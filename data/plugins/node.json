@@ -1,0 +1,191 @@
+{
+  "name": "node",
+  "rules": {
+    "callback-return": {
+      "recommended": false,
+      "fixable": false
+    },
+    "exports-style": {
+      "recommended": false,
+      "fixable": true
+    },
+    "file-extension-in-import": {
+      "recommended": false,
+      "fixable": true
+    },
+    "global-require": {
+      "recommended": false,
+      "fixable": false
+    },
+    "handle-callback-err": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-callback-literal": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-deprecated-api": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-exports-assign": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-extraneous-import": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-extraneous-require": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-missing-import": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-missing-require": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-mixed-requires": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-new-require": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-path-concat": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-process-env": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-process-exit": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-restricted-import": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-restricted-require": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-sync": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-top-level-await": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-unpublished-bin": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-unpublished-import": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-unpublished-require": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-unsupported-features/es-builtins": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-unsupported-features/es-syntax": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-unsupported-features/node-builtins": {
+      "recommended": true,
+      "fixable": false
+    },
+    "prefer-global/buffer": {
+      "recommended": false,
+      "fixable": false
+    },
+    "prefer-global/console": {
+      "recommended": false,
+      "fixable": false
+    },
+    "prefer-global/process": {
+      "recommended": false,
+      "fixable": false
+    },
+    "prefer-global/text-decoder": {
+      "recommended": false,
+      "fixable": false
+    },
+    "prefer-global/text-encoder": {
+      "recommended": false,
+      "fixable": false
+    },
+    "prefer-global/url-search-params": {
+      "recommended": false,
+      "fixable": false
+    },
+    "prefer-global/url": {
+      "recommended": false,
+      "fixable": false
+    },
+    "prefer-node-protocol": {
+      "recommended": false,
+      "fixable": true
+    },
+    "prefer-promises/dns": {
+      "recommended": false,
+      "fixable": false
+    },
+    "prefer-promises/fs": {
+      "recommended": false,
+      "fixable": false
+    },
+    "process-exit-as-throw": {
+      "recommended": true,
+      "fixable": false
+    },
+    "hashbang": {
+      "recommended": true,
+      "fixable": true
+    },
+    "no-hide-core-modules": {
+      "recommended": false,
+      "fixable": false
+    },
+    "shebang": {
+      "recommended": false,
+      "fixable": true
+    }
+  },
+  "recommendedConfig": {
+    "n/no-deprecated-api": "error",
+    "n/no-exports-assign": "error",
+    "n/no-extraneous-import": "error",
+    "n/no-extraneous-require": "error",
+    "n/no-missing-import": "error",
+    "n/no-missing-require": "error",
+    "n/no-process-exit": "error",
+    "n/no-unpublished-bin": "error",
+    "n/no-unpublished-import": "error",
+    "n/no-unpublished-require": "error",
+    "n/no-unsupported-features/es-builtins": "error",
+    "n/no-unsupported-features/es-syntax": [
+      "error",
+      {
+        "ignores": []
+      }
+    ],
+    "n/no-unsupported-features/node-builtins": "error",
+    "n/process-exit-as-throw": "error",
+    "n/hashbang": "error"
+  }
+}

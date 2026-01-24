@@ -1,0 +1,223 @@
+{
+  "name": "vitest",
+  "rules": {
+    "prefer-lowercase-title": {
+      "recommended": "strict",
+      "fixable": true
+    },
+    "max-nested-describe": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "no-identical-title": {
+      "recommended": "strict",
+      "fixable": true
+    },
+    "no-focused-tests": {
+      "recommended": "strict",
+      "fixable": true
+    },
+    "no-conditional-tests": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "expect-expect": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "consistent-test-it": {
+      "recommended": "strict",
+      "fixable": true
+    },
+    "prefer-to-be": {
+      "recommended": "strict",
+      "fixable": true
+    },
+    "no-hooks": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "no-restricted-vi-methods": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "consistent-test-filename": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "max-expects": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "no-alias-methods": {
+      "recommended": "strict",
+      "fixable": true
+    },
+    "no-commented-out-tests": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "no-conditional-expect": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "no-conditional-in-test": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "no-disabled-tests": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "no-done-callback": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "no-duplicate-hooks": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "no-large-snapshots": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "no-interpolation-in-snapshots": {
+      "recommended": "strict",
+      "fixable": true
+    },
+    "no-mocks-import": {
+      "recommended": "error",
+      "fixable": false
+    },
+    "no-restricted-matchers": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "no-standalone-expect": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "no-test-prefixes": {
+      "recommended": "strict",
+      "fixable": true
+    },
+    "no-test-return-statement": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "no-import-node-test": {
+      "recommended": "strict",
+      "fixable": true
+    },
+    "prefer-called-with": {
+      "recommended": "strict",
+      "fixable": true
+    },
+    "valid-title": {
+      "recommended": "strict",
+      "fixable": true
+    },
+    "valid-expect": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "prefer-to-be-falsy": {
+      "recommended": "strict",
+      "fixable": true
+    },
+    "prefer-to-be-object": {
+      "recommended": "strict",
+      "fixable": true
+    },
+    "prefer-to-be-truthy": {
+      "recommended": "strict",
+      "fixable": true
+    },
+    "prefer-to-have-length": {
+      "recommended": "strict",
+      "fixable": true
+    },
+    "prefer-equality-matcher": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "prefer-strict-equal": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "prefer-expect-resolves": {
+      "recommended": "strict",
+      "fixable": true
+    },
+    "prefer-each": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "prefer-hooks-on-top": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "prefer-hooks-in-order": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "require-local-test-context-for-concurrent-snapshots": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "prefer-mock-promise-shorthand": {
+      "recommended": "strict",
+      "fixable": true
+    },
+    "prefer-snapshot-hint": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "valid-describe-callback": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "require-top-level-describe": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "require-to-throw-message": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "require-hook": {
+      "recommended": "strict",
+      "fixable": false
+    },
+    "prefer-todo": {
+      "recommended": "strict",
+      "fixable": true
+    },
+    "prefer-spy-on": {
+      "recommended": "strict",
+      "fixable": true
+    },
+    "prefer-comparison-matcher": {
+      "recommended": "strict",
+      "fixable": true
+    },
+    "prefer-to-contain": {
+      "recommended": "strict",
+      "fixable": true
+    },
+    "prefer-expect-assertions": {
+      "recommended": "strict",
+      "fixable": false
+    }
+  },
+  "recommendedConfig": {
+    "vitest/expect-expect": "error",
+    "vitest/no-identical-title": "error",
+    "vitest/no-commented-out-tests": "error",
+    "vitest/valid-title": "error",
+    "vitest/valid-expect": "error",
+    "vitest/valid-describe-callback": "error",
+    "vitest/require-local-test-context-for-concurrent-snapshots": "error",
+    "vitest/no-import-node-test": "error"
+  }
+}

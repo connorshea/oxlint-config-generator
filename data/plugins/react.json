@@ -1,0 +1,441 @@
+{
+  "name": "react",
+  "rules": {
+    "boolean-prop-naming": {
+      "recommended": false,
+      "fixable": false
+    },
+    "button-has-type": {
+      "recommended": false,
+      "fixable": false
+    },
+    "checked-requires-onchange-or-readonly": {
+      "recommended": false,
+      "fixable": false
+    },
+    "default-props-match-prop-types": {
+      "recommended": false,
+      "fixable": false
+    },
+    "destructuring-assignment": {
+      "recommended": false,
+      "fixable": true
+    },
+    "display-name": {
+      "recommended": true,
+      "fixable": false
+    },
+    "forbid-component-props": {
+      "recommended": false,
+      "fixable": false
+    },
+    "forbid-dom-props": {
+      "recommended": false,
+      "fixable": false
+    },
+    "forbid-elements": {
+      "recommended": false,
+      "fixable": false
+    },
+    "forbid-foreign-prop-types": {
+      "recommended": false,
+      "fixable": false
+    },
+    "forbid-prop-types": {
+      "recommended": false,
+      "fixable": false
+    },
+    "forward-ref-uses-ref": {
+      "recommended": false,
+      "fixable": false
+    },
+    "function-component-definition": {
+      "recommended": false,
+      "fixable": true
+    },
+    "hook-use-state": {
+      "recommended": false,
+      "fixable": false
+    },
+    "iframe-missing-sandbox": {
+      "recommended": false,
+      "fixable": false
+    },
+    "jsx-boolean-value": {
+      "recommended": false,
+      "fixable": true
+    },
+    "jsx-child-element-spacing": {
+      "recommended": false,
+      "fixable": false
+    },
+    "jsx-closing-bracket-location": {
+      "recommended": false,
+      "fixable": true
+    },
+    "jsx-closing-tag-location": {
+      "recommended": false,
+      "fixable": true
+    },
+    "jsx-curly-spacing": {
+      "recommended": false,
+      "fixable": true
+    },
+    "jsx-curly-newline": {
+      "recommended": false,
+      "fixable": true
+    },
+    "jsx-equals-spacing": {
+      "recommended": false,
+      "fixable": true
+    },
+    "jsx-filename-extension": {
+      "recommended": false,
+      "fixable": false
+    },
+    "jsx-first-prop-new-line": {
+      "recommended": false,
+      "fixable": true
+    },
+    "jsx-handler-names": {
+      "recommended": false,
+      "fixable": false
+    },
+    "jsx-indent": {
+      "recommended": false,
+      "fixable": true
+    },
+    "jsx-indent-props": {
+      "recommended": false,
+      "fixable": true
+    },
+    "jsx-key": {
+      "recommended": true,
+      "fixable": false
+    },
+    "jsx-max-depth": {
+      "recommended": false,
+      "fixable": false
+    },
+    "jsx-max-props-per-line": {
+      "recommended": false,
+      "fixable": true
+    },
+    "jsx-newline": {
+      "recommended": false,
+      "fixable": true
+    },
+    "jsx-no-bind": {
+      "recommended": false,
+      "fixable": false
+    },
+    "jsx-no-comment-textnodes": {
+      "recommended": true,
+      "fixable": false
+    },
+    "jsx-no-constructed-context-values": {
+      "recommended": false,
+      "fixable": false
+    },
+    "jsx-no-duplicate-props": {
+      "recommended": true,
+      "fixable": false
+    },
+    "jsx-no-leaked-render": {
+      "recommended": false,
+      "fixable": true
+    },
+    "jsx-no-literals": {
+      "recommended": false,
+      "fixable": false
+    },
+    "jsx-no-script-url": {
+      "recommended": false,
+      "fixable": false
+    },
+    "jsx-no-target-blank": {
+      "recommended": true,
+      "fixable": true
+    },
+    "jsx-no-useless-fragment": {
+      "recommended": false,
+      "fixable": true
+    },
+    "jsx-one-expression-per-line": {
+      "recommended": false,
+      "fixable": true
+    },
+    "jsx-no-undef": {
+      "recommended": true,
+      "fixable": false
+    },
+    "jsx-curly-brace-presence": {
+      "recommended": false,
+      "fixable": true
+    },
+    "jsx-pascal-case": {
+      "recommended": false,
+      "fixable": false
+    },
+    "jsx-fragments": {
+      "recommended": false,
+      "fixable": true
+    },
+    "jsx-props-no-multi-spaces": {
+      "recommended": false,
+      "fixable": true
+    },
+    "jsx-props-no-spreading": {
+      "recommended": false,
+      "fixable": false
+    },
+    "jsx-props-no-spread-multi": {
+      "recommended": false,
+      "fixable": false
+    },
+    "jsx-sort-default-props": {
+      "recommended": false,
+      "fixable": false
+    },
+    "jsx-sort-props": {
+      "recommended": false,
+      "fixable": true
+    },
+    "jsx-space-before-closing": {
+      "recommended": false,
+      "fixable": true
+    },
+    "jsx-tag-spacing": {
+      "recommended": false,
+      "fixable": true
+    },
+    "jsx-uses-react": {
+      "recommended": true,
+      "fixable": false
+    },
+    "jsx-uses-vars": {
+      "recommended": true,
+      "fixable": false
+    },
+    "jsx-wrap-multilines": {
+      "recommended": false,
+      "fixable": true
+    },
+    "no-invalid-html-attribute": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-access-state-in-setstate": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-adjacent-inline-elements": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-array-index-key": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-arrow-function-lifecycle": {
+      "recommended": false,
+      "fixable": true
+    },
+    "no-children-prop": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-danger": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-danger-with-children": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-deprecated": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-did-mount-set-state": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-did-update-set-state": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-direct-mutation-state": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-find-dom-node": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-is-mounted": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-multi-comp": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-namespace": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-set-state": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-string-refs": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-redundant-should-component-update": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-render-return-value": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-this-in-sfc": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-typos": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-unescaped-entities": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-unknown-property": {
+      "recommended": true,
+      "fixable": true
+    },
+    "no-unsafe": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-unstable-nested-components": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-unused-class-component-methods": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-unused-prop-types": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-unused-state": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-object-type-as-default-prop": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-will-update-set-state": {
+      "recommended": false,
+      "fixable": false
+    },
+    "prefer-es6-class": {
+      "recommended": false,
+      "fixable": false
+    },
+    "prefer-exact-props": {
+      "recommended": false,
+      "fixable": false
+    },
+    "prefer-read-only-props": {
+      "recommended": false,
+      "fixable": true
+    },
+    "prefer-stateless-function": {
+      "recommended": false,
+      "fixable": false
+    },
+    "prop-types": {
+      "recommended": true,
+      "fixable": false
+    },
+    "react-in-jsx-scope": {
+      "recommended": true,
+      "fixable": false
+    },
+    "require-default-props": {
+      "recommended": false,
+      "fixable": false
+    },
+    "require-optimization": {
+      "recommended": false,
+      "fixable": false
+    },
+    "require-render-return": {
+      "recommended": true,
+      "fixable": false
+    },
+    "self-closing-comp": {
+      "recommended": false,
+      "fixable": true
+    },
+    "sort-comp": {
+      "recommended": false,
+      "fixable": false
+    },
+    "sort-default-props": {
+      "recommended": false,
+      "fixable": false
+    },
+    "sort-prop-types": {
+      "recommended": false,
+      "fixable": true
+    },
+    "state-in-constructor": {
+      "recommended": false,
+      "fixable": false
+    },
+    "static-property-placement": {
+      "recommended": false,
+      "fixable": false
+    },
+    "style-prop-object": {
+      "recommended": false,
+      "fixable": false
+    },
+    "void-dom-elements-no-children": {
+      "recommended": false,
+      "fixable": false
+    }
+  },
+  "recommendedConfig": {
+    "react/display-name": 2,
+    "react/jsx-key": 2,
+    "react/jsx-no-comment-textnodes": 2,
+    "react/jsx-no-duplicate-props": 2,
+    "react/jsx-no-target-blank": 2,
+    "react/jsx-no-undef": 2,
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/no-children-prop": 2,
+    "react/no-danger-with-children": 2,
+    "react/no-deprecated": 2,
+    "react/no-direct-mutation-state": 2,
+    "react/no-find-dom-node": 2,
+    "react/no-is-mounted": 2,
+    "react/no-render-return-value": 2,
+    "react/no-string-refs": 2,
+    "react/no-unescaped-entities": 2,
+    "react/no-unknown-property": 2,
+    "react/no-unsafe": 0,
+    "react/prop-types": 2,
+    "react/react-in-jsx-scope": 2,
+    "react/require-render-return": 2
+  }
+}
