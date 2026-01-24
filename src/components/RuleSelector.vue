@@ -26,7 +26,7 @@ interface DisplayRule {
 
 const props = defineProps<{
   selectedPlugins: PluginName[];
-  selectedJSPlugins: JSPluginName[];
+  selectedJsPlugins: JSPluginName[];
   enableTypeAware: boolean;
   useRecommended: boolean;
   ruleOverrides: Record<string, RuleOverride>;
@@ -56,7 +56,7 @@ const allRules = rulesData as OxlintRule[];
 // Convert JS plugin rules to DisplayRule format
 const jsPluginRules = computed((): DisplayRule[] => {
   const rules: DisplayRule[] = [];
-  for (const jsPluginName of props.selectedJSPlugins) {
+  for (const jsPluginName of props.selectedJsPlugins) {
     const plugin = jsPluginDataMap[jsPluginName];
     for (const [ruleName, ruleData] of Object.entries(plugin.rules)) {
       if (ruleData.deprecated) continue;
@@ -184,9 +184,9 @@ const groupedRules = computed(() => {
   // Sort groups: eslint first, then alphabetically, JS plugins at the end
   const sortedEntries = Object.entries(groups).sort(([a], [b]) => {
     const aIsJS =
-      a.startsWith("@") || props.selectedJSPlugins.some((p) => jsPluginDataMap[p].rulePrefix === a);
+      a.startsWith("@") || props.selectedJsPlugins.some((p) => jsPluginDataMap[p].rulePrefix === a);
     const bIsJS =
-      b.startsWith("@") || props.selectedJSPlugins.some((p) => jsPluginDataMap[p].rulePrefix === b);
+      b.startsWith("@") || props.selectedJsPlugins.some((p) => jsPluginDataMap[p].rulePrefix === b);
 
     if (aIsJS && !bIsJS) return 1;
     if (!aIsJS && bIsJS) return -1;

@@ -4,12 +4,12 @@ import type { PluginName, JSPluginName } from "../types";
 
 const props = defineProps<{
   selectedPlugins: PluginName[];
-  selectedJSPlugins: JSPluginName[];
+  selectedJsPlugins: JSPluginName[];
 }>();
 
 const emit = defineEmits<{
   "update:selectedPlugins": [plugins: PluginName[]];
-  "update:selectedJSPlugins": [plugins: JSPluginName[]];
+  "update:selectedJsPlugins": [plugins: JSPluginName[]];
 }>();
 
 interface PluginCategory {
@@ -86,8 +86,8 @@ const isSelected = (plugin: PluginName) => {
 };
 
 const toggleJSPlugin = (plugin: JSPluginName) => {
-  const index = props.selectedJSPlugins.indexOf(plugin);
-  const newPlugins = [...props.selectedJSPlugins];
+  const index = props.selectedJsPlugins.indexOf(plugin);
+  const newPlugins = [...props.selectedJsPlugins];
 
   if (index > -1) {
     newPlugins.splice(index, 1);
@@ -95,11 +95,11 @@ const toggleJSPlugin = (plugin: JSPluginName) => {
     newPlugins.push(plugin);
   }
 
-  emit("update:selectedJSPlugins", newPlugins);
+  emit("update:selectedJsPlugins", newPlugins);
 };
 
 const isJSPluginSelected = (plugin: JSPluginName) => {
-  return props.selectedJSPlugins.includes(plugin);
+  return props.selectedJsPlugins.includes(plugin);
 };
 
 const toggleJSPluginsSection = () => {
@@ -151,7 +151,7 @@ const toggleJSPluginsSection = () => {
             {{ plugin.label }}
           </button>
         </div>
-        <p v-if="selectedJSPlugins.length > 0" class="js-plugins-note">
+        <p v-if="selectedJsPlugins.length > 0" class="js-plugins-note">
           Note: You'll need to install the selected plugins in your project.
         </p>
       </div>
