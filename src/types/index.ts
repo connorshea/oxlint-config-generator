@@ -1,12 +1,14 @@
-export interface Rule {
-  name: string;
+export interface OxlintRule {
+  scope: string;
+  value: string;
   category: string;
-  plugin?: string;
-  documentation?: string;
-  typescript?: boolean;
-  recommended?: boolean;
-  fixable?: boolean;
+  type_aware: boolean;
+  fix: string;
+  default: boolean;
+  docs_url: string;
 }
+
+export type RuleOverride = "error" | "warn" | "off" | null;
 
 export interface PluginRules {
   plugin: string;
