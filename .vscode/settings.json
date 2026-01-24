@@ -2,8 +2,8 @@
   "search.exclude": {
     "vendor/**/*": true
   },
-  "[typescript][vue][css][json]": {
+  "[typescript][vue][css][json][jsonc]": {
     "editor.defaultFormatter": "oxc.oxc-vscode",
     "editor.formatOnSave": true
-  },
+  }
 }
