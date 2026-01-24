@@ -138,7 +138,7 @@ const toggleJSPluginsSection = () => {
       <button
         class="js-plugins-toggle"
         @click="toggleJSPluginsSection"
-        title="Experimental: JS plugin support is experimental"
+        title="JavaScript plugin support works but is still experimental"
       >
         <span class="js-plugins-toggle-text"
           >{{ showJSPlugins ? "−" : "+" }} JS Plugins (ESLint Compatibility)</span
@@ -165,8 +165,19 @@ const toggleJSPluginsSection = () => {
             {{ plugin.label }}
           </button>
         </div>
-        <p v-if="selectedJsPlugins.length > 0" class="js-plugins-note">
-          Note: You'll need to install the selected plugins in your project.
+        <p class="js-plugins-note">
+          You will need to install the selected plugins in your project for them to work.
+        </p>
+        <p class="js-plugins-note js-plugins-experimental-note">
+          Note: JS plugin support is experimental and may not work perfectly with all plugins or
+          rules, these particular JS plugins have only been tested with basic configurations. Read
+          more about JS Plugins in
+          <a
+            href="https://oxc.rs/docs/guide/usage/linter/js-plugins.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            >the Oxlint documentation</a
+          >.
         </p>
       </div>
     </div>
@@ -277,5 +288,14 @@ const toggleJSPluginsSection = () => {
   color: var(--color-text-muted);
   margin-top: 0.75rem;
   font-style: italic;
+}
+
+.js-plugins-experimental-note {
+  background: var(--color-code-bg);
+  color: var(--color-text-secondary);
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-style: normal;
+  border: 1px solid var(--color-border);
 }
 </style>
