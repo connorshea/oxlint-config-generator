@@ -1,16 +1,12 @@
 # Oxlint Config Generator
 
-A Vue 3 + Vite static website that allows users to interactively create Oxlint configuration files.
+[View the site here](https://connorshea.github.io/oxlint-config-generator/)
 
-[Oxlint](https://oxc.rs) is a fast linter for JavaScript and TypeScript written in Rust, porting many rules from ESLint and popular ESLint plugins.
+![Oxlint Config Generator Screenshot](./screenshot.png)
 
-## Features
+A Vue 3 + Vite static website that makes it easy to create Oxlint configuration files.
 
-- **Plugin Selection**: Choose which ESLint plugins to include rules from (React, Vue, TypeScript, Jest, Vitest, etc.)
-- **Type-Aware Rules**: Toggle to enable or disable type-aware rules
-- **Recommended Rulesets**: Optionally use recommended rules from original ESLint plugins
-- **Config Generation**: Generate `.oxlintrc.json` files with one click
-- **Copy to Clipboard**: Easily copy generated configurations
+[Oxlint](https://oxc.rs) is a fast, ESLint-compatible linter for JavaScript and TypeScript written in Rust. It has a lot of rules from various ESLint plugins, and I wanted to create a simple application to set up a configuration file based on the recommended rules from the original plugins.
 
 ## Development
 
