@@ -5,11 +5,13 @@ import RuleSelector from "./components/RuleSelector.vue";
 import ConfigDisplay from "./components/ConfigDisplay.vue";
 import { generateOxlintConfig, countEnabledRules } from "./utils/config-generator";
 import type { PluginName, RuleOverride } from "./types";
+import packageJson from "../package.json";
 
 const selectedPlugins = ref<PluginName[]>(["eslint", "oxc", "typescript"]);
 const enableTypeAware = ref(false);
 const useRecommended = ref(true);
 const ruleOverrides = ref<Record<string, RuleOverride>>({});
+const showFullRulesList = ref(false);
 
 const handlePluginChange = (plugins: PluginName[]) => {
   selectedPlugins.value = plugins;
@@ -61,6 +63,10 @@ watch(isDark, (v) => {
 const toggleTheme = () => {
   isDark.value = !isDark.value;
 };
+
+const oxlintVersion = computed(() => {
+  return (packageJson.devDependencies as Record<string, string>)?.oxlint?.replace("^", "") || "unknown";
+});
 </script>
 
 <template>
@@ -78,42 +84,44 @@ const toggleTheme = () => {
       </button>
     </header>
 
-    <div class="main-layout">
-      <div class="settings-column">
+    <div class="top-cards">
+      <div class="section options-card">
+        <h2>Options</h2>
+        <div class="checkbox-group">
+          <label>
+            <input v-model="useRecommended" type="checkbox" />
+            <span>Use recommended rulesets for each plugin</span>
+          </label>
+          <p class="option-help">
+            Enables rules that are marked as recommended in the original ESLint plugins (e.g.
+            eslint-plugin-react, @typescript-eslint/eslint-plugin).
+          </p>
+          <label>
+            <input v-model="enableTypeAware" type="checkbox" />
+            <span>Enable type-aware rules</span>
+          </label>
+          <p class="option-help">
+            Type-aware rules require
+            <a
+              href="https://www.npmjs.com/package/oxlint-tsgolint"
+              target="_blank"
+              rel="noopener noreferrer"
+              >oxlint-tsgolint</a
+            >
+            to be installed.
+          </p>
+        </div>
+      </div>
+
+      <div class="section plugins-card">
         <PluginSelector
           :selected-plugins="selectedPlugins"
           @update:selected-plugins="handlePluginChange"
         />
-
-        <div class="section">
-          <h2>Options</h2>
-          <div class="checkbox-group">
-            <label>
-              <input v-model="useRecommended" type="checkbox" />
-              <span>Use recommended rulesets for each plugin</span>
-            </label>
-            <p class="option-help">
-              Enables rules that are marked as recommended in the original ESLint plugins (e.g.
-              eslint-plugin-react, @typescript-eslint/eslint-plugin).
-            </p>
-            <label>
-              <input v-model="enableTypeAware" type="checkbox" />
-              <span>Enable type-aware rules</span>
-            </label>
-            <p class="option-help">
-              Type-aware rules require
-              <a
-                href="https://www.npmjs.com/package/oxlint-tsgolint"
-                target="_blank"
-                rel="noopener noreferrer"
-                >oxlint-tsgolint</a
-              >
-              to be installed.
-            </p>
-          </div>
-        </div>
       </div>
+    </div>
 
+    <div class="main-layout">
       <div class="rules-column">
         <RuleSelector
           :selected-plugins="selectedPlugins"
@@ -121,7 +129,9 @@ const toggleTheme = () => {
           :use-recommended="useRecommended"
           :rule-overrides="ruleOverrides"
           :enabled-rule-count="enabledRuleCount"
+          :show-full-rules-list="showFullRulesList"
           @update:rule-overrides="handleRuleOverridesChange"
+          @update:show-full-rules-list="(val) => (showFullRulesList = val)"
         />
       </div>
 
@@ -142,6 +152,7 @@ const toggleTheme = () => {
           >Source Code</a
         >
         · Made with 💜 in Denver, Colorado
+        · Ruleset based on Oxlint v{{ oxlintVersion }}
       </p>
     </footer>
   </div>
@@ -190,18 +201,24 @@ header code {
   font-size: 0.9em;
 }
 
+.top-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.options-card,
+.plugins-card {
+  margin-bottom: 0;
+}
+
 .main-layout {
   display: grid;
-  grid-template-columns: 300px 1fr 400px;
+  grid-template-columns: 1fr 400px;
   gap: 1.5rem;
   flex: 1;
   align-items: start;
-}
-
-.settings-column {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
 }
 
 .rules-column {
@@ -235,40 +252,33 @@ footer a:hover {
 }
 
 @media (max-width: 1200px) {
+  .top-cards {
+    grid-template-columns: 1fr;
+  }
+
   .main-layout {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .settings-column {
-    grid-column: 1;
-  }
-
-  .rules-column {
-    grid-column: 2;
+    grid-template-columns: 1fr;
   }
 
   .config-column {
-    grid-column: 1 / -1;
     position: static;
   }
 }
 
 @media (max-width: 768px) {
-  .main-layout {
+  .top-cards {
     grid-template-columns: 1fr;
   }
 
-  .settings-column,
-  .rules-column,
-  .config-column {
-    grid-column: 1;
+  .main-layout {
+    grid-template-columns: 1fr;
   }
 }
 
 .option-help {
   font-size: 0.8125rem;
   color: var(--color-text-muted);
-  margin: -0.25rem 0 0.75rem 2rem;
+  margin: 0.25rem 0 0.75rem 2.25rem;
   line-height: 1.4;
 }
 
