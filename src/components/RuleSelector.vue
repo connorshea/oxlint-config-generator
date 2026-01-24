@@ -25,9 +25,9 @@ const filteredRules = computed(() => {
       return false;
     }
 
-    // Always include eslint core rules
+    // Include eslint core rules only when the 'eslint' plugin is selected
     if (rule.scope === "eslint") {
-      return true;
+      return props.selectedPlugins.includes("eslint");
     }
 
     // Check if the plugin is selected

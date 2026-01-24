@@ -6,7 +6,7 @@ import ConfigDisplay from "./components/ConfigDisplay.vue";
 import { generateOxlintConfig, countEnabledRules } from "./utils/config-generator";
 import type { PluginName, RuleOverride } from "./types";
 
-const selectedPlugins = ref<PluginName[]>(["oxc", "unicorn", "typescript"]);
+const selectedPlugins = ref<PluginName[]>(["eslint", "oxc", "unicorn", "typescript"]);
 const enableTypeAware = ref(false);
 const useRecommended = ref(true);
 const ruleOverrides = ref<Record<string, RuleOverride>>({});

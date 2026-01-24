@@ -10,6 +10,7 @@ const emit = defineEmits<{
 }>();
 
 const availablePlugins: { name: PluginName; label: string }[] = [
+  { name: "eslint", label: "ESLint" },
   { name: "oxc", label: "oxc" },
   { name: "typescript", label: "TypeScript" },
   { name: "unicorn", label: "Unicorn" },
