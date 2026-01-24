@@ -74,18 +74,15 @@ export function generateOxlintConfig(
   enableTypeAware: boolean,
   useRecommended: boolean,
 ): string {
+  // Build config with keys in desired order: $schema, plugins, categories, rules
   const config: OxlintConfig = {
     $schema: "./node_modules/oxlint/configuration_schema.json",
+    plugins: selectedPlugins.length > 0 ? [...selectedPlugins] : undefined,
     categories: {
       correctness: "off",
     },
     rules: {},
   };
-
-  // Add selected plugins
-  if (selectedPlugins.length > 0) {
-    config.plugins = [...selectedPlugins];
-  }
 
   // Filter rules based on selected plugins
   const selectedRules = (
