@@ -69,6 +69,10 @@ const getRuleId = (rule: OxlintRule): string => {
   return rule.scope === "eslint" ? rule.value : `${rule.scope.replace("_", "-")}/${rule.value}`;
 };
 
+const getEnabledCountForGroup = (rules: OxlintRule[]): number => {
+  return rules.filter((rule) => isRuleEnabled(rule)).length;
+};
+
 const getRuleStatus = (rule: OxlintRule): RuleOverride => {
   const ruleId = getRuleId(rule);
   return props.ruleOverrides[ruleId] ?? null;
@@ -158,7 +162,11 @@ const formatGroupName = (scope: string): string => {
       <details v-for="[scope, rules] in groupedRules" :key="scope" class="rule-group">
         <summary class="group-summary">
           <span class="group-name">{{ formatGroupName(scope) }}</span>
-          <span class="group-count">{{ rules.length }} rules</span>
+          <span class="group-count">
+            <span class="enabled-count">{{ getEnabledCountForGroup(rules) }}</span>
+            <span class="count-separator">/</span>
+            <span>{{ rules.length }} rules</span>
+          </span>
         </summary>
 
         <div class="rule-list">
@@ -256,6 +264,16 @@ const formatGroupName = (scope: string): string => {
 .group-count {
   font-size: 0.8125rem;
   color: var(--color-text-muted);
+}
+
+.enabled-count {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.count-separator {
+  margin: 0 0.125rem;
+  opacity: 0.5;
 }
 
 .rule-list {
