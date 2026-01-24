@@ -16,7 +16,7 @@ A Vue 3 + Vite static website that allows users to interactively create Oxlint c
 
 ### Prerequisites
 
-- Node.js (v18 or higher)
+- Node.js (v24 or higher)
 - pnpm
 
 ### Setup
