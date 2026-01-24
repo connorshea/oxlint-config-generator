@@ -283,13 +283,19 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
             <label class="rule-toggle">
               <input type="checkbox" :checked="isRuleEnabled(rule)" @change="toggleRule(rule)" />
               <div class="rule-content">
-                <span class="rule-name">{{ rule.value }}</span>
-                <!-- TODO: Render this as markdown, specifically the <code> backticks part. -->
-                <p
-                  v-if="getRuleDescription(rule)"
-                  class="rule-desc"
-                  :title="getRuleDescription(rule)"
-                >
+                <div class="rule-head">
+                  <span class="rule-name">{{ rule.value }}</span>
+                  <a
+                    v-if="rule.docs_url"
+                    :href="rule.docs_url"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="rule-doc-link"
+                    title="Open docs in new tab"
+                  >(docs)</a>
+                </div>
+
+                <p v-if="getRuleDescription(rule)" class="rule-desc" :title="getRuleDescription(rule)">
                   {{ getRuleDescription(rule) }}
                 </p>
               </div>
@@ -316,9 +322,7 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
               >
                 type-aware
               </span>
-              <a :href="rule.docs_url" target="_blank" rel="noopener noreferrer" class="docs-link">
-                docs
-              </a>
+
             </div>
           </div>
         </div>
@@ -441,14 +445,33 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
   min-width: 0;
 }
 
+.rule-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
 .rule-name {
   font-family: "SF Mono", "Fira Code", Menlo, Monaco, Consolas, monospace;
   font-size: 0.8125rem;
   color: var(--color-text);
-  display: block;
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  display: inline-block;
+}
+
+.rule-doc-link {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.rule-doc-link:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
 }
 
 .rule-toggle input[type="checkbox"] {
@@ -481,14 +504,6 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
   transform: rotate(45deg);
 }
 
-.rule-name {
-  font-family: "SF Mono", "Fira Code", Menlo, Monaco, Consolas, monospace;
-  font-size: 0.8125rem;
-  color: var(--color-text);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 
 .rule-desc {
   font-size: 0.8125rem;
@@ -566,14 +581,5 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
   font-weight: 500;
 }
 
-.docs-link {
-  font-size: 0.75rem;
-  color: var(--color-text-muted);
-  text-decoration: none;
-}
 
-.docs-link:hover {
-  color: var(--color-primary);
-  text-decoration: underline;
-}
 </style>
