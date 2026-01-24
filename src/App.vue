@@ -112,6 +112,7 @@ const oxlintVersion = computed(() => {
       <div class="rules-column">
         <RuleSelector
           :selected-plugins="selectedPlugins"
+          :selected-j-s-plugins="selectedJSPlugins"
           :enable-type-aware="enableTypeAware"
           :use-recommended="useRecommended"
           :rule-overrides="ruleOverrides"
