@@ -3,6 +3,7 @@ import { computed, ref } from "vue";
 import type { PluginName, JSPluginName, OxlintRule, RuleOverride } from "../types";
 import rulesData from "../../data/rules.json";
 import ruleDescriptions from "../../data/rule-descriptions.json";
+import jsPluginDescriptions from "../../data/js-plugin-descriptions.json";
 import {
   isRuleRecommended,
   isRuleDeprecated,
@@ -63,10 +64,20 @@ const jsPluginRules = computed((): DisplayRule[] => {
 
       const ruleId = `${plugin.rulePrefix}/${ruleName}`;
 
+      // Get description from js-plugin-descriptions.json
+      const pluginDescriptions = (jsPluginDescriptions as Record<string, Record<string, string>>)[
+        plugin.rulePrefix
+      ];
+      const description = pluginDescriptions?.[ruleName] ?? "";
+
       // Apply search filter
       if (searchQuery.value) {
         const query = searchQuery.value.toLowerCase();
-        if (!ruleId.toLowerCase().includes(query) && !ruleName.toLowerCase().includes(query)) {
+        if (
+          !ruleId.toLowerCase().includes(query) &&
+          !ruleName.toLowerCase().includes(query) &&
+          !description.toLowerCase().includes(query)
+        ) {
           continue;
         }
       }
@@ -83,7 +94,7 @@ const jsPluginRules = computed((): DisplayRule[] => {
         id: ruleId,
         name: ruleName,
         scope: plugin.rulePrefix,
-        description: "",
+        description,
         recommended: ruleData.recommended,
         fixable: ruleData.fixable,
         typeAware: false,
@@ -453,30 +464,10 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
     </div>
 
     <div class="rule-groups">
-      <details
-        v-for="[scope, rules] in groupedRules"
-        :key="scope"
-        :open="showFullRulesList"
-        class="rule-group"
-      >
-        <summary v-if="!showFullRulesList" class="group-summary">
-          <span class="group-name">{{ formatGroupName(scope) }}</span>
-          <span class="group-count">
-            <span class="enabled-count">{{ getEnabledCountForGroup(rules) }}</span>
-            <span class="count-separator">/</span>
-            <span>{{ rules.length }} rules</span>
-          </span>
-        </summary>
-
-        <p v-if="!showFullRulesList" class="group-source">
-          Rules from
-          <a :href="getGroupSource(scope).url" target="_blank" rel="noopener noreferrer">
-            {{ getGroupSource(scope).text }}
-          </a>
-        </p>
-
-        <div class="rule-list">
-          <div v-for="rule in rules" :key="rule.id" class="rule-item">
+      <!-- Full rules list mode: simple div without details/summary -->
+      <div v-if="showFullRulesList" class="rule-group rule-group-flat">
+        <div class="rule-list rule-list-full">
+          <div v-for="rule in allDisplayRules" :key="rule.id" class="rule-item">
             <label class="rule-toggle">
               <input
                 type="checkbox"
@@ -485,7 +476,7 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
               />
               <div class="rule-content">
                 <div class="rule-head">
-                  <span class="rule-name">{{ rule.name }}</span>
+                  <span class="rule-name">{{ rule.id }}</span>
                   <a
                     v-if="rule.docsUrl"
                     :href="rule.docsUrl"
@@ -545,7 +536,99 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
             </div>
           </div>
         </div>
-      </details>
+      </div>
+
+      <!-- Grouped mode: collapsible details elements -->
+      <template v-else>
+        <details v-for="[scope, rules] in groupedRules" :key="scope" class="rule-group">
+          <summary class="group-summary">
+            <span class="group-name">{{ formatGroupName(scope) }}</span>
+            <span class="group-count">
+              <span class="enabled-count">{{ getEnabledCountForGroup(rules) }}</span>
+              <span class="count-separator">/</span>
+              <span>{{ rules.length }} rules</span>
+            </span>
+          </summary>
+
+          <p class="group-source">
+            Rules from
+            <a :href="getGroupSource(scope).url" target="_blank" rel="noopener noreferrer">
+              {{ getGroupSource(scope).text }}
+            </a>
+          </p>
+
+          <div class="rule-list">
+            <div v-for="rule in rules" :key="rule.id" class="rule-item">
+              <label class="rule-toggle">
+                <input
+                  type="checkbox"
+                  :checked="isDisplayRuleEnabled(rule)"
+                  @change="onDisplayRuleChange($event, rule)"
+                />
+                <div class="rule-content">
+                  <div class="rule-head">
+                    <span class="rule-name">{{ rule.name }}</span>
+                    <a
+                      v-if="rule.docsUrl"
+                      :href="rule.docsUrl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="rule-doc-link"
+                      title="Open docs in new tab"
+                      >(docs)</a
+                    >
+                  </div>
+
+                  <p
+                    v-if="rule.description"
+                    class="rule-desc"
+                    :title="rule.description"
+                    v-html="parseMarkdownInDescription(rule.description)"
+                  ></p>
+                </div>
+              </label>
+
+              <div class="rule-meta">
+                <span
+                  v-if="rule.category"
+                  :class="['category-badge', getCategoryClass(rule.category)]"
+                  :title="getCategoryTooltip(rule.category)"
+                >
+                  {{ rule.category }}
+                </span>
+                <span
+                  v-if="rule.isJSPlugin"
+                  class="js-plugin-badge"
+                  title="This rule comes from an external ESLint plugin"
+                >
+                  js-plugin
+                </span>
+                <span
+                  v-if="rule.recommended"
+                  class="recommended-badge"
+                  title="This rule is recommended in the original ESLint plugin"
+                >
+                  recommended
+                </span>
+                <span
+                  v-if="rule.typeAware"
+                  class="type-aware-badge"
+                  title="This rule requires type information from TypeScript"
+                >
+                  type-aware
+                </span>
+                <span
+                  v-if="rule.fixable"
+                  class="fixable-badge"
+                  title="This rule supports automatic fixing"
+                >
+                  autofixable
+                </span>
+              </div>
+            </div>
+          </div>
+        </details>
+      </template>
     </div>
   </div>
 </template>
@@ -638,6 +721,14 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
   gap: 0.25rem;
   max-height: 400px;
   overflow-y: auto;
+}
+
+.rule-list-full {
+  max-height: 600px;
+}
+
+.rule-group-flat {
+  padding: 0;
 }
 
 .rule-item {
@@ -853,10 +944,15 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
   height: 1rem;
   border: 2px solid var(--color-border-hover);
   border-radius: 3px;
+  background-color: var(--color-bg-elevated);
   cursor: pointer;
   transition: all 0.15s ease;
   flex-shrink: 0;
   position: relative;
+}
+
+.view-toggle input[type="checkbox"]:hover {
+  border-color: var(--color-primary);
 }
 
 .view-toggle input[type="checkbox"]:checked {
