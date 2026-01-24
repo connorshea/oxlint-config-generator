@@ -443,7 +443,7 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
     </div>
 
     <div class="rule-controls">
-      <label class="view-toggle">
+      <label class="selector-checkbox view-toggle">
         <input
           type="checkbox"
           :checked="showFullRulesList"
@@ -471,11 +471,11 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
       </div>
 
       <div class="filter-toggles">
-        <label class="filter-toggle">
+        <label class="selector-checkbox filter-toggle">
           <input type="checkbox" v-model="filterFixable" />
           <span>Autofixable only</span>
         </label>
-        <label class="filter-toggle">
+        <label class="selector-checkbox filter-toggle">
           <input type="checkbox" v-model="filterRecommended" />
           <span>Recommended only</span>
         </label>
@@ -962,7 +962,7 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
   font-size: 0.875rem;
 }
 
-.view-toggle input[type="checkbox"] {
+.selector-checkbox input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
   width: 1rem;
@@ -976,16 +976,16 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
   position: relative;
 }
 
-.view-toggle input[type="checkbox"]:hover {
+.selector-checkbox input[type="checkbox"]:hover {
   border-color: var(--color-primary);
 }
 
-.view-toggle input[type="checkbox"]:checked {
+.selector-checkbox input[type="checkbox"]:checked {
   background-color: var(--color-primary);
   border-color: var(--color-primary);
 }
 
-.view-toggle input[type="checkbox"]:checked::after {
+.selector-checkbox input[type="checkbox"]:checked::after {
   content: "";
   position: absolute;
   left: 4px;
@@ -1061,41 +1061,6 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
   cursor: pointer;
   font-size: 0.875rem;
   color: var(--color-text-secondary);
-}
-
-.filter-toggle input[type="checkbox"] {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 1rem;
-  height: 1rem;
-  border: 2px solid var(--color-border-hover);
-  border-radius: 3px;
-  background-color: var(--color-bg-elevated);
-  cursor: pointer;
-  transition: all 0.15s ease;
-  flex-shrink: 0;
-  position: relative;
-}
-
-.filter-toggle input[type="checkbox"]:hover {
-  border-color: var(--color-primary);
-}
-
-.filter-toggle input[type="checkbox"]:checked {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
-}
-
-.filter-toggle input[type="checkbox"]:checked::after {
-  content: "";
-  position: absolute;
-  left: 2px;
-  top: -1px;
-  width: 4px;
-  height: 8px;
-  border: solid white;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
 }
 
 :deep(.inline-code) {
