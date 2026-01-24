@@ -709,17 +709,17 @@
     "no-instanceof-array": {
       "recommended": false,
       "fixable": false,
-      "deprecated": false
+      "deprecated": true
     },
     "no-length-as-slice-end": {
       "recommended": false,
       "fixable": false,
-      "deprecated": false
+      "deprecated": true
     },
     "no-array-push-push": {
       "recommended": false,
       "fixable": false,
-      "deprecated": false
+      "deprecated": true
     }
   },
   "recommendedConfig": {

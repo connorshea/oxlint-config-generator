@@ -141,10 +141,15 @@ async function generatePluginData() {
           normalizedRecommendedRules.has(ruleName) ||
           normalizedRecommendedRules.has(`${plugin.name}/${ruleName}`);
 
-        // Detect deprecation: common patterns are meta.deprecated or meta.docs.deprecated
-        const isDeprecated = Boolean(
-          rule.meta?.deprecated === true || rule.meta?.docs?.deprecated === true,
-        );
+        // Detect deprecation: common patterns are meta.deprecated (boolean or object) or meta.docs.deprecated
+        let isDeprecated = false;
+        if (rule.meta?.deprecated !== undefined) {
+          // If deprecated is a boolean use it; if it's an object (details) treat as deprecated
+          isDeprecated = typeof rule.meta.deprecated === "boolean" ? rule.meta.deprecated : true;
+        }
+        if (!isDeprecated && rule.meta?.docs?.deprecated !== undefined) {
+          isDeprecated = Boolean(rule.meta.docs.deprecated);
+        }
 
         pluginData.rules[ruleName] = {
           recommended: isRecommendedViaMeta || isRecommendedViaConfig,
