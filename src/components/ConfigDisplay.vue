@@ -40,15 +40,16 @@ const copyToClipboard = async () => {
 }
 
 .instructions code {
-  background-color: #2a2a2a;
-  padding: 0.2em 0.4em;
-  border-radius: 3px;
-  font-family: "Courier New", monospace;
+  background-color: var(--color-primary-muted);
+  color: var(--color-primary);
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+  font-family: "SF Mono", "Fira Code", Menlo, Monaco, Consolas, monospace;
 }
 
 @media (prefers-color-scheme: light) {
   .instructions code {
-    background-color: #e0e0e0;
+    background-color: var(--color-primary-muted);
   }
 }
 </style>

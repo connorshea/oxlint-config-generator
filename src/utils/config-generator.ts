@@ -88,7 +88,8 @@ export function isRuleRecommended(rule: OxlintRule): boolean {
 }
 
 export function getRuleId(rule: OxlintRule): string {
-  return rule.scope === "eslint" ? rule.value : `${rule.scope.replace("_", "-")}/${rule.value}`;
+  // Always prefix with the scope (hyphenate underscores), e.g. eslint/accessor-pairs
+  return `${rule.scope.replace("_", "-")}/${rule.value}`;
 }
 
 export function generateOxlintConfig(
