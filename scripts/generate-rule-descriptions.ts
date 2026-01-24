@@ -58,17 +58,22 @@ function walkDir(dir: string, callback: (filePath: string) => void) {
 function extractWhatItDoes(markdown: string) {
   // Remove windows CRs
   const md = markdown.replace(/\r/g, "");
-  // Match a heading like '## What it does' (any heading level)
-  const headingRegex = /^#{1,6}\s*What it does\s*$/gim;
-  const match = headingRegex.exec(md);
+
+  // Match `<RuleHeader />` and strip everything before it.
+  const ruleHeaderIndex = md.indexOf("<RuleHeader />");
+  const mdAfterHeader = ruleHeaderIndex !== -1 ? md.slice(ruleHeaderIndex) : md;
+
+  // Match a heading like '### What it does' (exactly level 3)
+  const headingRegex = /^#{3}\s*What it does\s*$/gim;
+  const match = headingRegex.exec(mdAfterHeader);
   if (!match) return "";
 
   // Find the start index after the heading
   const startIndex = match.index + match[0].length;
 
   // Slice from after heading to the next heading or end of file
-  const rest = md.slice(startIndex);
-  const nextHeadingMatch = rest.match(/^{#{1,6}\s.*$/m);
+  const rest = mdAfterHeader.slice(startIndex);
+  const nextHeadingMatch = rest.match(/^#{3}\s*.*$/m);
   const endIndex = nextHeadingMatch ? nextHeadingMatch.index : rest.length;
   let section = rest.slice(0, endIndex).trim();
 
@@ -79,11 +84,11 @@ function extractWhatItDoes(markdown: string) {
   section = section.replace(/!\[[^\]]*\]\([^)]*\)/g, ""); // remove images
   section = section.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
 
-  // Strip inline code
-  section = section.replace(/`([^`]+)`/g, "$1");
+  // Do not strip inline code
+  // section = section.replace(/`([^`]+)`/g, "$1");
 
   // Remove remaining Markdown emphasis and headings
-  section = section.replace(/(^|\n)#{1,6}\s.*$/gim, "");
+  section = section.replace(/(^|\n)#{1,3}\s.*$/gim, "");
   section = section.replace(/\*{1,2}([^*]+)\*{1,2}/g, "$1");
   section = section.replace(/_{1,2}([^_]+)_{1,2}/g, "$1");
 

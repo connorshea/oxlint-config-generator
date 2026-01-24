@@ -283,9 +283,16 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
               <input type="checkbox" :checked="isRuleEnabled(rule)" @change="toggleRule(rule)" />
               <div class="rule-content">
                 <span class="rule-name">{{ rule.value }}</span>
-                <p v-if="getRuleDescription(rule)" class="rule-desc" :title="getRuleDescription(rule)">{{ getRuleDescription(rule) }}</p>
+                <!-- TODO: Render this as markdown, specifically the <code> backticks part. -->
+                <p
+                  v-if="getRuleDescription(rule)"
+                  class="rule-desc"
+                  :title="getRuleDescription(rule)"
+                >
+                  {{ getRuleDescription(rule) }}
+                </p>
               </div>
-            </label> 
+            </label>
 
             <div class="rule-meta">
               <span
