@@ -145,7 +145,7 @@ const formatGroupName = (scope: string): string => {
     vitest: "Vitest",
     nextjs: "Next.js",
     promise: "Promise",
-    n: "Node.js",
+    node: "Node.js",
   };
   return names[scope] || scope;
 };
@@ -166,7 +166,7 @@ const getGroupSource = (scope: string): string => {
     vitest: "Rules from eslint-plugin-vitest.",
     nextjs: "Rules from @next/eslint-plugin-next.",
     promise: "Rules from eslint-plugin-promise.",
-    n: "Rules from eslint-plugin-n.",
+    node: "Rules from eslint-plugin-n.",
   };
   return sources[scope] || "";
 };
