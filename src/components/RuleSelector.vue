@@ -963,8 +963,8 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
 .view-toggle input[type="checkbox"]:checked::after {
   content: "";
   position: absolute;
-  left: 3px;
-  top: 0px;
+  left: 4px;
+  top: 1px;
   width: 4px;
   height: 7px;
   border: solid white;
