@@ -2,211 +2,211 @@
   "name": "vitest",
   "rules": {
     "prefer-lowercase-title": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "max-nested-describe": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "no-identical-title": {
-      "recommended": "strict",
+      "recommended": true,
       "fixable": true
     },
     "no-focused-tests": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "no-conditional-tests": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "expect-expect": {
-      "recommended": "strict",
+      "recommended": true,
       "fixable": false
     },
     "consistent-test-it": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "prefer-to-be": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "no-hooks": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "no-restricted-vi-methods": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "consistent-test-filename": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "max-expects": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "no-alias-methods": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "no-commented-out-tests": {
-      "recommended": "strict",
+      "recommended": true,
       "fixable": false
     },
     "no-conditional-expect": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "no-conditional-in-test": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "no-disabled-tests": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "no-done-callback": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "no-duplicate-hooks": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "no-large-snapshots": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "no-interpolation-in-snapshots": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "no-mocks-import": {
-      "recommended": "error",
+      "recommended": false,
       "fixable": false
     },
     "no-restricted-matchers": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "no-standalone-expect": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "no-test-prefixes": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "no-test-return-statement": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "no-import-node-test": {
-      "recommended": "strict",
+      "recommended": true,
       "fixable": true
     },
     "prefer-called-with": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "valid-title": {
-      "recommended": "strict",
+      "recommended": true,
       "fixable": true
     },
     "valid-expect": {
-      "recommended": "strict",
+      "recommended": true,
       "fixable": false
     },
     "prefer-to-be-falsy": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "prefer-to-be-object": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "prefer-to-be-truthy": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "prefer-to-have-length": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "prefer-equality-matcher": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "prefer-strict-equal": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "prefer-expect-resolves": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "prefer-each": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "prefer-hooks-on-top": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "prefer-hooks-in-order": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "require-local-test-context-for-concurrent-snapshots": {
-      "recommended": "strict",
+      "recommended": true,
       "fixable": false
     },
     "prefer-mock-promise-shorthand": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "prefer-snapshot-hint": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "valid-describe-callback": {
-      "recommended": "strict",
+      "recommended": true,
       "fixable": false
     },
     "require-top-level-describe": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "require-to-throw-message": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "require-hook": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "prefer-todo": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "prefer-spy-on": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "prefer-comparison-matcher": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "prefer-to-contain": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "prefer-expect-assertions": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     }
   },

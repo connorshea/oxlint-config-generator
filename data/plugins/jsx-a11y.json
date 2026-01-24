@@ -6,79 +6,79 @@
       "fixable": false
     },
     "alt-text": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "anchor-ambiguous-text": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "anchor-has-content": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "anchor-is-valid": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "aria-activedescendant-has-tabindex": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "aria-props": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "aria-proptypes": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "aria-role": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "aria-unsupported-elements": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "autocomplete-valid": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "click-events-have-key-events": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "control-has-associated-label": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "heading-has-content": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "html-has-lang": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "iframe-has-title": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "img-redundant-alt": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "interactive-supports-focus": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "label-has-associated-control": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "label-has-for": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "lang": {
@@ -86,15 +86,15 @@
       "fixable": false
     },
     "media-has-caption": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "mouse-events-have-key-events": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-access-key": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-aria-hidden-on-focusable": {
@@ -102,27 +102,27 @@
       "fixable": false
     },
     "no-autofocus": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-distracting-elements": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-interactive-element-to-noninteractive-role": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-noninteractive-element-interactions": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-noninteractive-element-to-interactive-role": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-noninteractive-tabindex": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-onchange": {
@@ -130,11 +130,11 @@
       "fixable": false
     },
     "no-redundant-roles": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-static-element-interactions": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "prefer-tag-over-role": {
@@ -142,19 +142,19 @@
       "fixable": false
     },
     "role-has-required-aria-props": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "role-supports-aria-props": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "scope": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "tabindex-no-positive": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     }
   },
@@ -173,7 +173,15 @@
     "jsx-a11y/control-has-associated-label": [
       "off",
       {
-        "ignoreElements": ["audio", "canvas", "embed", "input", "textarea", "tr", "video"],
+        "ignoreElements": [
+          "audio",
+          "canvas",
+          "embed",
+          "input",
+          "textarea",
+          "tr",
+          "video"
+        ],
         "ignoreRoles": [
           "grid",
           "listbox",
@@ -186,7 +194,10 @@
           "tree",
           "treegrid"
         ],
-        "includeRoles": ["alert", "dialog"]
+        "includeRoles": [
+          "alert",
+          "dialog"
+        ]
       }
     ],
     "jsx-a11y/heading-has-content": "error",
@@ -196,7 +207,15 @@
     "jsx-a11y/interactive-supports-focus": [
       "error",
       {
-        "tabbable": ["button", "checkbox", "link", "searchbox", "spinbutton", "switch", "textbox"]
+        "tabbable": [
+          "button",
+          "checkbox",
+          "link",
+          "searchbox",
+          "spinbutton",
+          "switch",
+          "textbox"
+        ]
       }
     ],
     "jsx-a11y/label-has-associated-control": "error",
@@ -209,8 +228,13 @@
     "jsx-a11y/no-interactive-element-to-noninteractive-role": [
       "error",
       {
-        "tr": ["none", "presentation"],
-        "canvas": ["img"]
+        "tr": [
+          "none",
+          "presentation"
+        ],
+        "canvas": [
+          "img"
+        ]
       }
     ],
     "jsx-a11y/no-noninteractive-element-interactions": [
@@ -226,29 +250,79 @@
           "onKeyDown",
           "onKeyUp"
         ],
-        "alert": ["onKeyUp", "onKeyDown", "onKeyPress"],
-        "body": ["onError", "onLoad"],
-        "dialog": ["onKeyUp", "onKeyDown", "onKeyPress"],
-        "iframe": ["onError", "onLoad"],
-        "img": ["onError", "onLoad"]
+        "alert": [
+          "onKeyUp",
+          "onKeyDown",
+          "onKeyPress"
+        ],
+        "body": [
+          "onError",
+          "onLoad"
+        ],
+        "dialog": [
+          "onKeyUp",
+          "onKeyDown",
+          "onKeyPress"
+        ],
+        "iframe": [
+          "onError",
+          "onLoad"
+        ],
+        "img": [
+          "onError",
+          "onLoad"
+        ]
       }
     ],
     "jsx-a11y/no-noninteractive-element-to-interactive-role": [
       "error",
       {
-        "ul": ["listbox", "menu", "menubar", "radiogroup", "tablist", "tree", "treegrid"],
-        "ol": ["listbox", "menu", "menubar", "radiogroup", "tablist", "tree", "treegrid"],
-        "li": ["menuitem", "menuitemradio", "menuitemcheckbox", "option", "row", "tab", "treeitem"],
-        "table": ["grid"],
-        "td": ["gridcell"],
-        "fieldset": ["radiogroup", "presentation"]
+        "ul": [
+          "listbox",
+          "menu",
+          "menubar",
+          "radiogroup",
+          "tablist",
+          "tree",
+          "treegrid"
+        ],
+        "ol": [
+          "listbox",
+          "menu",
+          "menubar",
+          "radiogroup",
+          "tablist",
+          "tree",
+          "treegrid"
+        ],
+        "li": [
+          "menuitem",
+          "menuitemradio",
+          "menuitemcheckbox",
+          "option",
+          "row",
+          "tab",
+          "treeitem"
+        ],
+        "table": [
+          "grid"
+        ],
+        "td": [
+          "gridcell"
+        ],
+        "fieldset": [
+          "radiogroup",
+          "presentation"
+        ]
       }
     ],
     "jsx-a11y/no-noninteractive-tabindex": [
       "error",
       {
         "tags": [],
-        "roles": ["tabpanel"],
+        "roles": [
+          "tabpanel"
+        ],
         "allowExpressionValues": true
       }
     ],
@@ -257,7 +331,14 @@
       "error",
       {
         "allowExpressionValues": true,
-        "handlers": ["onClick", "onMouseDown", "onMouseUp", "onKeyPress", "onKeyDown", "onKeyUp"]
+        "handlers": [
+          "onClick",
+          "onMouseDown",
+          "onMouseUp",
+          "onKeyPress",
+          "onKeyDown",
+          "onKeyUp"
+        ]
       }
     ],
     "jsx-a11y/role-has-required-aria-props": "error",

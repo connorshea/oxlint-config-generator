@@ -2,163 +2,163 @@
   "name": "jsdoc",
   "rules": {
     "check-access": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "check-alignment": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "check-examples": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "check-indentation": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "check-line-alignment": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "check-param-names": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "check-property-names": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "check-syntax": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "check-tag-names": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "check-template-names": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "check-types": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "check-values": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "convert-to-jsdoc-comments": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "empty-tags": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "escape-inline-tags": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "implements-on-classes": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "imports-as-dependencies": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "informative-docs": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "lines-before-block": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "match-description": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "match-name": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "multiline-blocks": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-bad-blocks": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-blank-block-descriptions": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-blank-blocks": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-defaults": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-missing-syntax": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-multi-asterisks": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-restricted-syntax": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-types": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-undefined-types": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "prefer-import-tag": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "reject-any-type": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "reject-function-type": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-asterisk-prefix": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "require-description": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-description-complete-sentence": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "require-example": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "require-file-overview": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-hyphen-before-param-description": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "require-jsdoc": {
@@ -166,139 +166,139 @@
       "fixable": true
     },
     "require-next-description": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-next-type": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-param": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "require-param-description": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "require-param-name": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-param-type": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "require-property": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "require-property-description": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-property-name": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-property-type": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-rejects": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-returns": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "require-returns-check": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-returns-description": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-returns-type": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-tags": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-template": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-template-description": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-throws": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-throws-description": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-throws-type": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-yields": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-yields-check": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-yields-description": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-yields-type": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "sort-tags": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "tag-lines": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "text-escaping": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "ts-method-signature-style": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "ts-no-empty-object-type": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "ts-no-unnecessary-template-expression": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "ts-prefer-function-type": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "type-formatting": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "valid-types": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     }
   },

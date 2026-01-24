@@ -2,34 +2,27 @@
   "name": "typescript",
   "rules": {
     "adjacent-overload-signatures": {
-      "recommended": "stylistic",
+      "recommended": false,
       "fixable": false
     },
     "array-type": {
-      "recommended": "stylistic",
+      "recommended": false,
       "fixable": true
     },
     "await-thenable": {
-      "recommended": "recommended",
+      "recommended": false,
       "fixable": false
     },
     "ban-ts-comment": {
-      "recommended": {
-        "recommended": true,
-        "strict": [
-          {
-            "minimumDescriptionLength": 10
-          }
-        ]
-      },
+      "recommended": true,
       "fixable": false
     },
     "ban-tslint-comment": {
-      "recommended": "stylistic",
+      "recommended": false,
       "fixable": true
     },
     "class-literal-property-style": {
-      "recommended": "stylistic",
+      "recommended": false,
       "fixable": false
     },
     "class-methods-use-this": {
@@ -37,11 +30,11 @@
       "fixable": false
     },
     "consistent-generic-constructors": {
-      "recommended": "stylistic",
+      "recommended": false,
       "fixable": true
     },
     "consistent-indexed-object-style": {
-      "recommended": "stylistic",
+      "recommended": false,
       "fixable": true
     },
     "consistent-return": {
@@ -49,11 +42,11 @@
       "fixable": false
     },
     "consistent-type-assertions": {
-      "recommended": "stylistic",
+      "recommended": false,
       "fixable": true
     },
     "consistent-type-definitions": {
-      "recommended": "stylistic",
+      "recommended": false,
       "fixable": true
     },
     "consistent-type-exports": {
@@ -69,7 +62,7 @@
       "fixable": false
     },
     "dot-notation": {
-      "recommended": "stylistic",
+      "recommended": false,
       "fixable": true
     },
     "explicit-function-return-type": {
@@ -105,27 +98,27 @@
       "fixable": false
     },
     "no-array-constructor": {
-      "recommended": "recommended",
+      "recommended": true,
       "fixable": true
     },
     "no-array-delete": {
-      "recommended": "recommended",
+      "recommended": false,
       "fixable": false
     },
     "no-base-to-string": {
-      "recommended": "recommended",
+      "recommended": false,
       "fixable": false
     },
     "no-confusing-non-null-assertion": {
-      "recommended": "stylistic",
+      "recommended": false,
       "fixable": false
     },
     "no-confusing-void-expression": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "no-deprecated": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "no-dupe-class-members": {
@@ -133,19 +126,19 @@
       "fixable": false
     },
     "no-duplicate-enum-values": {
-      "recommended": "recommended",
+      "recommended": true,
       "fixable": false
     },
     "no-duplicate-type-constituents": {
-      "recommended": "recommended",
+      "recommended": false,
       "fixable": true
     },
     "no-dynamic-delete": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "no-empty-function": {
-      "recommended": "stylistic",
+      "recommended": false,
       "fixable": false
     },
     "no-empty-interface": {
@@ -153,31 +146,31 @@
       "fixable": true
     },
     "no-empty-object-type": {
-      "recommended": "recommended",
+      "recommended": true,
       "fixable": false
     },
     "no-explicit-any": {
-      "recommended": "recommended",
+      "recommended": true,
       "fixable": true
     },
     "no-extra-non-null-assertion": {
-      "recommended": "recommended",
+      "recommended": true,
       "fixable": true
     },
     "no-extraneous-class": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "no-floating-promises": {
-      "recommended": "recommended",
+      "recommended": false,
       "fixable": false
     },
     "no-for-in-array": {
-      "recommended": "recommended",
+      "recommended": false,
       "fixable": false
     },
     "no-implied-eval": {
-      "recommended": "recommended",
+      "recommended": false,
       "fixable": false
     },
     "no-import-type-side-effects": {
@@ -185,7 +178,7 @@
       "fixable": true
     },
     "no-inferrable-types": {
-      "recommended": "stylistic",
+      "recommended": false,
       "fixable": true
     },
     "no-invalid-this": {
@@ -193,7 +186,7 @@
       "fixable": false
     },
     "no-invalid-void-type": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "no-loop-func": {
@@ -209,39 +202,39 @@
       "fixable": false
     },
     "no-meaningless-void-operator": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "no-misused-new": {
-      "recommended": "recommended",
+      "recommended": true,
       "fixable": false
     },
     "no-misused-promises": {
-      "recommended": "recommended",
+      "recommended": false,
       "fixable": false
     },
     "no-misused-spread": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "no-mixed-enums": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "no-namespace": {
-      "recommended": "recommended",
+      "recommended": true,
       "fixable": false
     },
     "no-non-null-asserted-nullish-coalescing": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "no-non-null-asserted-optional-chain": {
-      "recommended": "recommended",
+      "recommended": true,
       "fixable": false
     },
     "no-non-null-assertion": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "no-redeclare": {
@@ -249,11 +242,11 @@
       "fixable": false
     },
     "no-redundant-type-constituents": {
-      "recommended": "recommended",
+      "recommended": false,
       "fixable": false
     },
     "no-require-imports": {
-      "recommended": "recommended",
+      "recommended": true,
       "fixable": false
     },
     "no-restricted-imports": {
@@ -269,7 +262,7 @@
       "fixable": false
     },
     "no-this-alias": {
-      "recommended": "recommended",
+      "recommended": true,
       "fixable": false
     },
     "no-type-alias": {
@@ -277,11 +270,11 @@
       "fixable": false
     },
     "no-unnecessary-boolean-literal-compare": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "no-unnecessary-condition": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "no-unnecessary-parameter-property-assignment": {
@@ -293,59 +286,59 @@
       "fixable": true
     },
     "no-unnecessary-template-expression": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "no-unnecessary-type-arguments": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "no-unnecessary-type-assertion": {
-      "recommended": "recommended",
+      "recommended": false,
       "fixable": true
     },
     "no-unnecessary-type-constraint": {
-      "recommended": "recommended",
+      "recommended": true,
       "fixable": false
     },
     "no-unnecessary-type-conversion": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "no-unnecessary-type-parameters": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "no-unsafe-argument": {
-      "recommended": "recommended",
+      "recommended": false,
       "fixable": false
     },
     "no-unsafe-assignment": {
-      "recommended": "recommended",
+      "recommended": false,
       "fixable": false
     },
     "no-unsafe-call": {
-      "recommended": "recommended",
+      "recommended": false,
       "fixable": false
     },
     "no-unsafe-declaration-merging": {
-      "recommended": "recommended",
+      "recommended": true,
       "fixable": false
     },
     "no-unsafe-enum-comparison": {
-      "recommended": "recommended",
+      "recommended": false,
       "fixable": false
     },
     "no-unsafe-function-type": {
-      "recommended": "recommended",
+      "recommended": true,
       "fixable": false
     },
     "no-unsafe-member-access": {
-      "recommended": "recommended",
+      "recommended": false,
       "fixable": false
     },
     "no-unsafe-return": {
-      "recommended": "recommended",
+      "recommended": false,
       "fixable": false
     },
     "no-unsafe-type-assertion": {
@@ -353,11 +346,11 @@
       "fixable": false
     },
     "no-unsafe-unary-minus": {
-      "recommended": "recommended",
+      "recommended": false,
       "fixable": false
     },
     "no-unused-expressions": {
-      "recommended": "recommended",
+      "recommended": true,
       "fixable": false
     },
     "no-unused-private-class-members": {
@@ -365,7 +358,7 @@
       "fixable": false
     },
     "no-unused-vars": {
-      "recommended": "recommended",
+      "recommended": true,
       "fixable": true
     },
     "no-use-before-define": {
@@ -373,11 +366,11 @@
       "fixable": false
     },
     "no-useless-constructor": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "no-useless-default-assignment": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "no-useless-empty-export": {
@@ -389,15 +382,15 @@
       "fixable": false
     },
     "no-wrapper-object-types": {
-      "recommended": "recommended",
+      "recommended": true,
       "fixable": true
     },
     "non-nullable-type-assertion-style": {
-      "recommended": "stylistic",
+      "recommended": false,
       "fixable": true
     },
     "only-throw-error": {
-      "recommended": "recommended",
+      "recommended": false,
       "fixable": false
     },
     "parameter-properties": {
@@ -405,7 +398,7 @@
       "fixable": false
     },
     "prefer-as-const": {
-      "recommended": "recommended",
+      "recommended": true,
       "fixable": true
     },
     "prefer-destructuring": {
@@ -417,39 +410,39 @@
       "fixable": false
     },
     "prefer-find": {
-      "recommended": "stylistic",
+      "recommended": false,
       "fixable": false
     },
     "prefer-for-of": {
-      "recommended": "stylistic",
+      "recommended": false,
       "fixable": false
     },
     "prefer-function-type": {
-      "recommended": "stylistic",
+      "recommended": false,
       "fixable": true
     },
     "prefer-includes": {
-      "recommended": "stylistic",
+      "recommended": false,
       "fixable": true
     },
     "prefer-literal-enum-member": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "prefer-namespace-keyword": {
-      "recommended": "recommended",
+      "recommended": true,
       "fixable": true
     },
     "prefer-nullish-coalescing": {
-      "recommended": "stylistic",
+      "recommended": false,
       "fixable": false
     },
     "prefer-optional-chain": {
-      "recommended": "stylistic",
+      "recommended": false,
       "fixable": true
     },
     "prefer-promise-reject-errors": {
-      "recommended": "recommended",
+      "recommended": false,
       "fixable": false
     },
     "prefer-readonly": {
@@ -461,19 +454,19 @@
       "fixable": false
     },
     "prefer-reduce-type-parameter": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "prefer-regexp-exec": {
-      "recommended": "stylistic",
+      "recommended": false,
       "fixable": true
     },
     "prefer-return-this-type": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": true
     },
     "prefer-string-starts-ends-with": {
-      "recommended": "stylistic",
+      "recommended": false,
       "fixable": true
     },
     "prefer-ts-expect-error": {
@@ -485,7 +478,7 @@
       "fixable": true
     },
     "related-getter-setter-pairs": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "require-array-sort-compare": {
@@ -493,44 +486,19 @@
       "fixable": false
     },
     "require-await": {
-      "recommended": "recommended",
+      "recommended": false,
       "fixable": false
     },
     "restrict-plus-operands": {
-      "recommended": {
-        "recommended": true,
-        "strict": [
-          {
-            "allowAny": false,
-            "allowBoolean": false,
-            "allowNullish": false,
-            "allowNumberAndString": false,
-            "allowRegExp": false
-          }
-        ]
-      },
+      "recommended": false,
       "fixable": false
     },
     "restrict-template-expressions": {
-      "recommended": {
-        "recommended": true,
-        "strict": [
-          {
-            "allowAny": false,
-            "allowBoolean": false,
-            "allowNever": false,
-            "allowNullish": false,
-            "allowNumber": false,
-            "allowRegExp": false
-          }
-        ]
-      },
+      "recommended": false,
       "fixable": false
     },
     "return-await": {
-      "recommended": {
-        "strict": ["error-handling-correctness-only"]
-      },
+      "recommended": false,
       "fixable": true
     },
     "sort-type-constituents": {
@@ -550,7 +518,7 @@
       "fixable": false
     },
     "triple-slash-reference": {
-      "recommended": "recommended",
+      "recommended": true,
       "fixable": false
     },
     "typedef": {
@@ -558,15 +526,15 @@
       "fixable": false
     },
     "unbound-method": {
-      "recommended": "recommended",
+      "recommended": false,
       "fixable": false
     },
     "unified-signatures": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     },
     "use-unknown-in-catch-callback-variable": {
-      "recommended": "strict",
+      "recommended": false,
       "fixable": false
     }
   },

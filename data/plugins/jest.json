@@ -6,7 +6,7 @@
       "fixable": true
     },
     "expect-expect": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "max-expects": {
@@ -18,15 +18,15 @@
       "fixable": false
     },
     "no-alias-methods": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-commented-out-tests": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-conditional-expect": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-conditional-in-test": {
@@ -38,15 +38,15 @@
       "fixable": false
     },
     "no-deprecated-functions": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-disabled-tests": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-done-callback": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-duplicate-hooks": {
@@ -58,11 +58,11 @@
       "fixable": false
     },
     "no-export": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-focused-tests": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-hooks": {
@@ -70,15 +70,15 @@
       "fixable": false
     },
     "no-identical-title": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-interpolation-in-snapshots": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-jasmine-globals": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-large-snapshots": {
@@ -86,7 +86,7 @@
       "fixable": false
     },
     "no-mocks-import": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-restricted-jest-methods": {
@@ -98,11 +98,11 @@
       "fixable": false
     },
     "no-standalone-expect": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-test-prefixes": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-test-return-statement": {
@@ -258,15 +258,15 @@
       "fixable": false
     },
     "unbound-method": {
-      "recommended": "recommended",
+      "recommended": false,
       "fixable": false
     },
     "valid-describe-callback": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "valid-expect-in-promise": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "valid-expect-with-promise": {
@@ -274,7 +274,7 @@
       "fixable": false
     },
     "valid-expect": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "valid-mock-module-path": {
@@ -282,7 +282,7 @@
       "fixable": false
     },
     "valid-title": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     }
   },

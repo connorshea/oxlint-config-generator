@@ -2,7 +2,7 @@
   "name": "unicorn",
   "rules": {
     "better-regex": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "catch-error-name": {
@@ -14,11 +14,11 @@
       "fixable": true
     },
     "consistent-date-clone": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "consistent-destructuring": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "consistent-empty-array-spread": {
@@ -26,7 +26,7 @@
       "fixable": true
     },
     "consistent-existence-index-check": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "consistent-function-scoping": {
@@ -34,7 +34,7 @@
       "fixable": false
     },
     "custom-error-definition": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "empty-brace-spaces": {
@@ -42,15 +42,15 @@
       "fixable": true
     },
     "error-message": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "escape-case": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "expiring-todo-comments": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "explicit-length-check": {
@@ -62,23 +62,23 @@
       "fixable": false
     },
     "import-style": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "new-for-builtins": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-abusive-eslint-disable": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "no-accessor-recursion": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "no-anonymous-default-export": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "no-array-callback-reference": {
@@ -86,11 +86,11 @@
       "fixable": false
     },
     "no-array-for-each": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-array-method-this-argument": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-array-reduce": {
@@ -98,11 +98,11 @@
       "fixable": false
     },
     "no-array-reverse": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "no-array-sort": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "no-await-expression-member": {
@@ -110,19 +110,19 @@
       "fixable": true
     },
     "no-await-in-promise-methods": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "no-console-spaces": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-document-cookie": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "no-empty-file": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "no-for-loop": {
@@ -130,7 +130,7 @@
       "fixable": true
     },
     "no-hex-escape": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-immediate-mutation": {
@@ -138,39 +138,39 @@
       "fixable": true
     },
     "no-instanceof-builtins": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-invalid-fetch-options": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "no-invalid-remove-event-listener": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "no-keyword-prefix": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-lonely-if": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-magic-array-flat-depth": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "no-named-default": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-negated-condition": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-negation-in-equality-check": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "no-nested-ternary": {
@@ -178,11 +178,11 @@
       "fixable": true
     },
     "no-new-array": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-new-buffer": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-null": {
@@ -190,183 +190,183 @@
       "fixable": true
     },
     "no-object-as-default-parameter": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "no-process-exit": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "no-single-promise-in-promise-methods": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-static-only-class": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-thenable": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "no-this-assignment": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "no-typeof-undefined": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-unnecessary-array-flat-depth": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-unnecessary-array-splice-count": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-unnecessary-await": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-unnecessary-polyfills": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "no-unnecessary-slice-end": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-unreadable-array-destructuring": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-unreadable-iife": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "no-unused-properties": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-useless-collection-argument": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-useless-error-capture-stack-trace": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-useless-fallback-in-spread": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-useless-length-check": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-useless-promise-resolve-reject": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-useless-spread": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-useless-switch-case": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "no-useless-undefined": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-zero-fractions": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "number-literal-case": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "numeric-separators-style": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-add-event-listener": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-array-find": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-array-flat": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-array-flat-map": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-array-index-of": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-array-some": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-at": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-bigint-literals": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-blob-reading-methods": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "prefer-class-fields": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-classlist-toggle": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-code-point": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "prefer-date-now": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-default-parameters": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "prefer-dom-node-append": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-dom-node-dataset": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-dom-node-remove": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-dom-node-text-content": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "prefer-event-target": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "prefer-export-from": {
@@ -374,75 +374,75 @@
       "fixable": true
     },
     "prefer-global-this": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-import-meta-properties": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "prefer-includes": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-json-parse-buffer": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "prefer-keyboard-event-key": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-logical-operator-over-ternary": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "prefer-math-min-max": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-math-trunc": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-modern-dom-apis": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-modern-math-apis": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-module": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-native-coercion-functions": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-negative-index": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-node-protocol": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-number-properties": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-object-from-entries": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-optional-catch-binding": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-prototype-methods": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-query-selector": {
@@ -450,27 +450,27 @@
       "fixable": true
     },
     "prefer-reflect-apply": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-regexp-test": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-response-static-json": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-set-has": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-set-size": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-single-call": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-spread": {
@@ -478,43 +478,43 @@
       "fixable": true
     },
     "prefer-string-raw": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-string-replace-all": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-string-slice": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-string-starts-ends-with": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-string-trim-start-end": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-structured-clone": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "prefer-switch": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-ternary": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prefer-top-level-await": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": false
     },
     "prefer-type-error": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "prevent-abbreviations": {
@@ -522,31 +522,31 @@
       "fixable": true
     },
     "relative-url-style": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "require-array-join-separator": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "require-module-attributes": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "require-module-specifiers": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "require-number-to-fixed-digits-argument": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "require-post-message-target-origin": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "string-content": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "switch-case-braces": {
@@ -558,11 +558,11 @@
       "fixable": true
     },
     "text-encoding-identifier-case": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "throw-new-error": {
-      "recommended": "unopinionated",
+      "recommended": true,
       "fixable": true
     },
     "no-instanceof-array": {

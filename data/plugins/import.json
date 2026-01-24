@@ -2,19 +2,19 @@
   "name": "import",
   "rules": {
     "no-unresolved": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "named": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "default": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "namespace": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-namespace": {
@@ -22,7 +22,7 @@
       "fixable": true
     },
     "export": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-mutable-exports": {
@@ -70,11 +70,11 @@
       "fixable": false
     },
     "no-named-as-default": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-named-as-default-member": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-anonymous-default-export": {
@@ -94,7 +94,7 @@
       "fixable": false
     },
     "no-duplicates": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "first": {

@@ -22,7 +22,7 @@
       "fixable": true
     },
     "attributes-order": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "block-lang": {
@@ -30,7 +30,7 @@
       "fixable": false
     },
     "block-order": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "block-spacing": {
@@ -410,7 +410,7 @@
       "fixable": false
     },
     "no-lone-template": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-loss-of-precision": {
@@ -426,7 +426,7 @@
       "fixable": false
     },
     "no-multiple-slot-args": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-multiple-template-root": {
@@ -462,7 +462,7 @@
       "fixable": false
     },
     "no-required-prop-with-default": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-reserved-component-names": {
@@ -646,7 +646,7 @@
       "fixable": false
     },
     "no-v-html": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-v-model-argument": {
@@ -690,7 +690,7 @@
       "fixable": true
     },
     "order-in-components": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "padding-line-between-blocks": {
@@ -870,7 +870,7 @@
       "fixable": true
     },
     "this-in-template": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "use-v-on-exact": {
