@@ -150,25 +150,75 @@ const formatGroupName = (scope: string): string => {
   return names[scope] || scope;
 };
 
-const getGroupSource = (scope: string): string => {
-  const sources: Record<string, string> = {
-    eslint: "Rules from ESLint core.",
-    oxc: "Rules unique to oxlint.",
-    typescript: "Rules from @typescript-eslint/eslint-plugin.",
-    react: "Rules from eslint-plugin-react.",
-    react_perf: "Rules from eslint-plugin-react-perf.",
-    jsx_a11y: "Rules from eslint-plugin-jsx-a11y.",
-    vue: "Rules from eslint-plugin-vue.",
-    unicorn: "Rules from eslint-plugin-unicorn.",
-    import: "Rules from eslint-plugin-import.",
-    jsdoc: "Rules from eslint-plugin-jsdoc.",
-    jest: "Rules from eslint-plugin-jest.",
-    vitest: "Rules from eslint-plugin-vitest.",
-    nextjs: "Rules from @next/eslint-plugin-next.",
-    promise: "Rules from eslint-plugin-promise.",
-    node: "Rules from eslint-plugin-n.",
+interface GroupSourceInfo {
+  text: string;
+  url: string;
+}
+
+const getGroupSource = (scope: string): GroupSourceInfo => {
+  const sources: Record<string, GroupSourceInfo> = {
+    eslint: {
+      text: "Rules from ESLint core.",
+      url: "https://github.com/eslint/eslint",
+    },
+    oxc: {
+      text: "Rules unique to oxlint.",
+      url: "https://github.com/oxc-project/oxc",
+    },
+    typescript: {
+      text: "Rules from @typescript-eslint/eslint-plugin.",
+      url: "https://github.com/typescript-eslint/typescript-eslint",
+    },
+    react: {
+      text: "Rules from eslint-plugin-react.",
+      url: "https://github.com/jsx-eslint/eslint-plugin-react",
+    },
+    react_perf: {
+      text: "Rules from eslint-plugin-react-perf.",
+      url: "https://github.com/cvazac/eslint-plugin-react-perf",
+    },
+    jsx_a11y: {
+      text: "Rules from eslint-plugin-jsx-a11y.",
+      url: "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y",
+    },
+    vue: {
+      text: "Rules from eslint-plugin-vue.",
+      url: "https://github.com/vuejs/eslint-plugin-vue",
+    },
+    unicorn: {
+      text: "Rules from eslint-plugin-unicorn.",
+      url: "https://github.com/sindresorhus/eslint-plugin-unicorn",
+    },
+    import: {
+      text: "Rules from eslint-plugin-import.",
+      url: "https://github.com/import-js/eslint-plugin-import",
+    },
+    jsdoc: {
+      text: "Rules from eslint-plugin-jsdoc.",
+      url: "https://github.com/gajus/eslint-plugin-jsdoc",
+    },
+    jest: {
+      text: "Rules from eslint-plugin-jest.",
+      url: "https://github.com/jest-community/eslint-plugin-jest",
+    },
+    vitest: {
+      text: "Rules from eslint-plugin-vitest.",
+      url: "https://github.com/vitest-dev/eslint-plugin-vitest",
+    },
+    nextjs: {
+      text: "Rules from @next/eslint-plugin-next.",
+      url: "https://github.com/vercel/next.js/tree/canary/packages/eslint-plugin-next",
+    },
+    promise: {
+      text: "Rules from eslint-plugin-promise.",
+      url: "https://github.com/eslint-community/eslint-plugin-promise",
+    },
+    node: {
+      text: "Rules from eslint-plugin-n.",
+      url: "https://github.com/eslint-community/eslint-plugin-n",
+    },
   };
-  return sources[scope] || "";
+  return sources[scope] || { text: "", url: "" };
 };
 </script>
 
@@ -190,7 +240,11 @@ const getGroupSource = (scope: string): string => {
           </span>
         </summary>
 
-        <p class="group-source">{{ getGroupSource(scope) }}</p>
+        <p class="group-source">
+          <a :href="getGroupSource(scope).url" target="_blank" rel="noopener noreferrer">
+            {{ getGroupSource(scope).text }}
+          </a>
+        </p>
 
         <div class="rule-list">
           <div v-for="rule in rules" :key="getRuleId(rule)" class="rule-item">

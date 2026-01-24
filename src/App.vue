@@ -71,7 +71,7 @@ const generatedConfig = computed(() => {
             </p>
             <label>
               <input v-model="useRecommended" type="checkbox" />
-              <span>Use recommended rulesets from original ESLint plugins</span>
+              <span>Use recommended rulesets for each plugin</span>
             </label>
             <p class="option-help">
               Enables rules that are marked as recommended in the original ESLint plugins (e.g.
