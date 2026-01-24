@@ -26,6 +26,13 @@ interface JSPlugin {
 const availableJSPlugins: JSPlugin[] = [
   { name: "playwright", label: "Playwright", npmPackage: "eslint-plugin-playwright" },
   { name: "stylistic", label: "Stylistic", npmPackage: "@stylistic/eslint-plugin" },
+  { name: "storybook", label: "Storybook", npmPackage: "eslint-plugin-storybook" },
+  {
+    name: "testing-library",
+    label: "Testing Library",
+    npmPackage: "eslint-plugin-testing-library",
+  },
+  { name: "cypress", label: "Cypress", npmPackage: "eslint-plugin-cypress" },
 ];
 
 const showJSPlugins = ref(false);

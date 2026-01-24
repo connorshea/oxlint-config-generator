@@ -56,7 +56,7 @@ export type PluginName =
   | "promise"
   | "node";
 
-export type JSPluginName = "playwright" | "stylistic";
+export type JSPluginName = "playwright" | "stylistic" | "storybook" | "testing-library" | "cypress";
 
 export interface JSPluginData {
   name: string;

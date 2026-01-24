@@ -1,0 +1,152 @@
+{
+  "name": "testing-library",
+  "packageName": "eslint-plugin-testing-library",
+  "rulePrefix": "testing-library",
+  "rules": {
+    "await-async-events": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "await-async-queries": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "await-async-utils": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "consistent-data-testid": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-await-sync-events": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-await-sync-queries": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "no-container": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-debugging-utils": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-dom-import": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "no-global-regexp-flag-in-query": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "no-manual-cleanup": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-node-access": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-promise-in-fire-event": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-render-in-lifecycle": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-test-id-queries": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-unnecessary-act": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-wait-for-multiple-assertions": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "no-wait-for-side-effects": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "no-wait-for-snapshot": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "prefer-explicit-assert": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "prefer-find-by": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-implicit-assert": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "prefer-presence-queries": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-query-by-disappearance": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "prefer-query-matchers": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "prefer-screen-queries": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "prefer-user-event": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "prefer-user-event-setup": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "render-result-naming-convention": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    }
+  }
+}

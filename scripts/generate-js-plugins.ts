@@ -14,6 +14,13 @@ interface JSPluginConfig {
 const jsPlugins: JSPluginConfig[] = [
   { name: "playwright", packageName: "eslint-plugin-playwright", rulePrefix: "playwright" },
   { name: "stylistic", packageName: "@stylistic/eslint-plugin", rulePrefix: "@stylistic" },
+  { name: "storybook", packageName: "eslint-plugin-storybook", rulePrefix: "storybook" },
+  {
+    name: "testing-library",
+    packageName: "eslint-plugin-testing-library",
+    rulePrefix: "testing-library",
+  },
+  { name: "cypress", packageName: "eslint-plugin-cypress", rulePrefix: "cypress" },
 ];
 
 async function generateJSPluginData() {
