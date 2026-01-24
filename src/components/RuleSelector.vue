@@ -112,6 +112,18 @@ const getCategoryClass = (category: string): string => {
   return classes[category] || "";
 };
 
+const getCategoryTooltip = (category: string): string => {
+  const tooltips: Record<string, string> = {
+    correctness: "Code that is outright wrong or useless",
+    suspicious: "Code that is most likely wrong or useless",
+    pedantic: "Lints which are rather strict or have occasional false positives",
+    style: "Code that should be written in a more idiomatic way",
+    restriction: "Lints which prevent the use of language or library features",
+    nursery: "New lints that are still under development",
+  };
+  return tooltips[category] || category;
+};
+
 const formatGroupName = (scope: string): string => {
   const names: Record<string, string> = {
     eslint: "ESLint",
@@ -156,11 +168,26 @@ const formatGroupName = (scope: string): string => {
             </label>
 
             <div class="rule-meta">
-              <span :class="['category-badge', getCategoryClass(rule.category)]">
+              <span
+                :class="['category-badge', getCategoryClass(rule.category)]"
+                :title="getCategoryTooltip(rule.category)"
+              >
                 {{ rule.category }}
               </span>
-              <span v-if="isRuleRecommended(rule)" class="recommended-badge">recommended</span>
-              <span v-if="rule.type_aware" class="type-aware-badge">type-aware</span>
+              <span
+                v-if="isRuleRecommended(rule)"
+                class="recommended-badge"
+                title="This rule is recommended in the original ESLint plugin"
+              >
+                recommended
+              </span>
+              <span
+                v-if="rule.type_aware"
+                class="type-aware-badge"
+                title="This rule requires type information from TypeScript"
+              >
+                type-aware
+              </span>
               <a :href="rule.docs_url" target="_blank" rel="noopener noreferrer" class="docs-link">
                 docs
               </a>
