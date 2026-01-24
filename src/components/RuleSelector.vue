@@ -120,6 +120,7 @@ const getCategoryTooltip = (category: string): string => {
     style: "Code that should be written in a more idiomatic way",
     restriction: "Lints which prevent the use of language or library features",
     nursery: "New lints that are still under development",
+    perf: "Performance-related code improvements",
   };
   return tooltips[category] || category;
 };

@@ -47,7 +47,7 @@ const isSelected = (plugin: PluginName) => {
 <template>
   <div class="section">
     <h2>Select Plugins</h2>
-    <p>Choose which ESLint plugins you want to include rules from:</p>
+    <p>Choose which plugins you want to include rules from:</p>
     <div class="plugin-selection">
       <button
         v-for="plugin in availablePlugins"
