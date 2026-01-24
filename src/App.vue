@@ -133,6 +133,13 @@ const toggleTheme = () => {
       <p>
         Learn more about Oxlint at
         <a href="https://oxc.rs" target="_blank" rel="noopener noreferrer">oxc.rs</a>
+        ·
+        <a
+          href="https://github.com/connorshea/oxlint-config-generator"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Source Code</a
+        >
       </p>
     </footer>
   </div>
