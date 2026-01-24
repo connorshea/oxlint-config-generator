@@ -529,9 +529,7 @@
     },
     "return-await": {
       "recommended": {
-        "strict": [
-          "error-handling-correctness-only"
-        ]
+        "strict": ["error-handling-correctness-only"]
       },
       "fixable": true
     },

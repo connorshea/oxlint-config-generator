@@ -10,17 +10,18 @@ const emit = defineEmits<{
 }>();
 
 const availablePlugins: { name: PluginName; label: string }[] = [
+  { name: "oxc", label: "oxc" },
+  { name: "typescript", label: "TypeScript" },
+  { name: "unicorn", label: "Unicorn" },
   { name: "react", label: "React" },
   { name: "react-perf", label: "React Performance" },
   { name: "jsx-a11y", label: "JSX Accessibility" },
   { name: "vue", label: "Vue" },
-  { name: "typescript", label: "TypeScript" },
+  { name: "next", label: "Next.js" },
   { name: "import", label: "Import" },
   { name: "jsdoc", label: "JSDoc" },
   { name: "jest", label: "Jest" },
   { name: "vitest", label: "Vitest" },
-  { name: "unicorn", label: "Unicorn" },
-  { name: "next", label: "Next.js" },
   { name: "promise", label: "Promise" },
   { name: "node", label: "Node.js" },
 ];
