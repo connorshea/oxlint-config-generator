@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from "vue";
 import type { PluginName, OxlintConfig } from "../types";
 import rulesData from "../../data/rules.json";
 import reactPlugin from "../../data/plugins/react.json";
@@ -28,7 +27,13 @@ const emit = defineEmits<{
 
 const pluginDataMap: Record<
   PluginName,
-  { name: string; rules: Record<string, { recommended: boolean }> }
+  {
+    name: string;
+    rules: Record<
+      string,
+      { recommended: boolean | string | Record<string, unknown> }
+    >;
+  }
 > = {
   react: reactPlugin,
   "react-perf": reactPerfPlugin,
@@ -43,6 +48,22 @@ const pluginDataMap: Record<
   next: nextPlugin,
   promise: promisePlugin,
   node: nodePlugin,
+};
+
+// Helper to check if a rule is recommended
+const isRecommended = (
+  recommended: boolean | string | Record<string, unknown> | undefined,
+): boolean => {
+  if (typeof recommended === "boolean") {
+    return recommended;
+  }
+  if (typeof recommended === "string") {
+    return recommended === "recommended" || recommended === "error";
+  }
+  if (typeof recommended === "object" && recommended !== null) {
+    return Boolean(recommended.recommended);
+  }
+  return false;
 };
 
 const scopeToPluginMap: Record<string, PluginName> = {
@@ -122,7 +143,10 @@ const generateConfig = () => {
       // For plugin rules, check if recommended in the plugin data
       if (pluginName) {
         const pluginData = pluginDataMap[pluginName];
-        if (pluginData && pluginData.rules[rule.value]?.recommended) {
+        if (
+          pluginData &&
+          isRecommended(pluginData.rules[rule.value]?.recommended)
+        ) {
           const ruleName = `${rule.scope.replace("_", "-")}/${rule.value}`;
           config.rules![ruleName] = "error";
         }

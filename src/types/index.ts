@@ -12,7 +12,7 @@ export interface PluginRules {
   plugin: string;
   rules: {
     [key: string]: {
-      recommended?: boolean;
+      recommended?: boolean | string | Record<string, unknown>;
       fixable?: boolean;
       meta?: {
         docs?: {
