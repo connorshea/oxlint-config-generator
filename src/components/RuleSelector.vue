@@ -419,6 +419,11 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
   margin: 0;
   padding: 0.5rem 1rem;
   border-bottom: 1px solid var(--color-border);
+
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
 }
 
 .rule-list {
