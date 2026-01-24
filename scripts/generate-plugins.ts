@@ -64,7 +64,7 @@ async function generatePluginData() {
       };
 
       // Get plugin rules (merge hooks rules into react)
-      const rules = { ...(pluginExport.rules || {}) };
+      const rules = { ...pluginExport.rules };
       if (hooksExport && hooksExport.rules) {
         Object.assign(rules, hooksExport.rules);
       }
