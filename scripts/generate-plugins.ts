@@ -56,7 +56,7 @@ async function generatePluginData() {
 
       const pluginData: {
         name: string;
-        rules: Record<string, { recommended: boolean; fixable: boolean }>;
+        rules: Record<string, { recommended: boolean; fixable: boolean; deprecated?: boolean }>;
         recommendedConfig?: Record<string, unknown>;
       } = {
         name: plugin.name,
@@ -129,7 +129,8 @@ async function generatePluginData() {
       for (const [ruleName, ruleConfig] of Object.entries(rules)) {
         const rule = ruleConfig as {
           meta?: {
-            docs?: { recommended?: boolean };
+            docs?: { recommended?: boolean; deprecated?: boolean };
+            deprecated?: boolean;
             fixable?: string | boolean;
           };
         };
@@ -140,9 +141,15 @@ async function generatePluginData() {
           normalizedRecommendedRules.has(ruleName) ||
           normalizedRecommendedRules.has(`${plugin.name}/${ruleName}`);
 
+        // Detect deprecation: common patterns are meta.deprecated or meta.docs.deprecated
+        const isDeprecated = Boolean(
+          rule.meta?.deprecated === true || rule.meta?.docs?.deprecated === true,
+        );
+
         pluginData.rules[ruleName] = {
           recommended: isRecommendedViaMeta || isRecommendedViaConfig,
           fixable: Boolean(rule.meta?.fixable),
+          deprecated: isDeprecated,
         };
       }
 
@@ -153,8 +160,9 @@ async function generatePluginData() {
       writeFileSync(outputPath, JSON.stringify(pluginData, null, 2));
 
       const recommendedCount = Object.values(pluginData.rules).filter((r) => r.recommended).length;
+      const deprecatedCount = Object.values(pluginData.rules).filter((r) => r.deprecated).length;
       console.log(
-        `  ✓ ${plugin.name}: ${Object.keys(pluginData.rules).length} rules (${recommendedCount} recommended)`,
+        `  ✓ ${plugin.name}: ${Object.keys(pluginData.rules).length} rules (${recommendedCount} recommended, ${deprecatedCount} deprecated)`,
       );
     } catch (error) {
       console.error(`  ✗ Error processing ${plugin.name}:`, error);

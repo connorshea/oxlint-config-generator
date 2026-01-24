@@ -3,211 +3,263 @@
   "rules": {
     "prefer-lowercase-title": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "max-nested-describe": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-identical-title": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "no-focused-tests": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "no-conditional-tests": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "expect-expect": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "consistent-test-it": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "prefer-to-be": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "no-hooks": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-restricted-vi-methods": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "consistent-test-filename": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "max-expects": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-alias-methods": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "no-commented-out-tests": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-conditional-expect": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-conditional-in-test": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-disabled-tests": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-done-callback": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": true
     },
     "no-duplicate-hooks": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-large-snapshots": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-interpolation-in-snapshots": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "no-mocks-import": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-restricted-matchers": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-standalone-expect": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-test-prefixes": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "no-test-return-statement": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-import-node-test": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "prefer-called-with": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "valid-title": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "valid-expect": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "prefer-to-be-falsy": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "prefer-to-be-object": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "prefer-to-be-truthy": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "prefer-to-have-length": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "prefer-equality-matcher": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "prefer-strict-equal": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "prefer-expect-resolves": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "prefer-each": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "prefer-hooks-on-top": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "prefer-hooks-in-order": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-local-test-context-for-concurrent-snapshots": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "prefer-mock-promise-shorthand": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "prefer-snapshot-hint": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "valid-describe-callback": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-top-level-describe": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-to-throw-message": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-hook": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "prefer-todo": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "prefer-spy-on": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "prefer-comparison-matcher": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "prefer-to-contain": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "prefer-expect-assertions": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     }
   },
   "recommendedConfig": {
