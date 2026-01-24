@@ -3,19 +3,23 @@
   "rules": {
     "jsx-no-new-object-as-prop": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "jsx-no-new-array-as-prop": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "jsx-no-new-function-as-prop": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "jsx-no-jsx-as-prop": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     }
   },
   "recommendedConfig": {

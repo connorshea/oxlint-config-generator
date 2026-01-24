@@ -3,303 +3,378 @@
   "rules": {
     "check-access": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "check-alignment": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "check-examples": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "check-indentation": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "check-line-alignment": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "check-param-names": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "check-property-names": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "check-syntax": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "check-tag-names": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "check-template-names": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "check-types": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "check-values": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "convert-to-jsdoc-comments": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "empty-tags": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "escape-inline-tags": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "implements-on-classes": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "imports-as-dependencies": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "informative-docs": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "lines-before-block": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "match-description": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "match-name": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "multiline-blocks": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "no-bad-blocks": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "no-blank-block-descriptions": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "no-blank-blocks": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "no-defaults": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "no-missing-syntax": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-multi-asterisks": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "no-restricted-syntax": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-types": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "no-undefined-types": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "prefer-import-tag": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "reject-any-type": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "reject-function-type": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-asterisk-prefix": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "require-description": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-description-complete-sentence": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "require-example": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "require-file-overview": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-hyphen-before-param-description": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "require-jsdoc": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "require-next-description": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-next-type": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-param": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "require-param-description": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "require-param-name": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-param-type": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "require-property": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "require-property-description": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-property-name": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-property-type": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-rejects": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-returns": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "require-returns-check": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-returns-description": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-returns-type": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-tags": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-template": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-template-description": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-throws": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-throws-description": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-throws-type": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-yields": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-yields-check": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-yields-description": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "require-yields-type": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "sort-tags": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "tag-lines": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "text-escaping": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "ts-method-signature-style": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "ts-no-empty-object-type": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "ts-no-unnecessary-template-expression": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "ts-prefer-function-type": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "type-formatting": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "valid-types": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     }
   },
   "recommendedConfig": {

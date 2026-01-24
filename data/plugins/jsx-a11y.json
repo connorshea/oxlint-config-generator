@@ -3,159 +3,198 @@
   "rules": {
     "accessible-emoji": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": true
     },
     "alt-text": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "anchor-ambiguous-text": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "anchor-has-content": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "anchor-is-valid": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "aria-activedescendant-has-tabindex": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "aria-props": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "aria-proptypes": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "aria-role": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "aria-unsupported-elements": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "autocomplete-valid": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "click-events-have-key-events": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "control-has-associated-label": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "heading-has-content": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "html-has-lang": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "iframe-has-title": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "img-redundant-alt": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "interactive-supports-focus": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "label-has-associated-control": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "label-has-for": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": true
     },
     "lang": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "media-has-caption": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "mouse-events-have-key-events": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-access-key": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-aria-hidden-on-focusable": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-autofocus": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-distracting-elements": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-interactive-element-to-noninteractive-role": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-noninteractive-element-interactions": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-noninteractive-element-to-interactive-role": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-noninteractive-tabindex": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-onchange": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": true
     },
     "no-redundant-roles": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-static-element-interactions": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "prefer-tag-over-role": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "role-has-required-aria-props": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "role-supports-aria-props": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "scope": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "tabindex-no-positive": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     }
   },
   "recommendedConfig": {

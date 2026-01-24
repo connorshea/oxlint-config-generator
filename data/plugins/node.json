@@ -3,167 +3,208 @@
   "rules": {
     "callback-return": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "exports-style": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "file-extension-in-import": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "global-require": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "handle-callback-err": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-callback-literal": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-deprecated-api": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-exports-assign": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-extraneous-import": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-extraneous-require": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-missing-import": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-missing-require": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-mixed-requires": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-new-require": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-path-concat": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-process-env": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-process-exit": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-restricted-import": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-restricted-require": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-sync": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-top-level-await": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-unpublished-bin": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-unpublished-import": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-unpublished-require": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-unsupported-features/es-builtins": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-unsupported-features/es-syntax": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-unsupported-features/node-builtins": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "prefer-global/buffer": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "prefer-global/console": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "prefer-global/process": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "prefer-global/text-decoder": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "prefer-global/text-encoder": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "prefer-global/url-search-params": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "prefer-global/url": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "prefer-node-protocol": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "prefer-promises/dns": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "prefer-promises/fs": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "process-exit-as-throw": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "hashbang": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "no-hide-core-modules": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": true
     },
     "shebang": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": true
     }
   },
   "recommendedConfig": {

@@ -3,187 +3,233 @@
   "rules": {
     "no-unresolved": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "named": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "default": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "namespace": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-namespace": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "export": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-mutable-exports": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "extensions": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-restricted-paths": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-internal-modules": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "group-exports": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-relative-packages": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "no-relative-parent-imports": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "consistent-type-specifier-style": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "no-self-import": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-cycle": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-named-default": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-named-as-default": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-named-as-default-member": {
       "recommended": true,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-anonymous-default-export": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-unused-modules": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-commonjs": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-amd": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-duplicates": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "first": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "max-dependencies": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-extraneous-dependencies": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-absolute-path": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "no-nodejs-modules": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-webpack-loader-syntax": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "order": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "newline-after-import": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "prefer-default-export": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-default-export": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-named-export": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-dynamic-require": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "unambiguous": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-unassigned-import": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-useless-path-segments": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "dynamic-import-chunkname": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-import-module-exports": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "no-empty-named-blocks": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "enforce-node-protocol-usage": {
       "recommended": true,
-      "fixable": true
+      "fixable": true,
+      "deprecated": false
     },
     "exports-last": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "no-deprecated": {
       "recommended": false,
-      "fixable": false
+      "fixable": false,
+      "deprecated": false
     },
     "imports-first": {
       "recommended": false,
-      "fixable": true
+      "fixable": true,
+      "deprecated": true
     }
   },
   "recommendedConfig": {
