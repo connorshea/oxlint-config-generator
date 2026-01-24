@@ -51,7 +51,7 @@ export const scopeToPluginMap: Record<string, PluginName> = {
   unicorn: "unicorn",
   nextjs: "next",
   promise: "promise",
-  n: "node",
+  node: "node",
 };
 
 const isRecommendedValue = (
