@@ -21,18 +21,15 @@ const copyToClipboard = async () => {
 </script>
 
 <template>
-  <div class="section">
+  <div class="section config-section">
     <h2>Generated Config</h2>
     <div class="config-display">
       <button class="copy-button" @click="copyToClipboard">
         {{ copied ? "Copied!" : "Copy" }}
       </button>
-      <pre>{{ config }}</pre>
+      <pre><code>{{ config }}</code></pre>
     </div>
-    <p class="instructions">
-      Copy this configuration and save it as <code>.oxlintrc.json</code> in
-      your project root.
-    </p>
+    <p class="instructions">Save as <code>.oxlintrc.json</code> in your project root.</p>
   </div>
 </template>
 

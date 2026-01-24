@@ -37,6 +37,7 @@ export interface OxlintConfig {
 }
 
 export type PluginName =
+  | "oxc"
   | "react"
   | "react-perf"
   | "jsx-a11y"

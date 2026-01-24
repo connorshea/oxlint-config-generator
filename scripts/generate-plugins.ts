@@ -73,17 +73,14 @@ async function generatePluginData() {
       if (configs.recommended) {
         pluginData.recommendedConfig = configs.recommended.rules || {};
       } else if (configs["flat/recommended"]) {
-        pluginData.recommendedConfig =
-          configs["flat/recommended"].rules || {};
+        pluginData.recommendedConfig = configs["flat/recommended"].rules || {};
       }
 
       // Write to file
       const outputPath = join(dataDir, `${plugin.name}.json`);
       writeFileSync(outputPath, JSON.stringify(pluginData, null, 2));
 
-      const recommendedCount = Object.values(pluginData.rules).filter(
-        (r) => r.recommended,
-      ).length;
+      const recommendedCount = Object.values(pluginData.rules).filter((r) => r.recommended).length;
       console.log(
         `  ✓ ${plugin.name}: ${Object.keys(pluginData.rules).length} rules (${recommendedCount} recommended)`,
       );
