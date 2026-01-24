@@ -13,5 +13,5 @@ TODO:
 - [ ] Make the "Copy" button float over the generated config box, so it's always visible.
 - [ ] Add JSON syntax highlighting to the generated config box.
 - [x] Fix the recommended check for TS rules to ensure we get recommended rules from the recommended-type-checked config the eslint plugin provides.
-- [ ] Move the docs link to a parentheical next to the rule name.
+- [x] Move the docs link to a parentheical next to the rule name.
 - [ ] Update the rule descriptions to parse Markdown backticks and use code blocks.
