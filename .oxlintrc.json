@@ -110,5 +110,5 @@
     "unicorn/prefer-set-size": "error",
     "unicorn/prefer-string-starts-ends-with": "error"
   },
-  "ignorePatterns": ["data/**"]
+  "ignorePatterns": ["data/", "dist/", "vendor/"]
 }
