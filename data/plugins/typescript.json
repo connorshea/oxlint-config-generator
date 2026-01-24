@@ -10,7 +10,7 @@
       "fixable": true
     },
     "await-thenable": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "ban-ts-comment": {
@@ -102,11 +102,11 @@
       "fixable": true
     },
     "no-array-delete": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-base-to-string": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-confusing-non-null-assertion": {
@@ -122,7 +122,7 @@
       "fixable": false
     },
     "no-dupe-class-members": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-duplicate-enum-values": {
@@ -130,7 +130,7 @@
       "fixable": false
     },
     "no-duplicate-type-constituents": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-dynamic-delete": {
@@ -162,15 +162,15 @@
       "fixable": false
     },
     "no-floating-promises": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-for-in-array": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-implied-eval": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-import-type-side-effects": {
@@ -210,7 +210,7 @@
       "fixable": false
     },
     "no-misused-promises": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-misused-spread": {
@@ -238,11 +238,11 @@
       "fixable": false
     },
     "no-redeclare": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-redundant-type-constituents": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-require-imports": {
@@ -294,7 +294,7 @@
       "fixable": true
     },
     "no-unnecessary-type-assertion": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-unnecessary-type-constraint": {
@@ -310,15 +310,15 @@
       "fixable": false
     },
     "no-unsafe-argument": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-unsafe-assignment": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-unsafe-call": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-unsafe-declaration-merging": {
@@ -326,7 +326,7 @@
       "fixable": false
     },
     "no-unsafe-enum-comparison": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-unsafe-function-type": {
@@ -334,11 +334,11 @@
       "fixable": false
     },
     "no-unsafe-member-access": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-unsafe-return": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-unsafe-type-assertion": {
@@ -346,7 +346,7 @@
       "fixable": false
     },
     "no-unsafe-unary-minus": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-unused-expressions": {
@@ -390,7 +390,7 @@
       "fixable": true
     },
     "only-throw-error": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "parameter-properties": {
@@ -442,7 +442,7 @@
       "fixable": true
     },
     "prefer-promise-reject-errors": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "prefer-readonly": {
@@ -486,15 +486,15 @@
       "fixable": false
     },
     "require-await": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "restrict-plus-operands": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "restrict-template-expressions": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "return-await": {
@@ -526,7 +526,7 @@
       "fixable": false
     },
     "unbound-method": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "unified-signatures": {
@@ -561,6 +561,56 @@
     "@typescript-eslint/no-wrapper-object-types": "error",
     "@typescript-eslint/prefer-as-const": "error",
     "@typescript-eslint/prefer-namespace-keyword": "error",
-    "@typescript-eslint/triple-slash-reference": "error"
+    "@typescript-eslint/triple-slash-reference": "error",
+    "constructor-super": "off",
+    "getter-return": "off",
+    "no-class-assign": "off",
+    "no-const-assign": "off",
+    "no-dupe-args": "off",
+    "no-dupe-class-members": "off",
+    "no-dupe-keys": "off",
+    "no-func-assign": "off",
+    "no-import-assign": "off",
+    "no-new-native-nonconstructor": "off",
+    "no-new-symbol": "off",
+    "no-obj-calls": "off",
+    "no-redeclare": "off",
+    "no-setter-return": "off",
+    "no-this-before-super": "off",
+    "no-undef": "off",
+    "no-unreachable": "off",
+    "no-unsafe-negation": "off",
+    "no-var": "error",
+    "no-with": "off",
+    "prefer-const": "error",
+    "prefer-rest-params": "error",
+    "prefer-spread": "error",
+    "@typescript-eslint/await-thenable": "error",
+    "@typescript-eslint/no-array-delete": "error",
+    "@typescript-eslint/no-base-to-string": "error",
+    "@typescript-eslint/no-duplicate-type-constituents": "error",
+    "@typescript-eslint/no-floating-promises": "error",
+    "@typescript-eslint/no-for-in-array": "error",
+    "no-implied-eval": "off",
+    "@typescript-eslint/no-implied-eval": "error",
+    "@typescript-eslint/no-misused-promises": "error",
+    "@typescript-eslint/no-redundant-type-constituents": "error",
+    "@typescript-eslint/no-unnecessary-type-assertion": "error",
+    "@typescript-eslint/no-unsafe-argument": "error",
+    "@typescript-eslint/no-unsafe-assignment": "error",
+    "@typescript-eslint/no-unsafe-call": "error",
+    "@typescript-eslint/no-unsafe-enum-comparison": "error",
+    "@typescript-eslint/no-unsafe-member-access": "error",
+    "@typescript-eslint/no-unsafe-return": "error",
+    "@typescript-eslint/no-unsafe-unary-minus": "error",
+    "no-throw-literal": "off",
+    "@typescript-eslint/only-throw-error": "error",
+    "prefer-promise-reject-errors": "off",
+    "@typescript-eslint/prefer-promise-reject-errors": "error",
+    "require-await": "off",
+    "@typescript-eslint/require-await": "error",
+    "@typescript-eslint/restrict-plus-operands": "error",
+    "@typescript-eslint/restrict-template-expressions": "error",
+    "@typescript-eslint/unbound-method": "error"
   }
 }

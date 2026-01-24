@@ -18,7 +18,7 @@
       "fixable": true
     },
     "attribute-hyphenation": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "attributes-order": {
@@ -62,7 +62,7 @@
       "fixable": true
     },
     "comment-directive": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "component-api-style": {
@@ -70,7 +70,7 @@
       "fixable": false
     },
     "component-definition-name-casing": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "component-name-in-template-casing": {
@@ -118,7 +118,7 @@
       "fixable": true
     },
     "first-attribute-linebreak": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "func-call-spacing": {
@@ -130,11 +130,11 @@
       "fixable": false
     },
     "html-closing-bracket-newline": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "html-closing-bracket-spacing": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "html-comment-content-newline": {
@@ -150,23 +150,23 @@
       "fixable": true
     },
     "html-end-tags": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "html-indent": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "html-quotes": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "html-self-closing": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "jsx-uses-vars": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "key-spacing": {
@@ -186,7 +186,7 @@
       "fixable": false
     },
     "max-attributes-per-line": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "max-len": {
@@ -206,11 +206,11 @@
       "fixable": false
     },
     "multi-word-component-names": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "multiline-html-element-content-newline": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "multiline-ternary": {
@@ -218,7 +218,7 @@
       "fixable": true
     },
     "mustache-interpolation-spacing": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "new-line-between-multi-line-property": {
@@ -230,11 +230,11 @@
       "fixable": true
     },
     "no-arrow-functions-in-watch": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-async-in-computed-properties": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-bare-strings-in-template": {
@@ -246,11 +246,11 @@
       "fixable": false
     },
     "no-child-content": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-computed-properties-in-data": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-console": {
@@ -266,95 +266,95 @@
       "fixable": false
     },
     "no-deprecated-data-object-declaration": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-deprecated-delete-set": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-deprecated-destroyed-lifecycle": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-deprecated-dollar-listeners-api": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-deprecated-dollar-scopedslots-api": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-deprecated-events-api": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-deprecated-filter": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-deprecated-functional-template": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-deprecated-html-element-is": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-deprecated-inline-template": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-deprecated-model-definition": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-deprecated-props-default-this": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-deprecated-router-link-tag-prop": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-deprecated-scope-attribute": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-deprecated-slot-attribute": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-deprecated-slot-scope-attribute": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-deprecated-v-bind-sync": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-deprecated-v-is": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-deprecated-v-on-native-modifier": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-deprecated-v-on-number-modifiers": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-deprecated-vue-config-keycodes": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-dupe-keys": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-dupe-v-else-if": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-duplicate-attr-inheritance": {
@@ -362,7 +362,7 @@
       "fixable": false
     },
     "no-duplicate-attributes": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-duplicate-class-names": {
@@ -378,11 +378,11 @@
       "fixable": false
     },
     "no-export-in-script-setup": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-expose-after-await": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-extra-parens": {
@@ -402,7 +402,7 @@
       "fixable": false
     },
     "no-lifecycle-after-await": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-literals-in-template": {
@@ -418,7 +418,7 @@
       "fixable": false
     },
     "no-multi-spaces": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-multiple-objects-in-class": {
@@ -434,7 +434,7 @@
       "fixable": false
     },
     "no-mutating-props": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-negated-condition": {
@@ -446,7 +446,7 @@
       "fixable": true
     },
     "no-parsing-error": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-potential-component-option-typo": {
@@ -454,7 +454,7 @@
       "fixable": false
     },
     "no-ref-as-operand": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-ref-object-reactivity-loss": {
@@ -466,15 +466,15 @@
       "fixable": true
     },
     "no-reserved-component-names": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-reserved-keys": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-reserved-props": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-restricted-block": {
@@ -534,15 +534,15 @@
       "fixable": false
     },
     "no-shared-component-data": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-side-effects-in-computed-properties": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-spaces-around-equal-signs-in-attribute": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-sparse-arrays": {
@@ -554,11 +554,11 @@
       "fixable": false
     },
     "no-template-key": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-template-shadow": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-template-target-blank": {
@@ -566,7 +566,7 @@
       "fixable": false
     },
     "no-textarea-mustache": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-this-in-before-route-enter": {
@@ -590,7 +590,7 @@
       "fixable": true
     },
     "no-unused-components": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-unused-emit-declarations": {
@@ -606,11 +606,11 @@
       "fixable": false
     },
     "no-unused-vars": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-use-computed-property-like-method": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-use-v-else-with-v-for": {
@@ -618,7 +618,7 @@
       "fixable": false
     },
     "no-use-v-if-with-v-for": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-useless-concat": {
@@ -630,7 +630,7 @@
       "fixable": true
     },
     "no-useless-template-attributes": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-useless-v-bind": {
@@ -638,7 +638,7 @@
       "fixable": true
     },
     "no-v-for-template-key-on-child": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-v-for-template-key": {
@@ -654,7 +654,7 @@
       "fixable": false
     },
     "no-v-text-v-html-on-component": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-v-text": {
@@ -662,7 +662,7 @@
       "fixable": false
     },
     "no-watch-after-await": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "object-curly-newline": {
@@ -682,7 +682,7 @@
       "fixable": true
     },
     "one-component-per-file": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "operator-linebreak": {
@@ -710,7 +710,7 @@
       "fixable": true
     },
     "prefer-import-from-vue": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "prefer-prop-type-boolean-first": {
@@ -734,7 +734,7 @@
       "fixable": false
     },
     "prop-name-casing": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "quote-props": {
@@ -742,7 +742,7 @@
       "fixable": true
     },
     "require-component-is": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-default-export": {
@@ -750,7 +750,7 @@
       "fixable": false
     },
     "require-default-prop": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-direct-export": {
@@ -762,7 +762,7 @@
       "fixable": false
     },
     "require-explicit-emits": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-explicit-slots": {
@@ -786,23 +786,23 @@
       "fixable": false
     },
     "require-prop-type-constructor": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "require-prop-types": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-render-return": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-slots-as-functions": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-toggle-inside-transition": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-typed-object-prop": {
@@ -814,11 +814,11 @@
       "fixable": false
     },
     "require-v-for-key": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "require-valid-default-prop": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "restricted-component-names": {
@@ -826,11 +826,11 @@
       "fixable": false
     },
     "return-in-computed-property": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "return-in-emits-validator": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "script-indent": {
@@ -838,7 +838,7 @@
       "fixable": true
     },
     "singleline-html-element-content-newline": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "slot-name-casing": {
@@ -874,11 +874,11 @@
       "fixable": true
     },
     "use-v-on-exact": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "v-bind-style": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "v-for-delimiter-style": {
@@ -890,7 +890,7 @@
       "fixable": true
     },
     "v-on-event-hyphenation": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "v-on-handler-style": {
@@ -898,27 +898,27 @@
       "fixable": true
     },
     "v-on-style": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "v-slot-style": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "valid-attribute-name": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "valid-define-emits": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "valid-define-options": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "valid-define-props": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "valid-model-definition": {
@@ -926,11 +926,11 @@
       "fixable": false
     },
     "valid-next-tick": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "valid-template-root": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "valid-v-bind-sync": {
@@ -938,67 +938,67 @@
       "fixable": false
     },
     "valid-v-bind": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "valid-v-cloak": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "valid-v-else-if": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "valid-v-else": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "valid-v-for": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "valid-v-html": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "valid-v-if": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "valid-v-is": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "valid-v-memo": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "valid-v-model": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "valid-v-on": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "valid-v-once": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "valid-v-pre": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "valid-v-show": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "valid-v-slot": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "valid-v-text": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     }
   },
@@ -1010,6 +1010,122 @@
     "vue/no-required-prop-with-default": "warn",
     "vue/no-v-html": "warn",
     "vue/order-in-components": "warn",
-    "vue/this-in-template": "warn"
+    "vue/this-in-template": "warn",
+    "vue/comment-directive": "error",
+    "vue/jsx-uses-vars": "error",
+    "vue/multi-word-component-names": "error",
+    "vue/no-arrow-functions-in-watch": "error",
+    "vue/no-async-in-computed-properties": "error",
+    "vue/no-child-content": "error",
+    "vue/no-computed-properties-in-data": "error",
+    "vue/no-deprecated-data-object-declaration": "error",
+    "vue/no-deprecated-delete-set": "error",
+    "vue/no-deprecated-destroyed-lifecycle": "error",
+    "vue/no-deprecated-dollar-listeners-api": "error",
+    "vue/no-deprecated-dollar-scopedslots-api": "error",
+    "vue/no-deprecated-events-api": "error",
+    "vue/no-deprecated-filter": "error",
+    "vue/no-deprecated-functional-template": "error",
+    "vue/no-deprecated-html-element-is": "error",
+    "vue/no-deprecated-inline-template": "error",
+    "vue/no-deprecated-model-definition": "error",
+    "vue/no-deprecated-props-default-this": "error",
+    "vue/no-deprecated-router-link-tag-prop": "error",
+    "vue/no-deprecated-scope-attribute": "error",
+    "vue/no-deprecated-slot-attribute": "error",
+    "vue/no-deprecated-slot-scope-attribute": "error",
+    "vue/no-deprecated-v-bind-sync": "error",
+    "vue/no-deprecated-v-is": "error",
+    "vue/no-deprecated-v-on-native-modifier": "error",
+    "vue/no-deprecated-v-on-number-modifiers": "error",
+    "vue/no-deprecated-vue-config-keycodes": "error",
+    "vue/no-dupe-keys": "error",
+    "vue/no-dupe-v-else-if": "error",
+    "vue/no-duplicate-attributes": "error",
+    "vue/no-export-in-script-setup": "error",
+    "vue/no-expose-after-await": "error",
+    "vue/no-lifecycle-after-await": "error",
+    "vue/no-mutating-props": "error",
+    "vue/no-parsing-error": "error",
+    "vue/no-ref-as-operand": "error",
+    "vue/no-reserved-component-names": "error",
+    "vue/no-reserved-keys": "error",
+    "vue/no-reserved-props": "error",
+    "vue/no-shared-component-data": "error",
+    "vue/no-side-effects-in-computed-properties": "error",
+    "vue/no-template-key": "error",
+    "vue/no-textarea-mustache": "error",
+    "vue/no-unused-components": "error",
+    "vue/no-unused-vars": "error",
+    "vue/no-use-computed-property-like-method": "error",
+    "vue/no-use-v-if-with-v-for": "error",
+    "vue/no-useless-template-attributes": "error",
+    "vue/no-v-for-template-key-on-child": "error",
+    "vue/no-v-text-v-html-on-component": "error",
+    "vue/no-watch-after-await": "error",
+    "vue/prefer-import-from-vue": "error",
+    "vue/require-component-is": "error",
+    "vue/require-prop-type-constructor": "error",
+    "vue/require-render-return": "error",
+    "vue/require-slots-as-functions": "error",
+    "vue/require-toggle-inside-transition": "error",
+    "vue/require-v-for-key": "error",
+    "vue/require-valid-default-prop": "error",
+    "vue/return-in-computed-property": "error",
+    "vue/return-in-emits-validator": "error",
+    "vue/use-v-on-exact": "error",
+    "vue/valid-attribute-name": "error",
+    "vue/valid-define-emits": "error",
+    "vue/valid-define-options": "error",
+    "vue/valid-define-props": "error",
+    "vue/valid-next-tick": "error",
+    "vue/valid-template-root": "error",
+    "vue/valid-v-bind": "error",
+    "vue/valid-v-cloak": "error",
+    "vue/valid-v-else-if": "error",
+    "vue/valid-v-else": "error",
+    "vue/valid-v-for": "error",
+    "vue/valid-v-html": "error",
+    "vue/valid-v-if": "error",
+    "vue/valid-v-is": "error",
+    "vue/valid-v-memo": "error",
+    "vue/valid-v-model": "error",
+    "vue/valid-v-on": "error",
+    "vue/valid-v-once": "error",
+    "vue/valid-v-pre": "error",
+    "vue/valid-v-show": "error",
+    "vue/valid-v-slot": "error",
+    "vue/valid-v-text": "error",
+    "vue/attribute-hyphenation": "warn",
+    "vue/component-definition-name-casing": "warn",
+    "vue/first-attribute-linebreak": "warn",
+    "vue/html-closing-bracket-newline": "warn",
+    "vue/html-closing-bracket-spacing": "warn",
+    "vue/html-end-tags": "warn",
+    "vue/html-indent": "warn",
+    "vue/html-quotes": "warn",
+    "vue/html-self-closing": "warn",
+    "vue/max-attributes-per-line": "warn",
+    "vue/multiline-html-element-content-newline": "warn",
+    "vue/mustache-interpolation-spacing": "warn",
+    "vue/no-multi-spaces": "warn",
+    "vue/no-spaces-around-equal-signs-in-attribute": "warn",
+    "vue/no-template-shadow": "warn",
+    "vue/one-component-per-file": "warn",
+    "vue/prop-name-casing": "warn",
+    "vue/require-default-prop": "warn",
+    "vue/require-explicit-emits": "warn",
+    "vue/require-prop-types": "warn",
+    "vue/singleline-html-element-content-newline": "warn",
+    "vue/v-bind-style": "warn",
+    "vue/v-on-event-hyphenation": [
+      "warn",
+      "always",
+      {
+        "autofix": true
+      }
+    ],
+    "vue/v-on-style": "warn",
+    "vue/v-slot-style": "warn"
   }
 }
