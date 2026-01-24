@@ -39,6 +39,7 @@ export interface OxlintConfig {
 }
 
 export type PluginName =
+  | "eslint"
   | "oxc"
   | "react"
   | "react-perf"

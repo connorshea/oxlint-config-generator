@@ -21,6 +21,7 @@ const pluginDataMap: Record<
     rules: Record<string, { recommended: boolean | string | Record<string, unknown> }>;
   }
 > = {
+  eslint: { name: "eslint", rules: {} },
   oxc: { name: "oxc", rules: {} },
   react: reactPlugin,
   "react-perf": reactPerfPlugin,
@@ -99,9 +100,12 @@ export function generateOxlintConfig(
   ruleOverrides: Record<string, RuleOverride> = {},
 ): string {
   // Build config with keys in desired order: $schema, plugins, categories, rules
+  // Exclude 'eslint' from the plugins list since ESLint is not an oxlint plugin
+  const explicitPlugins = selectedPlugins.filter((p) => p !== "eslint");
+
   const config: OxlintConfig = {
     $schema: "./node_modules/oxlint/configuration_schema.json",
-    plugins: selectedPlugins.length > 0 ? [...selectedPlugins] : undefined,
+    plugins: explicitPlugins.length > 0 ? [...explicitPlugins] : undefined,
     categories: {
       correctness: "off",
     },
@@ -118,9 +122,9 @@ export function generateOxlintConfig(
 
     const pluginName = scopeToPluginMap[rule.scope];
 
-    // Include eslint core rules always
+    // Include eslint core rules only if user selected the 'eslint' plugin
     if (rule.scope === "eslint") {
-      return true;
+      return selectedPlugins.includes("eslint");
     }
 
     // Include rules from selected plugins (including oxc)
@@ -176,7 +180,11 @@ export function countEnabledRules(
     const pluginName = scopeToPluginMap[rule.scope];
 
     // Check if rule is in scope
-    if (rule.scope !== "eslint") {
+    if (rule.scope === "eslint") {
+      if (!selectedPlugins.includes("eslint")) {
+        continue;
+      }
+    } else {
       if (!pluginName || !selectedPlugins.includes(pluginName)) {
         continue;
       }
