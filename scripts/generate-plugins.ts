@@ -57,21 +57,33 @@ async function generatePluginData() {
       const configs = pluginExport.configs || {};
       let recommendedRules: Record<string, unknown> = {};
 
-      // Check various config formats
-      if (configs.recommended?.rules) {
-        recommendedRules = configs.recommended.rules;
-      } else if (configs["flat/recommended"]?.rules) {
-        recommendedRules = configs["flat/recommended"].rules;
-      } else if (Array.isArray(configs["flat/recommended"])) {
-        // Some plugins use array format for flat config
-        for (const configItem of configs["flat/recommended"]) {
-          if (configItem?.rules) {
-            recommendedRules = { ...recommendedRules, ...configItem.rules };
+      // Helper to merge rule sets from a config value
+      const mergeRulesFromConfigValue = (cfg: any) => {
+        if (!cfg) return;
+        if (cfg.rules && typeof cfg.rules === "object") {
+          recommendedRules = { ...recommendedRules, ...cfg.rules };
+        } else if (Array.isArray(cfg)) {
+          for (const item of cfg) {
+            if (item?.rules) recommendedRules = { ...recommendedRules, ...item.rules };
           }
+        } else if (typeof cfg === "object") {
+          // legacy formats sometimes put rules directly on the config object
+          recommendedRules = { ...recommendedRules, ...(cfg.rules || cfg) };
         }
-      } else if (configs.recommended && typeof configs.recommended === "object") {
-        // Handle legacy format where rules might be at top level
-        recommendedRules = configs.recommended;
+      };
+
+      // Check various common config names and formats
+      mergeRulesFromConfigValue(configs.recommended);
+      mergeRulesFromConfigValue(configs["flat/recommended"]);
+      mergeRulesFromConfigValue(configs["recommended-requiring-type-checking"]);
+      mergeRulesFromConfigValue(configs["recommended-type-checked"]);
+      mergeRulesFromConfigValue(configs["recommended-type-checking"]);
+
+      // Also scan for any config name that looks like a "recommended.*type" variant
+      for (const key of Object.keys(configs)) {
+        if (/recommended.*type/i.test(key)) {
+          mergeRulesFromConfigValue(configs[key]);
+        }
       }
 
       // Normalize rule names (remove plugin prefix if present)
