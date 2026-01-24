@@ -62,10 +62,10 @@ const generatedConfig = computed(() => {
             <p class="option-help">
               Type-aware rules require
               <a
-                href="https://www.npmjs.com/package/oxlint-typescript-go"
+                href="https://www.npmjs.com/package/oxlint-tsgolint"
                 target="_blank"
                 rel="noopener noreferrer"
-                >oxlint-typescript-go</a
+                >oxlint-tsgolint</a
               >
               to be installed.
             </p>

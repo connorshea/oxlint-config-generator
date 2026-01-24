@@ -14,7 +14,7 @@ const availablePlugins: { name: PluginName; label: string }[] = [
   { name: "typescript", label: "TypeScript" },
   { name: "unicorn", label: "Unicorn" },
   { name: "react", label: "React" },
-  { name: "react-perf", label: "React Performance" },
+  { name: "react-perf", label: "React Perf" },
   { name: "jsx-a11y", label: "JSX Accessibility" },
   { name: "vue", label: "Vue" },
   { name: "next", label: "Next.js" },
