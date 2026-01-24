@@ -1,4 +1,4 @@
-import type { PluginName, OxlintConfig } from "../types";
+import type { PluginName, OxlintConfig, OxlintRule, RuleOverride } from "../types";
 import rulesData from "../../data/rules.json";
 import reactPlugin from "../../data/plugins/react.json";
 import reactPerfPlugin from "../../data/plugins/react-perf.json";
@@ -37,7 +37,7 @@ const pluginDataMap: Record<
   node: nodePlugin,
 };
 
-const scopeToPluginMap: Record<string, PluginName> = {
+export const scopeToPluginMap: Record<string, PluginName> = {
   oxc: "oxc",
   react: "react",
   react_perf: "react-perf",
@@ -54,7 +54,7 @@ const scopeToPluginMap: Record<string, PluginName> = {
   n: "node",
 };
 
-const isRecommended = (
+const isRecommendedValue = (
   recommended: boolean | string | Record<string, unknown> | undefined,
 ): boolean => {
   if (typeof recommended === "boolean") {
@@ -69,10 +69,33 @@ const isRecommended = (
   return false;
 };
 
+export function isRuleRecommended(rule: OxlintRule): boolean {
+  // For eslint and oxc rules, use the default flag
+  if (rule.scope === "eslint" || rule.scope === "oxc") {
+    return rule.default;
+  }
+
+  // For plugin rules, check the plugin data
+  const pluginName = scopeToPluginMap[rule.scope];
+  if (pluginName) {
+    const pluginData = pluginDataMap[pluginName];
+    if (pluginData) {
+      return isRecommendedValue(pluginData.rules[rule.value]?.recommended);
+    }
+  }
+
+  return false;
+}
+
+export function getRuleId(rule: OxlintRule): string {
+  return rule.scope === "eslint" ? rule.value : `${rule.scope.replace("_", "-")}/${rule.value}`;
+}
+
 export function generateOxlintConfig(
   selectedPlugins: PluginName[],
   enableTypeAware: boolean,
   useRecommended: boolean,
+  ruleOverrides: Record<string, RuleOverride> = {},
 ): string {
   // Build config with keys in desired order: $schema, plugins, categories, rules
   const config: OxlintConfig = {
@@ -85,14 +108,13 @@ export function generateOxlintConfig(
   };
 
   // Filter rules based on selected plugins
-  const selectedRules = (
-    rulesData as Array<{
-      scope: string;
-      value: string;
-      type_aware: boolean;
-      default: boolean;
-    }>
-  ).filter((rule) => {
+  const allRules = rulesData as OxlintRule[];
+  const selectedRules = allRules.filter((rule) => {
+    // Exclude nursery rules
+    if (rule.category === "nursery") {
+      return false;
+    }
+
     const pluginName = scopeToPluginMap[rule.scope];
 
     // Include eslint core rules always
@@ -112,37 +134,67 @@ export function generateOxlintConfig(
     return false;
   });
 
-  // If useRecommended is enabled, only enable recommended rules
-  if (useRecommended) {
-    for (const rule of selectedRules) {
-      const pluginName = scopeToPluginMap[rule.scope];
+  // Build rules based on recommended + overrides
+  for (const rule of selectedRules) {
+    const ruleId = getRuleId(rule);
+    const override = ruleOverrides[ruleId];
 
-      // For core eslint rules, use default flag
-      if (rule.scope === "eslint") {
-        if (rule.default) {
-          config.rules![rule.value] = "error";
-        }
-        continue;
+    // If there's an explicit override, use it
+    if (override !== undefined && override !== null) {
+      if (override !== "off") {
+        config.rules![ruleId] = override;
       }
+      // If override is "off", we don't add it (rule stays disabled)
+      continue;
+    }
 
-      // For oxc rules, use default flag (no external eslint plugin data)
-      if (rule.scope === "oxc") {
-        if (rule.default) {
-          config.rules![`oxc/${rule.value}`] = "error";
-        }
-        continue;
-      }
-
-      // For plugin rules, check if recommended in the plugin data
-      if (pluginName) {
-        const pluginData = pluginDataMap[pluginName];
-        if (pluginData && isRecommended(pluginData.rules[rule.value]?.recommended)) {
-          const ruleName = `${rule.scope.replace("_", "-")}/${rule.value}`;
-          config.rules![ruleName] = "error";
-        }
-      }
+    // No override - use recommended status if useRecommended is enabled
+    if (useRecommended && isRuleRecommended(rule)) {
+      config.rules![ruleId] = "error";
     }
   }
 
   return JSON.stringify(config, null, 2);
+}
+
+export function countEnabledRules(
+  selectedPlugins: PluginName[],
+  enableTypeAware: boolean,
+  useRecommended: boolean,
+  ruleOverrides: Record<string, RuleOverride> = {},
+): number {
+  const allRules = rulesData as OxlintRule[];
+  let count = 0;
+
+  for (const rule of allRules) {
+    // Exclude nursery rules
+    if (rule.category === "nursery") {
+      continue;
+    }
+
+    const pluginName = scopeToPluginMap[rule.scope];
+
+    // Check if rule is in scope
+    if (rule.scope !== "eslint") {
+      if (!pluginName || !selectedPlugins.includes(pluginName)) {
+        continue;
+      }
+      if (!enableTypeAware && rule.type_aware) {
+        continue;
+      }
+    }
+
+    const ruleId = getRuleId(rule);
+    const override = ruleOverrides[ruleId];
+
+    if (override !== undefined && override !== null) {
+      if (override !== "off") {
+        count++;
+      }
+    } else if (useRecommended && isRuleRecommended(rule)) {
+      count++;
+    }
+  }
+
+  return count;
 }
