@@ -11,7 +11,8 @@
     "fmt:check": "oxfmt --check",
     "generate:rules": "tsx scripts/generate-rules.ts",
     "generate:plugins": "tsx scripts/generate-plugins.ts",
-    "generate:all": "pnpm generate:rules && pnpm generate:plugins"
+    "generate:rule-descriptions": "tsx scripts/generate-rule-descriptions.ts",
+    "generate:all": "pnpm generate:rules && pnpm generate:plugins && pnpm generate:rule-descriptions && pnpm fmt"
   },
   "dependencies": {
     "vue": "^3.5.27"
