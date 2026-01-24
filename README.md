@@ -56,37 +56,6 @@ pnpm generate:plugins
 pnpm generate:all
 ```
 
-## Project Structure
-
-```
-oxlint-config-generator/
-├── data/                     # Generated data files
-│   ├── rules.json           # Rules from oxc-project
-│   └── plugins/             # Plugin data from ESLint plugins
-├── scripts/                  # Data generation scripts
-│   ├── generate-rules.ts    # Fetch rules.json
-│   └── generate-plugins.ts  # Extract plugin metadata
-├── src/
-│   ├── components/          # Vue components
-│   │   ├── PluginSelector.vue
-│   │   ├── ConfigGenerator.vue
-│   │   └── ConfigDisplay.vue
-│   ├── types/               # TypeScript type definitions
-│   ├── App.vue              # Main app component
-│   ├── main.ts              # App entry point
-│   └── style.css            # Global styles
-├── public/                   # Static assets
-└── dist/                     # Production build output
-```
-
-## How It Works
-
-1. **Data Generation**: Scripts fetch rules data from the oxc-project repository and extract metadata from ESLint plugins
-2. **Plugin Selection**: Users select which plugins they want to include
-3. **Rule Filtering**: Rules are filtered based on selected plugins and options (type-aware, recommended)
-4. **Config Generation**: A `.oxlintrc.json` file is generated with appropriate rules enabled
-5. **Export**: Users can copy the configuration to use in their projects
-
 ## Tools Used
 
 - **Vue 3** with Composition API
