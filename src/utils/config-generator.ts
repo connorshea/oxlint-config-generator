@@ -18,7 +18,14 @@ const pluginDataMap: Record<
   PluginName,
   {
     name: string;
-    rules: Record<string, { recommended: boolean | string | Record<string, unknown> }>;
+    rules: Record<
+      string,
+      {
+        recommended?: boolean | string | Record<string, unknown>;
+        fixable?: boolean;
+        deprecated?: boolean;
+      }
+    >;
   }
 > = {
   eslint: { name: "eslint", rules: {} },
@@ -88,6 +95,23 @@ export function isRuleRecommended(rule: OxlintRule): boolean {
   return false;
 }
 
+export function isRuleDeprecated(rule: OxlintRule): boolean {
+  // Check in rule object first (if source included deprecated flag)
+  if ((rule as any).deprecated === true) return true;
+
+  // For plugin rules, check plugin metadata
+  const pluginName = scopeToPluginMap[rule.scope];
+  if (pluginName) {
+    const pluginData = pluginDataMap[pluginName];
+    if (pluginData) {
+      return Boolean(pluginData.rules[rule.value]?.deprecated);
+    }
+  }
+
+  // No deprecation info found
+  return false;
+}
+
 export function getRuleId(rule: OxlintRule): string {
   // Always prefix with the scope (hyphenate underscores), e.g. eslint/accessor-pairs
   return `${rule.scope.replace("_", "-")}/${rule.value}`;
@@ -117,6 +141,11 @@ export function generateOxlintConfig(
   const selectedRules = allRules.filter((rule) => {
     // Exclude nursery rules
     if (rule.category === "nursery") {
+      return false;
+    }
+
+    // Exclude deprecated rules
+    if (isRuleDeprecated(rule)) {
       return false;
     }
 
@@ -191,6 +220,11 @@ export function countEnabledRules(
       if (!enableTypeAware && rule.type_aware) {
         continue;
       }
+    }
+
+    // Skip deprecated rules
+    if (isRuleDeprecated(rule)) {
+      continue;
     }
 
     const ruleId = getRuleId(rule);
