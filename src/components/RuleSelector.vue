@@ -3,7 +3,7 @@ import { computed } from "vue";
 import type { PluginName, OxlintRule, RuleOverride } from "../types";
 import rulesData from "../../data/rules.json";
 import ruleDescriptions from "../../data/rule-descriptions.json";
-import { isRuleRecommended, scopeToPluginMap } from "../utils/config-generator";
+import { isRuleRecommended, isRuleDeprecated, scopeToPluginMap } from "../utils/config-generator";
 
 const props = defineProps<{
   selectedPlugins: PluginName[];
@@ -33,6 +33,11 @@ const filteredRules = computed(() => {
   return allRules.filter((rule) => {
     // Exclude nursery rules
     if (rule.category === "nursery") {
+      return false;
+    }
+
+    // Exclude rules that were deprecated in the original plugins.
+    if (isRuleDeprecated(rule)) {
       return false;
     }
 
