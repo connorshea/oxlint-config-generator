@@ -89,6 +89,14 @@ const toggleTheme = () => {
           <h2>Options</h2>
           <div class="checkbox-group">
             <label>
+              <input v-model="useRecommended" type="checkbox" />
+              <span>Use recommended rulesets for each plugin</span>
+            </label>
+            <p class="option-help">
+              Enables rules that are marked as recommended in the original ESLint plugins (e.g.
+              eslint-plugin-react, @typescript-eslint/eslint-plugin).
+            </p>
+            <label>
               <input v-model="enableTypeAware" type="checkbox" />
               <span>Enable type-aware rules</span>
             </label>
@@ -101,14 +109,6 @@ const toggleTheme = () => {
                 >oxlint-tsgolint</a
               >
               to be installed.
-            </p>
-            <label>
-              <input v-model="useRecommended" type="checkbox" />
-              <span>Use recommended rulesets for each plugin</span>
-            </label>
-            <p class="option-help">
-              Enables rules that are marked as recommended in the original ESLint plugins (e.g.
-              eslint-plugin-react, @typescript-eslint/eslint-plugin).
             </p>
           </div>
         </div>
