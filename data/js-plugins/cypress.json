@@ -1,0 +1,67 @@
+{
+  "name": "cypress",
+  "packageName": "eslint-plugin-cypress",
+  "rulePrefix": "cypress",
+  "rules": {
+    "assertion-before-screenshot": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-assigning-return-values": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-async-before": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-async-tests": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-chained-get": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-debug": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-force": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-pause": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-unnecessary-waiting": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-xpath": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "require-data-selectors": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "unsafe-to-chain-command": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    }
+  }
+}

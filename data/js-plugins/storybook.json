@@ -1,0 +1,87 @@
+{
+  "name": "storybook",
+  "packageName": "eslint-plugin-storybook",
+  "rulePrefix": "storybook",
+  "rules": {
+    "await-interactions": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "context-in-play-function": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "csf-component": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "default-exports": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "hierarchy-separator": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "meta-inline-properties": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "meta-satisfies-type": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "no-redundant-story-name": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "no-renderer-packages": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-stories-of": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-title-property-in-meta": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "no-uninstalled-addons": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "prefer-pascal-case": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "story-exports": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "use-storybook-expect": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "use-storybook-testing-library": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    }
+  }
+}

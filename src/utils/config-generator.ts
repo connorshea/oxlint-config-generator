@@ -57,6 +57,24 @@ const pluginDataMap: Record<
 export const jsPluginDataMap: Record<JSPluginName, JSPluginData> = {
   playwright: playwrightPlugin as JSPluginData,
   stylistic: stylisticPlugin as JSPluginData,
+  storybook: {
+    name: "storybook",
+    packageName: "eslint-plugin-storybook",
+    rulePrefix: "storybook",
+    rules: {},
+  },
+  "testing-library": {
+    name: "testing-library",
+    packageName: "eslint-plugin-testing-library",
+    rulePrefix: "testing-library",
+    rules: {},
+  },
+  cypress: {
+    name: "cypress",
+    packageName: "eslint-plugin-cypress",
+    rulePrefix: "cypress",
+    rules: {},
+  },
 };
 
 export const scopeToPluginMap: Record<string, PluginName> = {

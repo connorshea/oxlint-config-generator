@@ -381,6 +381,18 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
       text: "@stylistic/eslint-plugin",
       url: "https://github.com/eslint-stylistic/eslint-stylistic",
     },
+    storybook: {
+      text: "eslint-plugin-storybook",
+      url: "https://github.com/storybookjs/eslint-plugin-storybook",
+    },
+    "testing-library": {
+      text: "eslint-plugin-testing-library",
+      url: "https://github.com/testing-library/eslint-plugin-testing-library",
+    },
+    cypress: {
+      text: "eslint-plugin-cypress",
+      url: "https://github.com/cypress-io/eslint-plugin-cypress",
+    },
   };
   return sources[scope] || { text: "", url: "" };
 };
