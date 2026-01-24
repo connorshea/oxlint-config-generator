@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref } from "vue";
 import PluginSelector from "./components/PluginSelector.vue";
 import ConfigGenerator from "./components/ConfigGenerator.vue";
 import ConfigDisplay from "./components/ConfigDisplay.vue";
