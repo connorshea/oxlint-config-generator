@@ -154,6 +154,7 @@ const getCategoryClass = (category: string): string => {
     style: "category-style",
     restriction: "category-restriction",
     nursery: "category-nursery",
+    perf: "category-perf",
   };
   return classes[category] || "";
 };
@@ -556,6 +557,11 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
 .category-pedantic {
   background: rgba(59, 130, 246, 0.15);
   color: #3b82f6;
+}
+
+.category-perf {
+  background: rgba(14, 165, 233, 0.12);
+  color: #0ea5e9;
 }
 
 .category-style {
