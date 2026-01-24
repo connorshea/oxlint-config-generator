@@ -118,6 +118,7 @@ const toggleTheme = () => {
         <RuleSelector
           :selected-plugins="selectedPlugins"
           :enable-type-aware="enableTypeAware"
+          :use-recommended="useRecommended"
           :rule-overrides="ruleOverrides"
           :enabled-rule-count="enabledRuleCount"
           @update:rule-overrides="handleRuleOverridesChange"

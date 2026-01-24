@@ -8,9 +8,20 @@ import { isRuleRecommended, scopeToPluginMap } from "../utils/config-generator";
 const props = defineProps<{
   selectedPlugins: PluginName[];
   enableTypeAware: boolean;
+  useRecommended: boolean;
   ruleOverrides: Record<string, RuleOverride>;
   enabledRuleCount: number;
 }>();
+
+// ...
+const isRuleEnabled = (rule: OxlintRule): boolean => {
+  const override = getRuleStatus(rule);
+  if (override !== null) {
+    return override !== "off";
+  }
+  // No explicit override: consider recommended only if the global toggle is enabled
+  return props.useRecommended ? isRuleRecommended(rule) : false;
+};
 
 const emit = defineEmits<{
   "update:ruleOverrides": [overrides: Record<string, RuleOverride>];
@@ -110,27 +121,26 @@ const getRuleStatus = (rule: OxlintRule): RuleOverride => {
   return props.ruleOverrides[ruleId] ?? null;
 };
 
-const isRuleEnabled = (rule: OxlintRule): boolean => {
-  const override = getRuleStatus(rule);
-  if (override !== null) {
-    return override !== "off";
-  }
-  // Default: use recommended status
-  return isRuleRecommended(rule);
-};
+// `isRuleEnabled` is defined earlier and respects the global `useRecommended` prop.
 
 const toggleRule = (rule: OxlintRule) => {
+  // Backcompat helper: flip state based on current status
   const ruleId = getRuleId(rule);
   const isCurrentlyEnabled = isRuleEnabled(rule);
+  const newOverrides = { ...props.ruleOverrides };
+  newOverrides[ruleId] = isCurrentlyEnabled ? "off" : "error";
+  emit("update:ruleOverrides", newOverrides);
+};
 
+const onRuleChange = (e: Event, rule: OxlintRule) => {
+  const checked = (e.target as HTMLInputElement).checked;
+  const ruleId = getRuleId(rule);
   const newOverrides = { ...props.ruleOverrides };
 
-  if (isCurrentlyEnabled) {
-    // Turn it off
-    newOverrides[ruleId] = "off";
-  } else {
-    // Turn it on
+  if (checked) {
     newOverrides[ruleId] = "error";
+  } else {
+    newOverrides[ruleId] = "off";
   }
 
   emit("update:ruleOverrides", newOverrides);
@@ -281,7 +291,7 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
         <div class="rule-list">
           <div v-for="rule in rules" :key="getRuleId(rule)" class="rule-item">
             <label class="rule-toggle">
-              <input type="checkbox" :checked="isRuleEnabled(rule)" @change="toggleRule(rule)" />
+              <input type="checkbox" :checked="isRuleEnabled(rule)" @change="onRuleChange($event, rule)" />
               <div class="rule-content">
                 <div class="rule-head">
                   <span class="rule-name">{{ rule.value }}</span>
