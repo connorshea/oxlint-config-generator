@@ -67,7 +67,8 @@ const groupedRules = computed(() => {
 });
 
 const getRuleId = (rule: OxlintRule): string => {
-  return rule.scope === "eslint" ? rule.value : `${rule.scope.replace("_", "-")}/${rule.value}`;
+  // Always include the scope (convert underscores to hyphens)
+  return `${rule.scope.replace("_", "-")}/${rule.value}`;
 };
 
 // Try to find a description from the generated descriptions JSON.
