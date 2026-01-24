@@ -8,7 +8,7 @@ import type { PluginName, JSPluginName, RuleOverride } from "./types";
 import packageJson from "../package.json";
 
 const selectedPlugins = ref<PluginName[]>(["eslint", "oxc", "typescript"]);
-const selectedJSPlugins = ref<JSPluginName[]>([]);
+const selectedJsPlugins = ref<JSPluginName[]>([]);
 const enableTypeAware = ref(false);
 const useRecommended = ref(true);
 const ruleOverrides = ref<Record<string, RuleOverride>>({});
@@ -19,7 +19,7 @@ const handlePluginChange = (plugins: PluginName[]) => {
 };
 
 const handleJSPluginChange = (plugins: JSPluginName[]) => {
-  selectedJSPlugins.value = plugins;
+  selectedJsPlugins.value = plugins;
 };
 
 const handleRuleOverridesChange = (overrides: Record<string, RuleOverride>) => {
@@ -29,7 +29,7 @@ const handleRuleOverridesChange = (overrides: Record<string, RuleOverride>) => {
 const enabledRuleCount = computed(() => {
   return countEnabledRules(
     selectedPlugins.value,
-    selectedJSPlugins.value,
+    selectedJsPlugins.value,
     enableTypeAware.value,
     useRecommended.value,
     ruleOverrides.value,
@@ -39,7 +39,7 @@ const enabledRuleCount = computed(() => {
 const generatedConfig = computed(() => {
   return generateOxlintConfig(
     selectedPlugins.value,
-    selectedJSPlugins.value,
+    selectedJsPlugins.value,
     enableTypeAware.value,
     useRecommended.value,
     ruleOverrides.value,
@@ -97,9 +97,9 @@ const oxlintVersion = computed(() => {
       <div class="section plugins-card">
         <PluginSelector
           :selected-plugins="selectedPlugins"
-          :selected-j-s-plugins="selectedJSPlugins"
+          :selected-js-plugins="selectedJsPlugins"
           @update:selected-plugins="handlePluginChange"
-          @update:selected-j-s-plugins="handleJSPluginChange"
+          @update:selected-js-plugins="handleJSPluginChange"
         />
       </div>
 
@@ -112,7 +112,7 @@ const oxlintVersion = computed(() => {
       <div class="rules-column">
         <RuleSelector
           :selected-plugins="selectedPlugins"
-          :selected-j-s-plugins="selectedJSPlugins"
+          :selected-js-plugins="selectedJsPlugins"
           :enable-type-aware="enableTypeAware"
           :use-recommended="useRecommended"
           :rule-overrides="ruleOverrides"
