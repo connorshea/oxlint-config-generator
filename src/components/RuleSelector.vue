@@ -121,17 +121,6 @@ const getRuleStatus = (rule: OxlintRule): RuleOverride => {
   return props.ruleOverrides[ruleId] ?? null;
 };
 
-// `isRuleEnabled` is defined earlier and respects the global `useRecommended` prop.
-
-const toggleRule = (rule: OxlintRule) => {
-  // Backcompat helper: flip state based on current status
-  const ruleId = getRuleId(rule);
-  const isCurrentlyEnabled = isRuleEnabled(rule);
-  const newOverrides = { ...props.ruleOverrides };
-  newOverrides[ruleId] = isCurrentlyEnabled ? "off" : "error";
-  emit("update:ruleOverrides", newOverrides);
-};
-
 const onRuleChange = (e: Event, rule: OxlintRule) => {
   const checked = (e.target as HTMLInputElement).checked;
   const ruleId = getRuleId(rule);
