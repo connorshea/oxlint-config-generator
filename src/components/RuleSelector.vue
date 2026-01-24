@@ -282,7 +282,11 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
         <div class="rule-list">
           <div v-for="rule in rules" :key="getRuleId(rule)" class="rule-item">
             <label class="rule-toggle">
-              <input type="checkbox" :checked="isRuleEnabled(rule)" @change="onRuleChange($event, rule)" />
+              <input
+                type="checkbox"
+                :checked="isRuleEnabled(rule)"
+                @change="onRuleChange($event, rule)"
+              />
               <div class="rule-content">
                 <div class="rule-head">
                   <span class="rule-name">{{ rule.value }}</span>
@@ -293,10 +297,15 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
                     rel="noopener noreferrer"
                     class="rule-doc-link"
                     title="Open docs in new tab"
-                  >(docs)</a>
+                    >(docs)</a
+                  >
                 </div>
 
-                <p v-if="getRuleDescription(rule)" class="rule-desc" :title="getRuleDescription(rule)">
+                <p
+                  v-if="getRuleDescription(rule)"
+                  class="rule-desc"
+                  :title="getRuleDescription(rule)"
+                >
                   {{ getRuleDescription(rule) }}
                 </p>
               </div>
@@ -323,7 +332,6 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
               >
                 type-aware
               </span>
-
             </div>
           </div>
         </div>
@@ -505,7 +513,6 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
   transform: rotate(45deg);
 }
 
-
 .rule-desc {
   font-size: 0.8125rem;
   color: var(--color-text-muted);
@@ -586,6 +593,4 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
   color: #3b82f6;
   font-weight: 500;
 }
-
-
 </style>
