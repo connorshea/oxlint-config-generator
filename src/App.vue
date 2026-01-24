@@ -39,7 +39,10 @@ const generatedConfig = computed(() => {
 
 // Theme toggle: persisted to localStorage and applied as a data-theme on <html>
 const savedTheme = typeof window !== "undefined" ? localStorage.getItem("theme") : null;
-const prefersDark = typeof window !== "undefined" && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+const prefersDark =
+  typeof window !== "undefined" &&
+  window.matchMedia &&
+  window.matchMedia("(prefers-color-scheme: dark)").matches;
 const isDark = ref<boolean>(savedTheme ? savedTheme === "dark" : prefersDark);
 
 const applyTheme = () => {

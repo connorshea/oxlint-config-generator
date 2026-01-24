@@ -5,5 +5,5 @@
   "semiColons": true,
   "insertFinalNewline": true,
   "singleQuote": false,
-  "ignorePatterns": []
+  "ignorePatterns": [],
 }
