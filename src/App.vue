@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref, computed, onMounted, watch } from "vue";
 import PluginSelector from "./components/PluginSelector.vue";
 import RuleSelector from "./components/RuleSelector.vue";
 import ConfigDisplay from "./components/ConfigDisplay.vue";
@@ -36,6 +36,28 @@ const generatedConfig = computed(() => {
     ruleOverrides.value,
   );
 });
+
+// Theme toggle: persisted to localStorage and applied as a data-theme on <html>
+const savedTheme = typeof window !== "undefined" ? localStorage.getItem("theme") : null;
+const prefersDark = typeof window !== "undefined" && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+const isDark = ref<boolean>(savedTheme ? savedTheme === "dark" : prefersDark);
+
+const applyTheme = () => {
+  document.documentElement.setAttribute("data-theme", isDark.value ? "dark" : "light");
+};
+
+onMounted(() => {
+  applyTheme();
+});
+
+watch(isDark, (v) => {
+  localStorage.setItem("theme", v ? "dark" : "light");
+  applyTheme();
+});
+
+const toggleTheme = () => {
+  isDark.value = !isDark.value;
+};
 </script>
 
 <template>
@@ -43,6 +65,14 @@ const generatedConfig = computed(() => {
     <header>
       <h1>Oxlint Config Generator</h1>
       <p>Easily create a <code>.oxlintrc.json</code> file for your project.</p>
+      <button
+        class="theme-toggle"
+        @click="toggleTheme"
+        :aria-pressed="isDark"
+        :title="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
+      >
+        {{ isDark ? "🌙 Dark" : "☀️ Light" }}
+      </button>
     </header>
 
     <div class="main-layout">
@@ -115,6 +145,28 @@ const generatedConfig = computed(() => {
 header {
   text-align: center;
   margin-bottom: 2rem;
+  position: relative;
+}
+
+.theme-toggle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateY(6px);
+  padding: 0.5rem 0.75rem;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.theme-toggle:hover {
+  color: var(--color-text);
+  background: var(--color-bg-hover);
+  border-color: var(--color-border-hover);
 }
 
 header code {
