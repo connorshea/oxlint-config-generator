@@ -149,6 +149,27 @@ const formatGroupName = (scope: string): string => {
   };
   return names[scope] || scope;
 };
+
+const getGroupSource = (scope: string): string => {
+  const sources: Record<string, string> = {
+    eslint: "Rules from ESLint core.",
+    oxc: "Rules unique to oxlint.",
+    typescript: "Rules from @typescript-eslint/eslint-plugin.",
+    react: "Rules from eslint-plugin-react.",
+    react_perf: "Rules from eslint-plugin-react-perf.",
+    jsx_a11y: "Rules from eslint-plugin-jsx-a11y.",
+    vue: "Rules from eslint-plugin-vue.",
+    unicorn: "Rules from eslint-plugin-unicorn.",
+    import: "Rules from eslint-plugin-import.",
+    jsdoc: "Rules from eslint-plugin-jsdoc.",
+    jest: "Rules from eslint-plugin-jest.",
+    vitest: "Rules from eslint-plugin-vitest.",
+    nextjs: "Rules from @next/eslint-plugin-next.",
+    promise: "Rules from eslint-plugin-promise.",
+    n: "Rules from eslint-plugin-n.",
+  };
+  return sources[scope] || "";
+};
 </script>
 
 <template>
@@ -168,6 +189,8 @@ const formatGroupName = (scope: string): string => {
             <span>{{ rules.length }} rules</span>
           </span>
         </summary>
+
+        <p class="group-source">{{ getGroupSource(scope) }}</p>
 
         <div class="rule-list">
           <div v-for="rule in rules" :key="getRuleId(rule)" class="rule-item">
@@ -274,6 +297,14 @@ const formatGroupName = (scope: string): string => {
 .count-separator {
   margin: 0 0.125rem;
   opacity: 0.5;
+}
+
+.group-source {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .rule-list {
