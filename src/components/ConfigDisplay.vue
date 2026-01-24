@@ -31,10 +31,7 @@ const highlightedConfig = computed(() => {
   });
 
   // 2. Highlight all remaining quoted strings as values
-  result = result.replace(
-    /"(?:\\.|[^"\\])*"/g,
-    '<span class="json-string">$&</span>',
-  );
+  result = result.replace(/"(?:\\.|[^"\\])*"/g, '<span class="json-string">$&</span>');
 
   // 3. Restore keys with highlighting
   result = result.replace(/__KEY_(\d+)__/g, (_, index) => {
