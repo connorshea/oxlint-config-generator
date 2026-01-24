@@ -2,6 +2,7 @@
 import { computed } from "vue";
 import type { PluginName, OxlintRule, RuleOverride } from "../types";
 import rulesData from "../../data/rules.json";
+import ruleDescriptions from "../../data/rule-descriptions.json";
 import { isRuleRecommended, scopeToPluginMap } from "../utils/config-generator";
 
 const props = defineProps<{
@@ -67,6 +68,36 @@ const groupedRules = computed(() => {
 
 const getRuleId = (rule: OxlintRule): string => {
   return rule.scope === "eslint" ? rule.value : `${rule.scope.replace("_", "-")}/${rule.value}`;
+};
+
+// Try to find a description from the generated descriptions JSON.
+// We handle a few possible key formats to be resilient to differences between
+// the site's folder names and the rule scope naming (underscores vs hyphens).
+const descriptions = ruleDescriptions as Record<string, Record<string, string>>;
+
+const getRuleDescription = (rule: OxlintRule): string => {
+  // ESLint core rules live under the 'eslint' key
+  const scopeKeyCandidates = [] as string[];
+  if (rule.scope === "eslint") {
+    scopeKeyCandidates.push("eslint");
+  } else {
+    // prefer mapping from scope to plugin name (e.g. react_perf -> react-perf)
+    const mapped = scopeToPluginMap[rule.scope];
+    if (mapped) scopeKeyCandidates.push(mapped);
+    // also try raw scope, and a hyphenated variant
+    scopeKeyCandidates.push(rule.scope);
+    scopeKeyCandidates.push(rule.scope.replace(/_/g, "-"));
+  }
+
+  for (const key of scopeKeyCandidates) {
+    const group = descriptions[key];
+    if (group) {
+      const desc = group[rule.value];
+      if (desc && desc.trim().length > 0) return desc.trim();
+    }
+  }
+
+  return "";
 };
 
 const getEnabledCountForGroup = (rules: OxlintRule[]): number => {
@@ -250,8 +281,11 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
           <div v-for="rule in rules" :key="getRuleId(rule)" class="rule-item">
             <label class="rule-toggle">
               <input type="checkbox" :checked="isRuleEnabled(rule)" @change="toggleRule(rule)" />
-              <span class="rule-name">{{ rule.value }}</span>
-            </label>
+              <div class="rule-content">
+                <span class="rule-name">{{ rule.value }}</span>
+                <p v-if="getRuleDescription(rule)" class="rule-desc" :title="getRuleDescription(rule)">{{ getRuleDescription(rule) }}</p>
+              </div>
+            </label> 
 
             <div class="rule-meta">
               <span
@@ -385,11 +419,28 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
 
 .rule-toggle {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
   cursor: pointer;
   flex: 1;
   min-width: 0;
+}
+
+.rule-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.rule-name {
+  font-family: "SF Mono", "Fira Code", Menlo, Monaco, Consolas, monospace;
+  font-size: 0.8125rem;
+  color: var(--color-text);
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .rule-toggle input[type="checkbox"] {
@@ -427,6 +478,19 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
   font-size: 0.8125rem;
   color: var(--color-text);
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rule-desc {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin: 0.25rem 0 0 0;
+  line-height: 1.3;
+  max-width: 48ch;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }
