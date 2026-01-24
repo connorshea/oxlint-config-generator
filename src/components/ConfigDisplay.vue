@@ -107,36 +107,33 @@ const highlightedConfig = computed(() => {
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
 }
 
-/* JSON Syntax Highlighting */
+/* JSON Syntax Highlighting - Dark mode (default) */
 :deep(.json-key) {
-  color: #3b82f6;
+  color: #93c5fd;
 }
 
 :deep(.json-string) {
-  color: #22c55e;
+  color: #86efac;
 }
 
 :deep(.json-number) {
-  color: #f59e0b;
+  color: #fcd34d;
 }
 
 :deep(.json-boolean) {
-  color: #a855f7;
+  color: #c4b5fd;
 }
 
 :deep(.json-null) {
-  color: #6b7280;
+  color: #9ca3af;
 }
 
 :deep(.json-punctuation) {
   color: var(--color-text-secondary);
 }
 
+/* Light mode via media query */
 @media (prefers-color-scheme: light) {
-  .instructions code {
-    background-color: var(--color-primary-muted);
-  }
-
   :deep(.json-key) {
     color: #2563eb;
   }
@@ -156,5 +153,47 @@ const highlightedConfig = computed(() => {
   :deep(.json-null) {
     color: #6b7280;
   }
+}
+
+/* Light mode via data-theme attribute */
+:root[data-theme="light"] :deep(.json-key) {
+  color: #2563eb;
+}
+
+:root[data-theme="light"] :deep(.json-string) {
+  color: #16a34a;
+}
+
+:root[data-theme="light"] :deep(.json-number) {
+  color: #d97706;
+}
+
+:root[data-theme="light"] :deep(.json-boolean) {
+  color: #9333ea;
+}
+
+:root[data-theme="light"] :deep(.json-null) {
+  color: #6b7280;
+}
+
+/* Dark mode via data-theme attribute */
+:root[data-theme="dark"] :deep(.json-key) {
+  color: #93c5fd;
+}
+
+:root[data-theme="dark"] :deep(.json-string) {
+  color: #86efac;
+}
+
+:root[data-theme="dark"] :deep(.json-number) {
+  color: #fcd34d;
+}
+
+:root[data-theme="dark"] :deep(.json-boolean) {
+  color: #c4b5fd;
+}
+
+:root[data-theme="dark"] :deep(.json-null) {
+  color: #9ca3af;
 }
 </style>

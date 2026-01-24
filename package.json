@@ -14,8 +14,9 @@
     "generate:rules": "tsx scripts/generate-rules.ts",
     "generate:plugins": "tsx scripts/generate-plugins.ts",
     "generate:js-plugins": "tsx scripts/generate-js-plugins.ts",
+    "generate:js-plugin-descriptions": "tsx scripts/generate-js-plugin-descriptions.ts",
     "generate:rule-descriptions": "tsx scripts/generate-rule-descriptions.ts",
-    "generate:all": "pnpm generate:rules && pnpm generate:plugins && pnpm generate:js-plugins && pnpm generate:rule-descriptions && pnpm fmt"
+    "generate:all": "pnpm generate:rules && pnpm generate:plugins && pnpm generate:js-plugins && pnpm generate:js-plugin-descriptions && pnpm generate:rule-descriptions && pnpm fmt"
   },
   "dependencies": {
     "vue": "^3.5.27"
