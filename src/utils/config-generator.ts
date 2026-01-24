@@ -143,7 +143,6 @@ export function generateOxlintConfig(
   enableTypeAware: boolean,
   useRecommended: boolean,
   ruleOverrides: Record<string, RuleOverride> = {},
-  jsPluginRuleOverrides: Record<string, RuleOverride> = {},
 ): string {
   // Build config with keys in desired order: $schema, jsPlugins, plugins, categories, rules
   // Exclude 'eslint' from the plugins list since ESLint is not an oxlint plugin
@@ -221,7 +220,9 @@ export function generateOxlintConfig(
       if (ruleData.deprecated) continue;
 
       const ruleId = `${jsPlugin.rulePrefix}/${ruleName}`;
-      const override = jsPluginRuleOverrides[ruleId];
+
+      // Check for explicit override in the global ruleOverrides map
+      const override = ruleOverrides[ruleId];
 
       if (override !== undefined && override !== null) {
         if (override !== "off") {
@@ -246,7 +247,6 @@ export function countEnabledRules(
   enableTypeAware: boolean,
   useRecommended: boolean,
   ruleOverrides: Record<string, RuleOverride> = {},
-  jsPluginRuleOverrides: Record<string, RuleOverride> = {},
 ): number {
   const allRules = rulesData as OxlintRule[];
   let count = 0;
@@ -297,7 +297,9 @@ export function countEnabledRules(
       if (ruleData.deprecated) continue;
 
       const ruleId = `${jsPlugin.rulePrefix}/${ruleName}`;
-      const override = jsPluginRuleOverrides[ruleId];
+
+      // Check for explicit override in the global ruleOverrides map
+      const override = ruleOverrides[ruleId];
 
       if (override !== undefined && override !== null) {
         if (override !== "off") {
