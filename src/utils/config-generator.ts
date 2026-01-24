@@ -1,4 +1,11 @@
-import type { PluginName, OxlintConfig, OxlintRule, RuleOverride } from "../types";
+import type {
+  PluginName,
+  JSPluginName,
+  OxlintConfig,
+  OxlintRule,
+  RuleOverride,
+  JSPluginData,
+} from "../types";
 import rulesData from "../../data/rules.json";
 import reactPlugin from "../../data/plugins/react.json";
 import reactPerfPlugin from "../../data/plugins/react-perf.json";
@@ -13,6 +20,8 @@ import unicornPlugin from "../../data/plugins/unicorn.json";
 import nextPlugin from "../../data/plugins/next.json";
 import promisePlugin from "../../data/plugins/promise.json";
 import nodePlugin from "../../data/plugins/node.json";
+import playwrightPlugin from "../../data/js-plugins/playwright.json";
+import stylisticPlugin from "../../data/js-plugins/stylistic.json";
 
 const pluginDataMap: Record<
   PluginName,
@@ -43,6 +52,11 @@ const pluginDataMap: Record<
   next: nextPlugin,
   promise: promisePlugin,
   node: nodePlugin,
+};
+
+export const jsPluginDataMap: Record<JSPluginName, JSPluginData> = {
+  playwright: playwrightPlugin as JSPluginData,
+  stylistic: stylisticPlugin as JSPluginData,
 };
 
 export const scopeToPluginMap: Record<string, PluginName> = {
@@ -119,16 +133,22 @@ export function getRuleId(rule: OxlintRule): string {
 
 export function generateOxlintConfig(
   selectedPlugins: PluginName[],
+  selectedJSPlugins: JSPluginName[],
   enableTypeAware: boolean,
   useRecommended: boolean,
   ruleOverrides: Record<string, RuleOverride> = {},
+  jsPluginRuleOverrides: Record<string, RuleOverride> = {},
 ): string {
-  // Build config with keys in desired order: $schema, plugins, categories, rules
+  // Build config with keys in desired order: $schema, jsPlugins, plugins, categories, rules
   // Exclude 'eslint' from the plugins list since ESLint is not an oxlint plugin
   const explicitPlugins = selectedPlugins.filter((p) => p !== "eslint");
 
+  // Build jsPlugins array with package names
+  const jsPluginsPackages = selectedJSPlugins.map((name) => jsPluginDataMap[name].packageName);
+
   const config: OxlintConfig = {
     $schema: "./node_modules/oxlint/configuration_schema.json",
+    jsPlugins: jsPluginsPackages.length > 0 ? jsPluginsPackages : undefined,
     plugins: explicitPlugins.length > 0 ? [...explicitPlugins] : undefined,
     categories: {
       correctness: "off",
@@ -188,14 +208,39 @@ export function generateOxlintConfig(
     }
   }
 
+  // Add JS plugin rules
+  for (const jsPluginName of selectedJSPlugins) {
+    const jsPlugin = jsPluginDataMap[jsPluginName];
+    for (const [ruleName, ruleData] of Object.entries(jsPlugin.rules)) {
+      if (ruleData.deprecated) continue;
+
+      const ruleId = `${jsPlugin.rulePrefix}/${ruleName}`;
+      const override = jsPluginRuleOverrides[ruleId];
+
+      if (override !== undefined && override !== null) {
+        if (override !== "off") {
+          config.rules![ruleId] = override;
+        }
+        continue;
+      }
+
+      // Use recommended if enabled
+      if (useRecommended && ruleData.recommended) {
+        config.rules![ruleId] = "error";
+      }
+    }
+  }
+
   return JSON.stringify(config, null, 2);
 }
 
 export function countEnabledRules(
   selectedPlugins: PluginName[],
+  selectedJSPlugins: JSPluginName[],
   enableTypeAware: boolean,
   useRecommended: boolean,
   ruleOverrides: Record<string, RuleOverride> = {},
+  jsPluginRuleOverrides: Record<string, RuleOverride> = {},
 ): number {
   const allRules = rulesData as OxlintRule[];
   let count = 0;
@@ -236,6 +281,25 @@ export function countEnabledRules(
       }
     } else if (useRecommended && isRuleRecommended(rule)) {
       count++;
+    }
+  }
+
+  // Count JS plugin rules
+  for (const jsPluginName of selectedJSPlugins) {
+    const jsPlugin = jsPluginDataMap[jsPluginName];
+    for (const [ruleName, ruleData] of Object.entries(jsPlugin.rules)) {
+      if (ruleData.deprecated) continue;
+
+      const ruleId = `${jsPlugin.rulePrefix}/${ruleName}`;
+      const override = jsPluginRuleOverrides[ruleId];
+
+      if (override !== undefined && override !== null) {
+        if (override !== "off") {
+          count++;
+        }
+      } else if (useRecommended && ruleData.recommended) {
+        count++;
+      }
     }
   }
 

@@ -4,10 +4,11 @@ import PluginSelector from "./components/PluginSelector.vue";
 import RuleSelector from "./components/RuleSelector.vue";
 import ConfigDisplay from "./components/ConfigDisplay.vue";
 import { generateOxlintConfig, countEnabledRules } from "./utils/config-generator";
-import type { PluginName, RuleOverride } from "./types";
+import type { PluginName, JSPluginName, RuleOverride } from "./types";
 import packageJson from "../package.json";
 
 const selectedPlugins = ref<PluginName[]>(["eslint", "oxc", "typescript"]);
+const selectedJSPlugins = ref<JSPluginName[]>([]);
 const enableTypeAware = ref(false);
 const useRecommended = ref(true);
 const ruleOverrides = ref<Record<string, RuleOverride>>({});
@@ -17,6 +18,10 @@ const handlePluginChange = (plugins: PluginName[]) => {
   selectedPlugins.value = plugins;
 };
 
+const handleJSPluginChange = (plugins: JSPluginName[]) => {
+  selectedJSPlugins.value = plugins;
+};
+
 const handleRuleOverridesChange = (overrides: Record<string, RuleOverride>) => {
   ruleOverrides.value = overrides;
 };
@@ -24,6 +29,7 @@ const handleRuleOverridesChange = (overrides: Record<string, RuleOverride>) => {
 const enabledRuleCount = computed(() => {
   return countEnabledRules(
     selectedPlugins.value,
+    selectedJSPlugins.value,
     enableTypeAware.value,
     useRecommended.value,
     ruleOverrides.value,
@@ -33,6 +39,7 @@ const enabledRuleCount = computed(() => {
 const generatedConfig = computed(() => {
   return generateOxlintConfig(
     selectedPlugins.value,
+    selectedJSPlugins.value,
     enableTypeAware.value,
     useRecommended.value,
     ruleOverrides.value,
@@ -90,7 +97,9 @@ const oxlintVersion = computed(() => {
       <div class="section plugins-card">
         <PluginSelector
           :selected-plugins="selectedPlugins"
+          :selected-j-s-plugins="selectedJSPlugins"
           @update:selected-plugins="handlePluginChange"
+          @update:selected-j-s-plugins="handleJSPluginChange"
         />
       </div>
 

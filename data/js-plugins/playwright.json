@@ -1,0 +1,277 @@
+{
+  "name": "playwright",
+  "packageName": "eslint-plugin-playwright",
+  "rulePrefix": "playwright",
+  "rules": {
+    "consistent-spacing-between-blocks": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "expect-expect": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "max-expects": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "max-nested-describe": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "missing-playwright-await": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "no-commented-out-tests": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-conditional-expect": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-conditional-in-test": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-duplicate-hooks": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-element-handle": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-eval": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-focused-test": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-force-option": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-get-by-title": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-hooks": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-nested-step": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-networkidle": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-nth-methods": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-page-pause": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-raw-locators": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-restricted-locators": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-restricted-matchers": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-skipped-test": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-slowed-test": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-standalone-expect": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "no-unsafe-references": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "no-unused-locators": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-useless-await": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "no-useless-not": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "no-wait-for-navigation": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-wait-for-selector": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-wait-for-timeout": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "prefer-comparison-matcher": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-equality-matcher": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "prefer-hooks-in-order": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "prefer-hooks-on-top": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "prefer-locator": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "prefer-lowercase-title": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-native-locators": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-strict-equal": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-to-be": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-to-contain": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-to-have-count": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-to-have-length": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-web-first-assertions": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "require-hook": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "require-soft-assertions": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "require-to-throw-message": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "require-top-level-describe": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "valid-describe-callback": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "valid-expect": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "valid-expect-in-promise": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "valid-test-tags": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "valid-title": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    }
+  }
+}
