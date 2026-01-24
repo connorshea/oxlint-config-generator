@@ -53,6 +53,36 @@ async function generatePluginData() {
       // Get plugin rules
       const rules = pluginExport.rules || {};
 
+      // Try to get recommended config first
+      const configs = pluginExport.configs || {};
+      let recommendedRules: Record<string, unknown> = {};
+
+      // Check various config formats
+      if (configs.recommended?.rules) {
+        recommendedRules = configs.recommended.rules;
+      } else if (configs["flat/recommended"]?.rules) {
+        recommendedRules = configs["flat/recommended"].rules;
+      } else if (Array.isArray(configs["flat/recommended"])) {
+        // Some plugins use array format for flat config
+        for (const configItem of configs["flat/recommended"]) {
+          if (configItem?.rules) {
+            recommendedRules = { ...recommendedRules, ...configItem.rules };
+          }
+        }
+      } else if (configs.recommended && typeof configs.recommended === "object") {
+        // Handle legacy format where rules might be at top level
+        recommendedRules = configs.recommended;
+      }
+
+      // Normalize rule names (remove plugin prefix if present)
+      const normalizedRecommendedRules = new Set<string>();
+      for (const ruleName of Object.keys(recommendedRules)) {
+        // Rule might be "import/no-unresolved" or just "no-unresolved"
+        const shortName = ruleName.includes("/") ? ruleName.split("/")[1] : ruleName;
+        normalizedRecommendedRules.add(shortName);
+        normalizedRecommendedRules.add(ruleName);
+      }
+
       // Process each rule
       for (const [ruleName, ruleConfig] of Object.entries(rules)) {
         const rule = ruleConfig as {
@@ -62,19 +92,19 @@ async function generatePluginData() {
           };
         };
 
+        // Check if recommended via meta.docs.recommended OR if it's in the recommended config
+        const isRecommendedViaMeta = rule.meta?.docs?.recommended === true;
+        const isRecommendedViaConfig =
+          normalizedRecommendedRules.has(ruleName) ||
+          normalizedRecommendedRules.has(`${plugin.name}/${ruleName}`);
+
         pluginData.rules[ruleName] = {
-          recommended: rule.meta?.docs?.recommended || false,
+          recommended: isRecommendedViaMeta || isRecommendedViaConfig,
           fixable: Boolean(rule.meta?.fixable),
         };
       }
 
-      // Try to get recommended config
-      const configs = pluginExport.configs || {};
-      if (configs.recommended) {
-        pluginData.recommendedConfig = configs.recommended.rules || {};
-      } else if (configs["flat/recommended"]) {
-        pluginData.recommendedConfig = configs["flat/recommended"].rules || {};
-      }
+      pluginData.recommendedConfig = recommendedRules;
 
       // Write to file
       const outputPath = join(dataDir, `${plugin.name}.json`);

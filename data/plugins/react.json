@@ -318,7 +318,7 @@
       "fixable": true
     },
     "no-unsafe": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-unstable-nested-components": {

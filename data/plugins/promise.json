@@ -2,19 +2,19 @@
   "name": "promise",
   "rules": {
     "param-names": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-return-wrap": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "always-return": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "catch-or-return": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "prefer-await-to-callbacks": {
@@ -30,35 +30,35 @@
       "fixable": true
     },
     "no-native": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-callback-in-promise": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-promise-in-callback": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-nesting": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "avoid-new": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-new-statics": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true
     },
     "no-return-in-finally": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "valid-params": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false
     },
     "no-multiple-resolved": {
