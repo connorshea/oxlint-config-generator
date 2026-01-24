@@ -1,0 +1,487 @@
+{
+  "name": "stylistic",
+  "packageName": "@stylistic/eslint-plugin",
+  "rulePrefix": "@stylistic",
+  "rules": {
+    "array-bracket-newline": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "array-bracket-spacing": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "array-element-newline": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "arrow-parens": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "arrow-spacing": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "block-spacing": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "brace-style": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "comma-dangle": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "comma-spacing": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "comma-style": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "computed-property-spacing": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "curly-newline": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "dot-location": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "eol-last": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "function-call-argument-newline": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "function-call-spacing": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "function-paren-newline": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "generator-star-spacing": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "implicit-arrow-linebreak": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "indent": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "indent-binary-ops": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "jsx-child-element-spacing": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "jsx-closing-bracket-location": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "jsx-closing-tag-location": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "jsx-curly-brace-presence": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "jsx-curly-newline": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "jsx-curly-spacing": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "jsx-equals-spacing": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "jsx-first-prop-new-line": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "jsx-function-call-newline": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "jsx-indent": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": true
+    },
+    "jsx-indent-props": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "jsx-max-props-per-line": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "jsx-newline": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "jsx-one-expression-per-line": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "jsx-pascal-case": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "jsx-props-no-multi-spaces": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": true
+    },
+    "jsx-quotes": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "jsx-self-closing-comp": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "jsx-sort-props": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": true
+    },
+    "jsx-tag-spacing": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "jsx-wrap-multilines": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "key-spacing": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "keyword-spacing": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "line-comment-position": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "linebreak-style": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "lines-around-comment": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "lines-between-class-members": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "exp-list-style": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "max-len": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "max-statements-per-line": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "member-delimiter-style": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "multiline-comment-style": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "multiline-ternary": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "new-parens": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "newline-per-chained-call": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "no-confusing-arrow": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "no-extra-parens": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "no-extra-semi": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "no-floating-decimal": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "no-mixed-operators": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-mixed-spaces-and-tabs": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-multi-spaces": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "no-multiple-empty-lines": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "no-tabs": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-trailing-spaces": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "no-whitespace-before-property": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "nonblock-statement-body-position": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "object-curly-newline": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "object-curly-spacing": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "object-property-newline": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "one-var-declaration-per-line": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "operator-linebreak": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "padded-blocks": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "padding-line-between-statements": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "quote-props": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "quotes": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "rest-spread-spacing": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "semi": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "semi-spacing": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "semi-style": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "space-before-blocks": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "space-before-function-paren": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "space-in-parens": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "space-infix-ops": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "space-unary-ops": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "spaced-comment": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "switch-colon-spacing": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "template-curly-spacing": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "template-tag-spacing": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "type-annotation-spacing": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "type-generic-spacing": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "type-named-tuple-spacing": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "wrap-iife": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "wrap-regex": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "yield-star-spacing": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    }
+  }
+}

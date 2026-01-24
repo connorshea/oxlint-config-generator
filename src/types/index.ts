@@ -55,3 +55,12 @@ export type PluginName =
   | "next"
   | "promise"
   | "node";
+
+export type JSPluginName = "playwright" | "stylistic";
+
+export interface JSPluginData {
+  name: string;
+  packageName: string;
+  rulePrefix: string;
+  rules: Record<string, { recommended: boolean; fixable: boolean; deprecated?: boolean }>;
+}

@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import type { PluginName } from "../types";
+import type { PluginName, JSPluginName } from "../types";
 
 const props = defineProps<{
   selectedPlugins: PluginName[];
+  selectedJSPlugins: JSPluginName[];
 }>();
 
 const emit = defineEmits<{
   "update:selectedPlugins": [plugins: PluginName[]];
+  "update:selectedJSPlugins": [plugins: JSPluginName[]];
 }>();
 
 interface PluginCategory {
@@ -15,24 +17,18 @@ interface PluginCategory {
   plugins: { name: PluginName; label: string }[];
 }
 
-interface AdditionalPlugin {
-  name: string;
+interface JSPlugin {
+  name: JSPluginName;
   label: string;
   npmPackage: string;
 }
 
-const additionalJSPlugins: AdditionalPlugin[] = [
+const availableJSPlugins: JSPlugin[] = [
   { name: "playwright", label: "Playwright", npmPackage: "eslint-plugin-playwright" },
-  {
-    name: "testing-library",
-    label: "Testing Library",
-    npmPackage: "eslint-plugin-testing-library",
-  },
   { name: "stylistic", label: "Stylistic", npmPackage: "@stylistic/eslint-plugin" },
-  { name: "storybook", label: "Storybook", npmPackage: "eslint-plugin-storybook" },
 ];
 
-const showAdditionalPlugins = ref(false);
+const showJSPlugins = ref(false);
 
 const pluginCategories: PluginCategory[] = [
   {
@@ -89,8 +85,25 @@ const isSelected = (plugin: PluginName) => {
   return props.selectedPlugins.includes(plugin);
 };
 
-const toggleAdditionalPlugins = () => {
-  showAdditionalPlugins.value = !showAdditionalPlugins.value;
+const toggleJSPlugin = (plugin: JSPluginName) => {
+  const index = props.selectedJSPlugins.indexOf(plugin);
+  const newPlugins = [...props.selectedJSPlugins];
+
+  if (index > -1) {
+    newPlugins.splice(index, 1);
+  } else {
+    newPlugins.push(plugin);
+  }
+
+  emit("update:selectedJSPlugins", newPlugins);
+};
+
+const isJSPluginSelected = (plugin: JSPluginName) => {
+  return props.selectedJSPlugins.includes(plugin);
+};
+
+const toggleJSPluginsSection = () => {
+  showJSPlugins.value = !showJSPlugins.value;
 };
 </script>
 
@@ -114,21 +127,33 @@ const toggleAdditionalPlugins = () => {
       </div>
     </div>
 
-    <div class="additional-plugins-section">
-      <button class="additional-plugins-toggle" @click="toggleAdditionalPlugins">
-        {{ showAdditionalPlugins ? "−" : "+" }} Additional JS Plugins (Coming Soon)
+    <div class="js-plugins-section">
+      <button class="js-plugins-toggle" @click="toggleJSPluginsSection">
+        {{ showJSPlugins ? "−" : "+" }} JS Plugins (ESLint Compatibility)
       </button>
-      <div v-if="showAdditionalPlugins" class="additional-plugins-info">
+      <div v-if="showJSPlugins" class="js-plugins-content">
         <p class="info-text">
-          The following ESLint plugins are not yet supported by Oxlint, but may be added in the
-          future:
+          Oxlint can use existing ESLint plugins via its ESLint API compatibility. Select plugins to
+          include:
         </p>
-        <ul class="plugin-list">
-          <li v-for="plugin in additionalJSPlugins" :key="plugin.name" class="plugin-list-item">
-            <strong>{{ plugin.label }}</strong>
-            <code class="npm-package">{{ plugin.npmPackage }}</code>
-          </li>
-        </ul>
+        <div class="plugin-selection js-plugin-selection">
+          <button
+            v-for="plugin in availableJSPlugins"
+            :key="plugin.name"
+            :class="[
+              'plugin-button',
+              'js-plugin-button',
+              { selected: isJSPluginSelected(plugin.name) },
+            ]"
+            @click="toggleJSPlugin(plugin.name)"
+            :title="plugin.npmPackage"
+          >
+            {{ plugin.label }}
+          </button>
+        </div>
+        <p v-if="selectedJSPlugins.length > 0" class="js-plugins-note">
+          Note: You'll need to install the selected plugins in your project.
+        </p>
       </div>
     </div>
   </div>
@@ -167,13 +192,13 @@ const toggleAdditionalPlugins = () => {
   gap: 0.5rem;
 }
 
-.additional-plugins-section {
+.js-plugins-section {
   margin-top: 1.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--color-border);
 }
 
-.additional-plugins-toggle {
+.js-plugins-toggle {
   width: 100%;
   text-align: left;
   padding: 0.625rem 0.875rem;
@@ -187,13 +212,13 @@ const toggleAdditionalPlugins = () => {
   color: var(--color-text-secondary);
 }
 
-.additional-plugins-toggle:hover {
+.js-plugins-toggle:hover {
   background: var(--color-bg-elevated);
   color: var(--color-text);
   border-color: var(--color-border-hover);
 }
 
-.additional-plugins-info {
+.js-plugins-content {
   margin-top: 0.75rem;
   padding: 1rem;
   background: var(--color-bg-hover);
@@ -207,37 +232,22 @@ const toggleAdditionalPlugins = () => {
   line-height: 1.4;
 }
 
-.plugin-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+.js-plugin-selection {
+  margin-top: 0.5rem;
 }
 
-.plugin-list-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.8125rem;
-  padding: 0.5rem;
-  background: var(--color-bg-elevated);
-  border-radius: 4px;
+.js-plugin-button {
+  border-style: dashed;
 }
 
-.plugin-list-item strong {
-  color: var(--color-text);
-  min-width: 120px;
+.js-plugin-button.selected {
+  border-style: solid;
 }
 
-.npm-package {
-  font-family: "SF Mono", "Fira Code", Menlo, Monaco, Consolas, monospace;
+.js-plugins-note {
   font-size: 0.75rem;
   color: var(--color-text-muted);
-  background: var(--color-code-bg);
-  padding: 0.125rem 0.375rem;
-  border-radius: 3px;
-  border: 1px solid var(--color-border);
+  margin-top: 0.75rem;
+  font-style: italic;
 }
 </style>
