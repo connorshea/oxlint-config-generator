@@ -29,6 +29,7 @@ export interface PluginRules {
 
 export interface OxlintConfig {
   $schema: string;
+  jsPlugins?: string[];
   plugins?: string[];
   categories?: {
     correctness?: string;
