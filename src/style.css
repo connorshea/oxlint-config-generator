@@ -133,6 +133,15 @@ p {
   color: var(--color-text-secondary);
 }
 
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 /* Buttons */
 button {
   border-radius: 8px;
