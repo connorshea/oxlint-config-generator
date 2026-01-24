@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import type { PluginName, OxlintRule, RuleOverride } from "../types";
 import rulesData from "../../data/rules.json";
 import ruleDescriptions from "../../data/rule-descriptions.json";
@@ -11,7 +11,11 @@ const props = defineProps<{
   useRecommended: boolean;
   ruleOverrides: Record<string, RuleOverride>;
   enabledRuleCount: number;
+  showFullRulesList: boolean;
 }>();
+
+const searchQuery = ref("");
+const filterFixable = ref<"all" | "fixable" | "non-fixable">("all");
 
 // ...
 const isRuleEnabled = (rule: OxlintRule): boolean => {
@@ -25,6 +29,7 @@ const isRuleEnabled = (rule: OxlintRule): boolean => {
 
 const emit = defineEmits<{
   "update:ruleOverrides": [overrides: Record<string, RuleOverride>];
+  "update:showFullRulesList": [value: boolean];
 }>();
 
 const allRules = rulesData as OxlintRule[];
@@ -43,17 +48,35 @@ const filteredRules = computed(() => {
 
     // Include eslint core rules only when the 'eslint' plugin is selected
     if (rule.scope === "eslint") {
-      return props.selectedPlugins.includes("eslint");
-    }
-
-    // Check if the plugin is selected
-    const pluginName = scopeToPluginMap[rule.scope];
-    if (!pluginName || !props.selectedPlugins.includes(pluginName)) {
-      return false;
+      if (!props.selectedPlugins.includes("eslint")) return false;
+    } else {
+      // Check if the plugin is selected
+      const pluginName = scopeToPluginMap[rule.scope];
+      if (!pluginName || !props.selectedPlugins.includes(pluginName)) {
+        return false;
+      }
     }
 
     // Filter out type-aware rules if not enabled
     if (!props.enableTypeAware && rule.type_aware) {
+      return false;
+    }
+
+    // Apply search filter
+    if (searchQuery.value) {
+      const query = searchQuery.value.toLowerCase();
+      const ruleId = getRuleId(rule).toLowerCase();
+      const description = getRuleDescription(rule).toLowerCase();
+      if (!ruleId.includes(query) && !description.includes(query)) {
+        return false;
+      }
+    }
+
+    // Apply fixable filter
+    if (filterFixable.value === "fixable" && rule.fix === "none") {
+      return false;
+    }
+    if (filterFixable.value === "non-fixable" && rule.fix !== "none") {
       return false;
     }
 
@@ -62,6 +85,11 @@ const filteredRules = computed(() => {
 });
 
 const groupedRules = computed(() => {
+  if (props.showFullRulesList) {
+    // In full rules list mode, return all filtered rules in a single group
+    return [["all", filteredRules.value] as [string, OxlintRule[]]];
+  }
+
   const groups: Record<string, OxlintRule[]> = {};
 
   for (const rule of filteredRules.value) {
@@ -115,6 +143,11 @@ const getRuleDescription = (rule: OxlintRule): string => {
   }
 
   return "";
+};
+
+const parseMarkdownInDescription = (description: string): string => {
+  // Parse inline code blocks (backticks) into <code> tags
+  return description.replace(/`([^`]+)`/g, '<code class="inline-code">$1</code>');
 };
 
 const getEnabledCountForGroup = (rules: OxlintRule[]): number => {
@@ -266,9 +299,58 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
       <span class="rule-count">{{ enabledRuleCount }} rules enabled</span>
     </div>
 
+    <div class="rule-controls">
+      <label class="view-toggle">
+        <input
+          type="checkbox"
+          :checked="showFullRulesList"
+          @change="emit('update:showFullRulesList', !showFullRulesList)"
+        />
+        <span>Show full rules list</span>
+      </label>
+
+      <div class="search-bar">
+        <input
+          v-model="searchQuery"
+          type="text"
+          placeholder="Search rules..."
+          class="search-input"
+        />
+      </div>
+
+      <div class="filter-group">
+        <label class="filter-label">Show:</label>
+        <div class="filter-buttons">
+          <button
+            :class="['filter-button', { active: filterFixable === 'all' }]"
+            @click="filterFixable = 'all'"
+          >
+            All
+          </button>
+          <button
+            :class="['filter-button', { active: filterFixable === 'fixable' }]"
+            @click="filterFixable = 'fixable'"
+          >
+            Autofixable
+          </button>
+          <button
+            :class="['filter-button', { active: filterFixable === 'non-fixable' }]"
+            @click="filterFixable = 'non-fixable'"
+          >
+            Non-fixable
+          </button>
+        </div>
+      </div>
+    </div>
+
     <div class="rule-groups">
-      <details v-for="[scope, rules] in groupedRules" :key="scope" class="rule-group">
-        <summary class="group-summary">
+      <details
+        v-for="[scope, rules] in groupedRules"
+        :key="scope"
+        :open="showFullRulesList"
+        class="rule-group"
+      >
+        <summary v-if="!showFullRulesList" class="group-summary">
           <span class="group-name">{{ formatGroupName(scope) }}</span>
           <span class="group-count">
             <span class="enabled-count">{{ getEnabledCountForGroup(rules) }}</span>
@@ -277,7 +359,7 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
           </span>
         </summary>
 
-        <p class="group-source">
+        <p v-if="!showFullRulesList" class="group-source">
           Rules from
           <a :href="getGroupSource(scope).url" target="_blank" rel="noopener noreferrer">
             {{ getGroupSource(scope).text }}
@@ -310,9 +392,8 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
                   v-if="getRuleDescription(rule)"
                   class="rule-desc"
                   :title="getRuleDescription(rule)"
-                >
-                  {{ getRuleDescription(rule) }}
-                </p>
+                  v-html="parseMarkdownInDescription(getRuleDescription(rule))"
+                ></p>
               </div>
             </label>
 
@@ -336,6 +417,13 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
                 title="This rule requires type information from TypeScript"
               >
                 type-aware
+              </span>
+              <span
+                v-if="rule.fix !== 'none'"
+                class="fixable-badge"
+                title="This rule supports automatic fixing"
+              >
+                autofixable
               </span>
             </div>
           </div>
@@ -603,5 +691,138 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
   background: rgba(59, 130, 246, 0.15);
   color: #3b82f6;
   font-weight: 500;
+}
+
+.fixable-badge {
+  font-size: 0.6875rem;
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+  background: rgba(168, 85, 247, 0.15);
+  color: #a855f7;
+  font-weight: 500;
+}
+
+.rule-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: var(--color-bg-hover);
+  border-radius: 8px;
+}
+
+.view-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.view-toggle input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid var(--color-border-hover);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.view-toggle input[type="checkbox"]:checked {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.view-toggle input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 0px;
+  width: 4px;
+  height: 7px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.search-bar {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-bg-elevated);
+  color: var(--color-text);
+  font-size: 0.875rem;
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary-muted);
+}
+
+.search-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.filter-label {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.375rem;
+}
+
+.filter-button {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.8125rem;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-elevated);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.filter-button:hover {
+  background: var(--color-bg-hover);
+  color: var(--color-text);
+}
+
+.filter-button.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+:deep(.inline-code) {
+  background-color: var(--color-code-bg);
+  color: var(--color-primary);
+  padding: 0.125rem 0.375rem;
+  border-radius: 3px;
+  font-family: "SF Mono", "Fira Code", Menlo, Monaco, Consolas, monospace;
+  font-size: 0.8em;
+  border: 1px solid var(--color-border);
 }
 </style>
