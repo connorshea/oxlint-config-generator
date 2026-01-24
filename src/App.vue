@@ -141,8 +141,7 @@ const toggleTheme = () => {
           rel="noopener noreferrer"
           >Source Code</a
         >
-        ·
-        Made with 💜 in Denver, Colorado
+        · Made with 💜 in Denver, Colorado
       </p>
     </footer>
   </div>
