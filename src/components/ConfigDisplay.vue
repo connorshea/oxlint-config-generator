@@ -20,14 +20,36 @@ const copyToClipboard = async () => {
 };
 
 const highlightedConfig = computed(() => {
-  // Simple JSON syntax highlighting
-  return props.config
-    .replace(/("(?:\\.|[^"\\])*")\s*:/g, '<span class="json-key">$1</span>:')
-    .replace(/:\s*("(?:\\.|[^"\\])*")/g, ': <span class="json-string">$1</span>')
-    .replace(/:\s*(true|false)/g, ': <span class="json-boolean">$1</span>')
-    .replace(/:\s*null/g, ': <span class="json-null">null</span>')
-    .replace(/:\s*(-?\d+\.?\d*)/g, ': <span class="json-number">$1</span>')
-    .replace(/([{}[\],])/g, '<span class="json-punctuation">$1</span>');
+  // Simple JSON syntax highlighting using a token-based approach
+  const keys: string[] = [];
+  let result = props.config;
+
+  // 1. Extract and replace keys with placeholders
+  result = result.replace(/("(?:\\.|[^"\\])*")\s*:/g, (_, key) => {
+    keys.push(key);
+    return `__KEY_${keys.length - 1}__:`;
+  });
+
+  // 2. Highlight all remaining quoted strings as values
+  result = result.replace(
+    /"(?:\\.|[^"\\])*"/g,
+    '<span class="json-string">$&</span>',
+  );
+
+  // 3. Restore keys with highlighting
+  result = result.replace(/__KEY_(\d+)__/g, (_, index) => {
+    return `<span class="json-key">${keys[parseInt(index)]}</span>`;
+  });
+
+  // 4. Highlight booleans, null, numbers
+  result = result.replace(/:\s*(true|false)/g, ': <span class="json-boolean">$1</span>');
+  result = result.replace(/:\s*null/g, ': <span class="json-null">null</span>');
+  result = result.replace(/:\s*(-?\d+\.?\d*)/g, ': <span class="json-number">$1</span>');
+
+  // 5. Highlight punctuation
+  result = result.replace(/([{}[\],])/g, '<span class="json-punctuation">$1</span>');
+
+  return result;
 });
 </script>
 
@@ -65,10 +87,9 @@ const highlightedConfig = computed(() => {
 }
 
 .copy-button-float {
-  position: sticky;
-  top: 0.75rem;
-  right: 0.75rem;
-  float: right;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
   z-index: 10;
   padding: 0.5rem 0.875rem;
   font-size: 0.8125rem;
@@ -79,7 +100,7 @@ const highlightedConfig = computed(() => {
   cursor: pointer;
   transition: all 0.15s ease;
   font-weight: 500;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .copy-button-float:hover {
@@ -87,10 +108,6 @@ const highlightedConfig = computed(() => {
   border-color: var(--color-primary-hover);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
-}
-
-.config-display {
-  clear: both;
 }
 
 /* JSON Syntax Highlighting */

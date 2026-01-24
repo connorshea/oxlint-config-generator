@@ -87,7 +87,33 @@ const oxlintVersion = computed(() => {
     </header>
 
     <div class="top-cards">
-      <div class="section options-card">
+      <div class="section plugins-card">
+        <PluginSelector
+          :selected-plugins="selectedPlugins"
+          @update:selected-plugins="handlePluginChange"
+        />
+      </div>
+
+      <aside class="section config-card">
+        <ConfigDisplay :config="generatedConfig" />
+      </aside>
+    </div>
+
+    <div class="main-layout">
+      <div class="rules-column">
+        <RuleSelector
+          :selected-plugins="selectedPlugins"
+          :enable-type-aware="enableTypeAware"
+          :use-recommended="useRecommended"
+          :rule-overrides="ruleOverrides"
+          :enabled-rule-count="enabledRuleCount"
+          :show-full-rules-list="showFullRulesList"
+          @update:rule-overrides="handleRuleOverridesChange"
+          @update:show-full-rules-list="(val) => (showFullRulesList = val)"
+        />
+      </div>
+
+      <div class="section options-column">
         <h2>Options</h2>
         <div class="checkbox-group">
           <label>
@@ -114,32 +140,6 @@ const oxlintVersion = computed(() => {
           </p>
         </div>
       </div>
-
-      <div class="section plugins-card">
-        <PluginSelector
-          :selected-plugins="selectedPlugins"
-          @update:selected-plugins="handlePluginChange"
-        />
-      </div>
-    </div>
-
-    <div class="main-layout">
-      <div class="rules-column">
-        <RuleSelector
-          :selected-plugins="selectedPlugins"
-          :enable-type-aware="enableTypeAware"
-          :use-recommended="useRecommended"
-          :rule-overrides="ruleOverrides"
-          :enabled-rule-count="enabledRuleCount"
-          :show-full-rules-list="showFullRulesList"
-          @update:rule-overrides="handleRuleOverridesChange"
-          @update:show-full-rules-list="(val) => (showFullRulesList = val)"
-        />
-      </div>
-
-      <aside class="config-column">
-        <ConfigDisplay :config="generatedConfig" />
-      </aside>
     </div>
 
     <footer>
@@ -209,14 +209,20 @@ header code {
   margin-bottom: 1.5rem;
 }
 
-.options-card,
-.plugins-card {
+.plugins-card,
+.config-card {
   margin-bottom: 0;
+}
+
+.options-column {
+  position: sticky;
+  top: 1.5rem;
+  height: fit-content;
 }
 
 .main-layout {
   display: grid;
-  grid-template-columns: 1fr 400px;
+  grid-template-columns: 1fr 300px;
   gap: 1.5rem;
   flex: 1;
   align-items: start;
@@ -224,11 +230,6 @@ header code {
 
 .rules-column {
   min-width: 0;
-}
-
-.config-column {
-  position: sticky;
-  top: 1.5rem;
 }
 
 footer {
@@ -261,7 +262,7 @@ footer a:hover {
     grid-template-columns: 1fr;
   }
 
-  .config-column {
+  .options-column {
     position: static;
   }
 }
