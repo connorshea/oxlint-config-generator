@@ -36,7 +36,19 @@ const props = defineProps<{
 }>();
 
 const searchQuery = ref("");
-const filterFixable = ref<"all" | "fixable" | "non-fixable">("all");
+const filterFixable = ref(false);
+const filterCategory = ref<string>("all");
+const filterRecommended = ref(false);
+
+const availableCategories = [
+  { value: "all", label: "All Categories" },
+  { value: "correctness", label: "Correctness" },
+  { value: "suspicious", label: "Suspicious" },
+  { value: "pedantic", label: "Pedantic" },
+  { value: "style", label: "Style" },
+  { value: "restriction", label: "Restriction" },
+  { value: "perf", label: "Perf" },
+];
 
 const isDisplayRuleEnabled = (rule: DisplayRule): boolean => {
   const override = props.ruleOverrides[rule.id] ?? null;
@@ -83,12 +95,16 @@ const jsPluginRules = computed((): DisplayRule[] => {
       }
 
       // Apply fixable filter
-      if (filterFixable.value === "fixable" && !ruleData.fixable) {
+      if (filterFixable.value && !ruleData.fixable) {
         continue;
       }
-      if (filterFixable.value === "non-fixable" && ruleData.fixable) {
+
+      // Apply recommended filter
+      if (filterRecommended.value && !ruleData.recommended) {
         continue;
       }
+
+      // JS plugins don't have categories, so skip category filter for them
 
       rules.push({
         id: ruleId,
@@ -144,10 +160,17 @@ const filteredRules = computed(() => {
     }
 
     // Apply fixable filter
-    if (filterFixable.value === "fixable" && rule.fix === "none") {
+    if (filterFixable.value && rule.fix === "none") {
       return false;
     }
-    if (filterFixable.value === "non-fixable" && rule.fix !== "none") {
+
+    // Apply category filter
+    if (filterCategory.value !== "all" && rule.category !== filterCategory.value) {
+      return false;
+    }
+
+    // Apply recommended filter
+    if (filterRecommended.value && !isRuleRecommended(rule)) {
       return false;
     }
 
@@ -439,27 +462,23 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
       </div>
 
       <div class="filter-group">
-        <label class="filter-label">Show:</label>
-        <div class="filter-buttons">
-          <button
-            :class="['filter-button', { active: filterFixable === 'all' }]"
-            @click="filterFixable = 'all'"
-          >
-            All
-          </button>
-          <button
-            :class="['filter-button', { active: filterFixable === 'fixable' }]"
-            @click="filterFixable = 'fixable'"
-          >
-            Autofixable
-          </button>
-          <button
-            :class="['filter-button', { active: filterFixable === 'non-fixable' }]"
-            @click="filterFixable = 'non-fixable'"
-          >
-            Non-fixable
-          </button>
-        </div>
+        <label class="filter-label">Category:</label>
+        <select v-model="filterCategory" class="filter-select">
+          <option v-for="cat in availableCategories" :key="cat.value" :value="cat.value">
+            {{ cat.label }}
+          </option>
+        </select>
+      </div>
+
+      <div class="filter-toggles">
+        <label class="filter-toggle">
+          <input type="checkbox" v-model="filterFixable" />
+          <span>Autofixable only</span>
+        </label>
+        <label class="filter-toggle">
+          <input type="checkbox" v-model="filterRecommended" />
+          <span>Recommended only</span>
+        </label>
       </div>
     </div>
 
@@ -921,12 +940,18 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
 
 .rule-controls {
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;
   background: var(--color-bg-hover);
   border-radius: 8px;
+}
+
+.search-bar {
+  flex: 1;
+  min-width: 150px;
 }
 
 .view-toggle {
@@ -972,11 +997,6 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
   transform: rotate(45deg);
 }
 
-.search-bar {
-  display: flex;
-  gap: 0.5rem;
-}
-
 .search-input {
   flex: 1;
   padding: 0.5rem 0.75rem;
@@ -1011,31 +1031,71 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
   font-weight: 500;
 }
 
-.filter-buttons {
-  display: flex;
-  gap: 0.375rem;
-}
-
-.filter-button {
+.filter-select {
   padding: 0.375rem 0.75rem;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   border-radius: 6px;
   border: 1px solid var(--color-border);
   background: var(--color-bg-elevated);
-  color: var(--color-text-secondary);
+  color: var(--color-text);
   cursor: pointer;
+  font-family: inherit;
   transition: all 0.15s ease;
 }
 
-.filter-button:hover {
-  background: var(--color-bg-hover);
-  color: var(--color-text);
+.filter-select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary-muted);
 }
 
-.filter-button.active {
-  background: var(--color-primary);
+.filter-toggles {
+  display: flex;
+  gap: 1rem;
+}
+
+.filter-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.filter-toggle input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid var(--color-border-hover);
+  border-radius: 3px;
+  background-color: var(--color-bg-elevated);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.filter-toggle input[type="checkbox"]:hover {
   border-color: var(--color-primary);
-  color: white;
+}
+
+.filter-toggle input[type="checkbox"]:checked {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.filter-toggle input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: -1px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
 :deep(.inline-code) {
