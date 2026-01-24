@@ -41,6 +41,19 @@ async function generatePluginData() {
       const pluginModule = await import(plugin.packageName);
       const pluginExport = pluginModule.default || pluginModule;
 
+      // If we're processing the react plugin, try to also import react-hooks and merge
+      let hooksExport: any = null;
+      if (plugin.name === "react") {
+        try {
+          const mod = await import("eslint-plugin-react-hooks");
+          hooksExport = mod.default || mod;
+          console.log("  → Found eslint-plugin-react-hooks; merging its rules into react data");
+        } catch (e) {
+          // Not all environments have react-hooks installed; that's fine
+          // We'll just proceed without it
+        }
+      }
+
       const pluginData: {
         name: string;
         rules: Record<string, { recommended: boolean; fixable: boolean }>;
@@ -50,8 +63,11 @@ async function generatePluginData() {
         rules: {},
       };
 
-      // Get plugin rules
-      const rules = pluginExport.rules || {};
+      // Get plugin rules (merge hooks rules into react)
+      const rules = { ...(pluginExport.rules || {}) };
+      if (hooksExport && hooksExport.rules) {
+        Object.assign(rules, hooksExport.rules);
+      }
 
       // Try to get recommended config first
       const configs = pluginExport.configs || {};
@@ -72,14 +88,28 @@ async function generatePluginData() {
         }
       };
 
-      // Check various common config names and formats
+      // Check various common config names and formats from plugin configs
       mergeRulesFromConfigValue(configs.recommended);
       mergeRulesFromConfigValue(configs["flat/recommended"]);
       mergeRulesFromConfigValue(configs["recommended-requiring-type-checking"]);
       mergeRulesFromConfigValue(configs["recommended-type-checked"]);
       mergeRulesFromConfigValue(configs["recommended-type-checking"]);
 
-      // Also scan for any config name that looks like a "recommended.*type" variant
+      // If hooksExport exists, also merge its configs the same way
+      if (hooksExport && hooksExport.configs) {
+        mergeRulesFromConfigValue(hooksExport.configs.recommended);
+        mergeRulesFromConfigValue(hooksExport.configs["flat/recommended"]);
+        mergeRulesFromConfigValue(hooksExport.configs["recommended-requiring-type-checking"]);
+        mergeRulesFromConfigValue(hooksExport.configs["recommended-type-checked"]);
+        mergeRulesFromConfigValue(hooksExport.configs["recommended-type-checking"]);
+        for (const key of Object.keys(hooksExport.configs)) {
+          if (/recommended.*type/i.test(key)) {
+            mergeRulesFromConfigValue(hooksExport.configs[key]);
+          }
+        }
+      }
+
+      // Also scan for any config name that looks like a "recommended.*type" variant on the main plugin
       for (const key of Object.keys(configs)) {
         if (/recommended.*type/i.test(key)) {
           mergeRulesFromConfigValue(configs[key]);

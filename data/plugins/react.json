@@ -412,6 +412,122 @@
     "void-dom-elements-no-children": {
       "recommended": false,
       "fixable": false
+    },
+    "exhaustive-deps": {
+      "recommended": true,
+      "fixable": true
+    },
+    "rules-of-hooks": {
+      "recommended": true,
+      "fixable": false
+    },
+    "hooks": {
+      "recommended": false,
+      "fixable": true
+    },
+    "capitalized-calls": {
+      "recommended": false,
+      "fixable": true
+    },
+    "static-components": {
+      "recommended": true,
+      "fixable": true
+    },
+    "use-memo": {
+      "recommended": true,
+      "fixable": true
+    },
+    "void-use-memo": {
+      "recommended": false,
+      "fixable": true
+    },
+    "component-hook-factories": {
+      "recommended": true,
+      "fixable": true
+    },
+    "preserve-manual-memoization": {
+      "recommended": true,
+      "fixable": true
+    },
+    "incompatible-library": {
+      "recommended": true,
+      "fixable": true
+    },
+    "immutability": {
+      "recommended": true,
+      "fixable": true
+    },
+    "globals": {
+      "recommended": true,
+      "fixable": true
+    },
+    "refs": {
+      "recommended": true,
+      "fixable": true
+    },
+    "memoized-effect-dependencies": {
+      "recommended": false,
+      "fixable": true
+    },
+    "set-state-in-effect": {
+      "recommended": true,
+      "fixable": true
+    },
+    "no-deriving-state-in-effects": {
+      "recommended": false,
+      "fixable": true
+    },
+    "error-boundaries": {
+      "recommended": true,
+      "fixable": true
+    },
+    "purity": {
+      "recommended": true,
+      "fixable": true
+    },
+    "set-state-in-render": {
+      "recommended": true,
+      "fixable": true
+    },
+    "invariant": {
+      "recommended": false,
+      "fixable": true
+    },
+    "todo": {
+      "recommended": false,
+      "fixable": true
+    },
+    "syntax": {
+      "recommended": false,
+      "fixable": true
+    },
+    "unsupported-syntax": {
+      "recommended": true,
+      "fixable": true
+    },
+    "config": {
+      "recommended": true,
+      "fixable": true
+    },
+    "gating": {
+      "recommended": true,
+      "fixable": true
+    },
+    "rule-suppression": {
+      "recommended": false,
+      "fixable": true
+    },
+    "automatic-effect-dependencies": {
+      "recommended": false,
+      "fixable": true
+    },
+    "fire": {
+      "recommended": false,
+      "fixable": true
+    },
+    "fbt": {
+      "recommended": false,
+      "fixable": true
     }
   },
   "recommendedConfig": {
@@ -436,6 +552,23 @@
     "react/no-unsafe": 0,
     "react/prop-types": 2,
     "react/react-in-jsx-scope": 2,
-    "react/require-render-return": 2
+    "react/require-render-return": 2,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/static-components": "error",
+    "react-hooks/use-memo": "error",
+    "react-hooks/component-hook-factories": "error",
+    "react-hooks/preserve-manual-memoization": "error",
+    "react-hooks/incompatible-library": "warn",
+    "react-hooks/immutability": "error",
+    "react-hooks/globals": "error",
+    "react-hooks/refs": "error",
+    "react-hooks/set-state-in-effect": "error",
+    "react-hooks/error-boundaries": "error",
+    "react-hooks/purity": "error",
+    "react-hooks/set-state-in-render": "error",
+    "react-hooks/unsupported-syntax": "warn",
+    "react-hooks/config": "error",
+    "react-hooks/gating": "error"
   }
 }
