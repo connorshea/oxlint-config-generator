@@ -51,7 +51,7 @@ const highlightedConfig = computed(() => {
 </script>
 
 <template>
-  <div class="section config-section">
+  <div class="config-section">
     <h2>Generated Config</h2>
     <div class="config-display-wrapper">
       <button class="copy-button-float" @click="copyToClipboard">
@@ -85,8 +85,8 @@ const highlightedConfig = computed(() => {
 
 .copy-button-float {
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: 1rem;
+  right: 1rem;
   z-index: 10;
   padding: 0.5rem 0.875rem;
   font-size: 0.8125rem;
