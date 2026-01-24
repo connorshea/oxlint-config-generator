@@ -1,0 +1,87 @@
+{
+  "name": "promise",
+  "rules": {
+    "param-names": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-return-wrap": {
+      "recommended": false,
+      "fixable": false
+    },
+    "always-return": {
+      "recommended": false,
+      "fixable": false
+    },
+    "catch-or-return": {
+      "recommended": false,
+      "fixable": false
+    },
+    "prefer-await-to-callbacks": {
+      "recommended": false,
+      "fixable": false
+    },
+    "prefer-await-to-then": {
+      "recommended": false,
+      "fixable": false
+    },
+    "prefer-catch": {
+      "recommended": false,
+      "fixable": true
+    },
+    "no-native": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-callback-in-promise": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-promise-in-callback": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-nesting": {
+      "recommended": false,
+      "fixable": false
+    },
+    "avoid-new": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-new-statics": {
+      "recommended": false,
+      "fixable": true
+    },
+    "no-return-in-finally": {
+      "recommended": false,
+      "fixable": false
+    },
+    "valid-params": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-multiple-resolved": {
+      "recommended": false,
+      "fixable": false
+    },
+    "spec-only": {
+      "recommended": false,
+      "fixable": false
+    }
+  },
+  "recommendedConfig": {
+    "promise/always-return": "error",
+    "promise/no-return-wrap": "error",
+    "promise/param-names": "error",
+    "promise/catch-or-return": "error",
+    "promise/no-native": "off",
+    "promise/no-nesting": "warn",
+    "promise/no-promise-in-callback": "warn",
+    "promise/no-callback-in-promise": "warn",
+    "promise/avoid-new": "off",
+    "promise/no-new-statics": "error",
+    "promise/no-return-in-finally": "warn",
+    "promise/valid-params": "warn"
+  }
+}

@@ -1,0 +1,726 @@
+{
+  "name": "unicorn",
+  "rules": {
+    "better-regex": {
+      "recommended": false,
+      "fixable": true
+    },
+    "catch-error-name": {
+      "recommended": true,
+      "fixable": true
+    },
+    "consistent-assert": {
+      "recommended": true,
+      "fixable": true
+    },
+    "consistent-date-clone": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "consistent-destructuring": {
+      "recommended": false,
+      "fixable": false
+    },
+    "consistent-empty-array-spread": {
+      "recommended": true,
+      "fixable": true
+    },
+    "consistent-existence-index-check": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "consistent-function-scoping": {
+      "recommended": true,
+      "fixable": false
+    },
+    "custom-error-definition": {
+      "recommended": false,
+      "fixable": true
+    },
+    "empty-brace-spaces": {
+      "recommended": true,
+      "fixable": true
+    },
+    "error-message": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "escape-case": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "expiring-todo-comments": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "explicit-length-check": {
+      "recommended": true,
+      "fixable": true
+    },
+    "filename-case": {
+      "recommended": true,
+      "fixable": false
+    },
+    "import-style": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "new-for-builtins": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-abusive-eslint-disable": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "no-accessor-recursion": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "no-anonymous-default-export": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "no-array-callback-reference": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-array-for-each": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-array-method-this-argument": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-array-reduce": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-array-reverse": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "no-array-sort": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "no-await-expression-member": {
+      "recommended": true,
+      "fixable": true
+    },
+    "no-await-in-promise-methods": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "no-console-spaces": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-document-cookie": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "no-empty-file": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "no-for-loop": {
+      "recommended": true,
+      "fixable": true
+    },
+    "no-hex-escape": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-immediate-mutation": {
+      "recommended": true,
+      "fixable": true
+    },
+    "no-instanceof-builtins": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-invalid-fetch-options": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "no-invalid-remove-event-listener": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "no-keyword-prefix": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-lonely-if": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-magic-array-flat-depth": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "no-named-default": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-negated-condition": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-negation-in-equality-check": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "no-nested-ternary": {
+      "recommended": true,
+      "fixable": true
+    },
+    "no-new-array": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-new-buffer": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-null": {
+      "recommended": true,
+      "fixable": true
+    },
+    "no-object-as-default-parameter": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "no-process-exit": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "no-single-promise-in-promise-methods": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-static-only-class": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-thenable": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "no-this-assignment": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "no-typeof-undefined": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-unnecessary-array-flat-depth": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-unnecessary-array-splice-count": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-unnecessary-await": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-unnecessary-polyfills": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "no-unnecessary-slice-end": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-unreadable-array-destructuring": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-unreadable-iife": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "no-unused-properties": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-useless-collection-argument": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-useless-error-capture-stack-trace": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-useless-fallback-in-spread": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-useless-length-check": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-useless-promise-resolve-reject": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-useless-spread": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-useless-switch-case": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "no-useless-undefined": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-zero-fractions": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "number-literal-case": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "numeric-separators-style": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-add-event-listener": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-array-find": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-array-flat": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-array-flat-map": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-array-index-of": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-array-some": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-at": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-bigint-literals": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-blob-reading-methods": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "prefer-class-fields": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-classlist-toggle": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-code-point": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "prefer-date-now": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-default-parameters": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "prefer-dom-node-append": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-dom-node-dataset": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-dom-node-remove": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-dom-node-text-content": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "prefer-event-target": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "prefer-export-from": {
+      "recommended": true,
+      "fixable": true
+    },
+    "prefer-global-this": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-import-meta-properties": {
+      "recommended": false,
+      "fixable": true
+    },
+    "prefer-includes": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-json-parse-buffer": {
+      "recommended": false,
+      "fixable": true
+    },
+    "prefer-keyboard-event-key": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-logical-operator-over-ternary": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "prefer-math-min-max": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-math-trunc": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-modern-dom-apis": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-modern-math-apis": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-module": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-native-coercion-functions": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-negative-index": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-node-protocol": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-number-properties": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-object-from-entries": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-optional-catch-binding": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-prototype-methods": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-query-selector": {
+      "recommended": true,
+      "fixable": true
+    },
+    "prefer-reflect-apply": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-regexp-test": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-response-static-json": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-set-has": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-set-size": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-single-call": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-spread": {
+      "recommended": true,
+      "fixable": true
+    },
+    "prefer-string-raw": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-string-replace-all": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-string-slice": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-string-starts-ends-with": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-string-trim-start-end": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-structured-clone": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "prefer-switch": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-ternary": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prefer-top-level-await": {
+      "recommended": "unopinionated",
+      "fixable": false
+    },
+    "prefer-type-error": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "prevent-abbreviations": {
+      "recommended": true,
+      "fixable": true
+    },
+    "relative-url-style": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "require-array-join-separator": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "require-module-attributes": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "require-module-specifiers": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "require-number-to-fixed-digits-argument": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "require-post-message-target-origin": {
+      "recommended": false,
+      "fixable": false
+    },
+    "string-content": {
+      "recommended": false,
+      "fixable": true
+    },
+    "switch-case-braces": {
+      "recommended": true,
+      "fixable": true
+    },
+    "template-indent": {
+      "recommended": true,
+      "fixable": true
+    },
+    "text-encoding-identifier-case": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "throw-new-error": {
+      "recommended": "unopinionated",
+      "fixable": true
+    },
+    "no-instanceof-array": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-length-as-slice-end": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-array-push-push": {
+      "recommended": false,
+      "fixable": false
+    }
+  },
+  "recommendedConfig": {
+    "no-negated-condition": "off",
+    "no-nested-ternary": "off",
+    "unicorn/better-regex": "off",
+    "unicorn/catch-error-name": "error",
+    "unicorn/consistent-assert": "error",
+    "unicorn/consistent-date-clone": "error",
+    "unicorn/consistent-destructuring": "off",
+    "unicorn/consistent-empty-array-spread": "error",
+    "unicorn/consistent-existence-index-check": "error",
+    "unicorn/consistent-function-scoping": "error",
+    "unicorn/custom-error-definition": "off",
+    "unicorn/empty-brace-spaces": "error",
+    "unicorn/error-message": "error",
+    "unicorn/escape-case": "error",
+    "unicorn/expiring-todo-comments": "error",
+    "unicorn/explicit-length-check": "error",
+    "unicorn/filename-case": "error",
+    "unicorn/import-style": "error",
+    "unicorn/new-for-builtins": "error",
+    "unicorn/no-abusive-eslint-disable": "error",
+    "unicorn/no-accessor-recursion": "error",
+    "unicorn/no-anonymous-default-export": "error",
+    "unicorn/no-array-callback-reference": "error",
+    "unicorn/no-array-for-each": "error",
+    "unicorn/no-array-method-this-argument": "error",
+    "unicorn/no-array-reduce": "error",
+    "unicorn/no-array-reverse": "error",
+    "unicorn/no-array-sort": "error",
+    "unicorn/no-await-expression-member": "error",
+    "unicorn/no-await-in-promise-methods": "error",
+    "unicorn/no-console-spaces": "error",
+    "unicorn/no-document-cookie": "error",
+    "unicorn/no-empty-file": "error",
+    "unicorn/no-for-loop": "error",
+    "unicorn/no-hex-escape": "error",
+    "unicorn/no-immediate-mutation": "error",
+    "unicorn/no-instanceof-builtins": "error",
+    "unicorn/no-invalid-fetch-options": "error",
+    "unicorn/no-invalid-remove-event-listener": "error",
+    "unicorn/no-keyword-prefix": "off",
+    "unicorn/no-lonely-if": "error",
+    "unicorn/no-magic-array-flat-depth": "error",
+    "unicorn/no-named-default": "error",
+    "unicorn/no-negated-condition": "error",
+    "unicorn/no-negation-in-equality-check": "error",
+    "unicorn/no-nested-ternary": "error",
+    "unicorn/no-new-array": "error",
+    "unicorn/no-new-buffer": "error",
+    "unicorn/no-null": "error",
+    "unicorn/no-object-as-default-parameter": "error",
+    "unicorn/no-process-exit": "error",
+    "unicorn/no-single-promise-in-promise-methods": "error",
+    "unicorn/no-static-only-class": "error",
+    "unicorn/no-thenable": "error",
+    "unicorn/no-this-assignment": "error",
+    "unicorn/no-typeof-undefined": "error",
+    "unicorn/no-unnecessary-array-flat-depth": "error",
+    "unicorn/no-unnecessary-array-splice-count": "error",
+    "unicorn/no-unnecessary-await": "error",
+    "unicorn/no-unnecessary-polyfills": "error",
+    "unicorn/no-unnecessary-slice-end": "error",
+    "unicorn/no-unreadable-array-destructuring": "error",
+    "unicorn/no-unreadable-iife": "error",
+    "unicorn/no-unused-properties": "off",
+    "unicorn/no-useless-collection-argument": "error",
+    "unicorn/no-useless-error-capture-stack-trace": "error",
+    "unicorn/no-useless-fallback-in-spread": "error",
+    "unicorn/no-useless-length-check": "error",
+    "unicorn/no-useless-promise-resolve-reject": "error",
+    "unicorn/no-useless-spread": "error",
+    "unicorn/no-useless-switch-case": "error",
+    "unicorn/no-useless-undefined": "error",
+    "unicorn/no-zero-fractions": "error",
+    "unicorn/number-literal-case": "error",
+    "unicorn/numeric-separators-style": "error",
+    "unicorn/prefer-add-event-listener": "error",
+    "unicorn/prefer-array-find": "error",
+    "unicorn/prefer-array-flat": "error",
+    "unicorn/prefer-array-flat-map": "error",
+    "unicorn/prefer-array-index-of": "error",
+    "unicorn/prefer-array-some": "error",
+    "unicorn/prefer-at": "error",
+    "unicorn/prefer-bigint-literals": "error",
+    "unicorn/prefer-blob-reading-methods": "error",
+    "unicorn/prefer-class-fields": "error",
+    "unicorn/prefer-classlist-toggle": "error",
+    "unicorn/prefer-code-point": "error",
+    "unicorn/prefer-date-now": "error",
+    "unicorn/prefer-default-parameters": "error",
+    "unicorn/prefer-dom-node-append": "error",
+    "unicorn/prefer-dom-node-dataset": "error",
+    "unicorn/prefer-dom-node-remove": "error",
+    "unicorn/prefer-dom-node-text-content": "error",
+    "unicorn/prefer-event-target": "error",
+    "unicorn/prefer-export-from": "error",
+    "unicorn/prefer-global-this": "error",
+    "unicorn/prefer-import-meta-properties": "off",
+    "unicorn/prefer-includes": "error",
+    "unicorn/prefer-json-parse-buffer": "off",
+    "unicorn/prefer-keyboard-event-key": "error",
+    "unicorn/prefer-logical-operator-over-ternary": "error",
+    "unicorn/prefer-math-min-max": "error",
+    "unicorn/prefer-math-trunc": "error",
+    "unicorn/prefer-modern-dom-apis": "error",
+    "unicorn/prefer-modern-math-apis": "error",
+    "unicorn/prefer-module": "error",
+    "unicorn/prefer-native-coercion-functions": "error",
+    "unicorn/prefer-negative-index": "error",
+    "unicorn/prefer-node-protocol": "error",
+    "unicorn/prefer-number-properties": "error",
+    "unicorn/prefer-object-from-entries": "error",
+    "unicorn/prefer-optional-catch-binding": "error",
+    "unicorn/prefer-prototype-methods": "error",
+    "unicorn/prefer-query-selector": "error",
+    "unicorn/prefer-reflect-apply": "error",
+    "unicorn/prefer-regexp-test": "error",
+    "unicorn/prefer-response-static-json": "error",
+    "unicorn/prefer-set-has": "error",
+    "unicorn/prefer-set-size": "error",
+    "unicorn/prefer-single-call": "error",
+    "unicorn/prefer-spread": "error",
+    "unicorn/prefer-string-raw": "error",
+    "unicorn/prefer-string-replace-all": "error",
+    "unicorn/prefer-string-slice": "error",
+    "unicorn/prefer-string-starts-ends-with": "error",
+    "unicorn/prefer-string-trim-start-end": "error",
+    "unicorn/prefer-structured-clone": "error",
+    "unicorn/prefer-switch": "error",
+    "unicorn/prefer-ternary": "error",
+    "unicorn/prefer-top-level-await": "error",
+    "unicorn/prefer-type-error": "error",
+    "unicorn/prevent-abbreviations": "error",
+    "unicorn/relative-url-style": "error",
+    "unicorn/require-array-join-separator": "error",
+    "unicorn/require-module-attributes": "error",
+    "unicorn/require-module-specifiers": "error",
+    "unicorn/require-number-to-fixed-digits-argument": "error",
+    "unicorn/require-post-message-target-origin": "off",
+    "unicorn/string-content": "off",
+    "unicorn/switch-case-braces": "error",
+    "unicorn/template-indent": "error",
+    "unicorn/text-encoding-identifier-case": "error",
+    "unicorn/throw-new-error": "error"
+  }
+}

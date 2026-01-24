@@ -1,0 +1,112 @@
+{
+  "name": "next",
+  "rules": {
+    "google-font-display": {
+      "recommended": true,
+      "fixable": false
+    },
+    "google-font-preconnect": {
+      "recommended": true,
+      "fixable": false
+    },
+    "inline-script-id": {
+      "recommended": true,
+      "fixable": false
+    },
+    "next-script-for-ga": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-assign-module-variable": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-async-client-component": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-before-interactive-script-outside-document": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-css-tags": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-document-import-in-page": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-duplicate-head": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-head-element": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-head-import-in-document": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-html-link-for-pages": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-img-element": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-page-custom-font": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-script-component-in-head": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-styled-jsx-in-document": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-sync-scripts": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-title-in-document-head": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-typos": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-unwanted-polyfillio": {
+      "recommended": true,
+      "fixable": false
+    }
+  },
+  "recommendedConfig": {
+    "@next/next/google-font-display": "warn",
+    "@next/next/google-font-preconnect": "warn",
+    "@next/next/next-script-for-ga": "warn",
+    "@next/next/no-async-client-component": "warn",
+    "@next/next/no-before-interactive-script-outside-document": "warn",
+    "@next/next/no-css-tags": "warn",
+    "@next/next/no-head-element": "warn",
+    "@next/next/no-html-link-for-pages": "warn",
+    "@next/next/no-img-element": "warn",
+    "@next/next/no-page-custom-font": "warn",
+    "@next/next/no-styled-jsx-in-document": "warn",
+    "@next/next/no-sync-scripts": "warn",
+    "@next/next/no-title-in-document-head": "warn",
+    "@next/next/no-typos": "warn",
+    "@next/next/no-unwanted-polyfillio": "warn",
+    "@next/next/inline-script-id": "error",
+    "@next/next/no-assign-module-variable": "error",
+    "@next/next/no-document-import-in-page": "error",
+    "@next/next/no-duplicate-head": "error",
+    "@next/next/no-head-import-in-document": "error",
+    "@next/next/no-script-component-in-head": "error"
+  }
+}

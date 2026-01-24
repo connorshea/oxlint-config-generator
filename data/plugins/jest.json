@@ -1,0 +1,310 @@
+{
+  "name": "jest",
+  "rules": {
+    "consistent-test-it": {
+      "recommended": false,
+      "fixable": true
+    },
+    "expect-expect": {
+      "recommended": false,
+      "fixable": false
+    },
+    "max-expects": {
+      "recommended": false,
+      "fixable": false
+    },
+    "max-nested-describe": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-alias-methods": {
+      "recommended": false,
+      "fixable": true
+    },
+    "no-commented-out-tests": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-conditional-expect": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-conditional-in-test": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-confusing-set-timeout": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-deprecated-functions": {
+      "recommended": false,
+      "fixable": true
+    },
+    "no-disabled-tests": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-done-callback": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-duplicate-hooks": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-error-equal": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-export": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-focused-tests": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-hooks": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-identical-title": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-interpolation-in-snapshots": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-jasmine-globals": {
+      "recommended": false,
+      "fixable": true
+    },
+    "no-large-snapshots": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-mocks-import": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-restricted-jest-methods": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-restricted-matchers": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-standalone-expect": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-test-prefixes": {
+      "recommended": false,
+      "fixable": true
+    },
+    "no-test-return-statement": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-unnecessary-assertion": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-unneeded-async-expect-function": {
+      "recommended": false,
+      "fixable": true
+    },
+    "no-untyped-mock-factory": {
+      "recommended": false,
+      "fixable": true
+    },
+    "padding-around-after-all-blocks": {
+      "recommended": false,
+      "fixable": true
+    },
+    "padding-around-after-each-blocks": {
+      "recommended": false,
+      "fixable": true
+    },
+    "padding-around-all": {
+      "recommended": false,
+      "fixable": true
+    },
+    "padding-around-before-all-blocks": {
+      "recommended": false,
+      "fixable": true
+    },
+    "padding-around-before-each-blocks": {
+      "recommended": false,
+      "fixable": true
+    },
+    "padding-around-describe-blocks": {
+      "recommended": false,
+      "fixable": true
+    },
+    "padding-around-expect-groups": {
+      "recommended": false,
+      "fixable": true
+    },
+    "padding-around-test-blocks": {
+      "recommended": false,
+      "fixable": true
+    },
+    "prefer-called-with": {
+      "recommended": false,
+      "fixable": false
+    },
+    "prefer-comparison-matcher": {
+      "recommended": false,
+      "fixable": true
+    },
+    "prefer-each": {
+      "recommended": false,
+      "fixable": false
+    },
+    "prefer-ending-with-an-expect": {
+      "recommended": false,
+      "fixable": false
+    },
+    "prefer-equality-matcher": {
+      "recommended": false,
+      "fixable": false
+    },
+    "prefer-expect-assertions": {
+      "recommended": false,
+      "fixable": false
+    },
+    "prefer-expect-resolves": {
+      "recommended": false,
+      "fixable": true
+    },
+    "prefer-hooks-in-order": {
+      "recommended": false,
+      "fixable": false
+    },
+    "prefer-hooks-on-top": {
+      "recommended": false,
+      "fixable": false
+    },
+    "prefer-importing-jest-globals": {
+      "recommended": false,
+      "fixable": true
+    },
+    "prefer-jest-mocked": {
+      "recommended": false,
+      "fixable": true
+    },
+    "prefer-lowercase-title": {
+      "recommended": false,
+      "fixable": true
+    },
+    "prefer-mock-promise-shorthand": {
+      "recommended": false,
+      "fixable": true
+    },
+    "prefer-mock-return-shorthand": {
+      "recommended": false,
+      "fixable": true
+    },
+    "prefer-snapshot-hint": {
+      "recommended": false,
+      "fixable": false
+    },
+    "prefer-spy-on": {
+      "recommended": false,
+      "fixable": true
+    },
+    "prefer-strict-equal": {
+      "recommended": false,
+      "fixable": false
+    },
+    "prefer-to-be": {
+      "recommended": false,
+      "fixable": true
+    },
+    "prefer-to-contain": {
+      "recommended": false,
+      "fixable": true
+    },
+    "prefer-to-have-been-called-times": {
+      "recommended": false,
+      "fixable": true
+    },
+    "prefer-to-have-been-called": {
+      "recommended": false,
+      "fixable": true
+    },
+    "prefer-to-have-length": {
+      "recommended": false,
+      "fixable": true
+    },
+    "prefer-todo": {
+      "recommended": false,
+      "fixable": true
+    },
+    "require-hook": {
+      "recommended": false,
+      "fixable": false
+    },
+    "require-to-throw-message": {
+      "recommended": false,
+      "fixable": false
+    },
+    "require-top-level-describe": {
+      "recommended": false,
+      "fixable": false
+    },
+    "unbound-method": {
+      "recommended": "recommended",
+      "fixable": false
+    },
+    "valid-describe-callback": {
+      "recommended": false,
+      "fixable": false
+    },
+    "valid-expect-in-promise": {
+      "recommended": false,
+      "fixable": false
+    },
+    "valid-expect-with-promise": {
+      "recommended": false,
+      "fixable": false
+    },
+    "valid-expect": {
+      "recommended": false,
+      "fixable": true
+    },
+    "valid-mock-module-path": {
+      "recommended": false,
+      "fixable": false
+    },
+    "valid-title": {
+      "recommended": false,
+      "fixable": true
+    }
+  },
+  "recommendedConfig": {
+    "jest/expect-expect": "warn",
+    "jest/no-alias-methods": "error",
+    "jest/no-commented-out-tests": "warn",
+    "jest/no-conditional-expect": "error",
+    "jest/no-deprecated-functions": "error",
+    "jest/no-disabled-tests": "warn",
+    "jest/no-done-callback": "error",
+    "jest/no-export": "error",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/no-interpolation-in-snapshots": "error",
+    "jest/no-jasmine-globals": "error",
+    "jest/no-mocks-import": "error",
+    "jest/no-standalone-expect": "error",
+    "jest/no-test-prefixes": "error",
+    "jest/valid-describe-callback": "error",
+    "jest/valid-expect": "error",
+    "jest/valid-expect-in-promise": "error",
+    "jest/valid-title": "error"
+  }
+}

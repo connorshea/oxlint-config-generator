@@ -1,0 +1,199 @@
+{
+  "name": "import",
+  "rules": {
+    "no-unresolved": {
+      "recommended": false,
+      "fixable": false
+    },
+    "named": {
+      "recommended": false,
+      "fixable": false
+    },
+    "default": {
+      "recommended": false,
+      "fixable": false
+    },
+    "namespace": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-namespace": {
+      "recommended": false,
+      "fixable": true
+    },
+    "export": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-mutable-exports": {
+      "recommended": false,
+      "fixable": false
+    },
+    "extensions": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-restricted-paths": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-internal-modules": {
+      "recommended": false,
+      "fixable": false
+    },
+    "group-exports": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-relative-packages": {
+      "recommended": false,
+      "fixable": true
+    },
+    "no-relative-parent-imports": {
+      "recommended": false,
+      "fixable": false
+    },
+    "consistent-type-specifier-style": {
+      "recommended": false,
+      "fixable": true
+    },
+    "no-self-import": {
+      "recommended": true,
+      "fixable": false
+    },
+    "no-cycle": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-named-default": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-named-as-default": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-named-as-default-member": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-anonymous-default-export": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-unused-modules": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-commonjs": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-amd": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-duplicates": {
+      "recommended": false,
+      "fixable": true
+    },
+    "first": {
+      "recommended": false,
+      "fixable": true
+    },
+    "max-dependencies": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-extraneous-dependencies": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-absolute-path": {
+      "recommended": false,
+      "fixable": true
+    },
+    "no-nodejs-modules": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-webpack-loader-syntax": {
+      "recommended": false,
+      "fixable": false
+    },
+    "order": {
+      "recommended": false,
+      "fixable": true
+    },
+    "newline-after-import": {
+      "recommended": false,
+      "fixable": true
+    },
+    "prefer-default-export": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-default-export": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-named-export": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-dynamic-require": {
+      "recommended": false,
+      "fixable": false
+    },
+    "unambiguous": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-unassigned-import": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-useless-path-segments": {
+      "recommended": false,
+      "fixable": true
+    },
+    "dynamic-import-chunkname": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-import-module-exports": {
+      "recommended": true,
+      "fixable": true
+    },
+    "no-empty-named-blocks": {
+      "recommended": false,
+      "fixable": true
+    },
+    "enforce-node-protocol-usage": {
+      "recommended": true,
+      "fixable": true
+    },
+    "exports-last": {
+      "recommended": false,
+      "fixable": false
+    },
+    "no-deprecated": {
+      "recommended": false,
+      "fixable": false
+    },
+    "imports-first": {
+      "recommended": false,
+      "fixable": true
+    }
+  },
+  "recommendedConfig": {
+    "import/no-unresolved": "error",
+    "import/named": "error",
+    "import/namespace": "error",
+    "import/default": "error",
+    "import/export": "error",
+    "import/no-named-as-default": "warn",
+    "import/no-named-as-default-member": "warn",
+    "import/no-duplicates": "warn"
+  }
+}
