@@ -179,7 +179,7 @@
     "no-empty-interface": {
       "recommended": false,
       "fixable": true,
-      "deprecated": false
+      "deprecated": true
     },
     "no-empty-object-type": {
       "recommended": true,
@@ -244,7 +244,7 @@
     "no-loss-of-precision": {
       "recommended": false,
       "fixable": false,
-      "deprecated": false
+      "deprecated": true
     },
     "no-magic-numbers": {
       "recommended": false,
@@ -334,7 +334,7 @@
     "no-type-alias": {
       "recommended": false,
       "fixable": false,
-      "deprecated": false
+      "deprecated": true
     },
     "no-unnecessary-boolean-literal-compare": {
       "recommended": false,
@@ -474,7 +474,7 @@
     "no-var-requires": {
       "recommended": false,
       "fixable": false,
-      "deprecated": false
+      "deprecated": true
     },
     "no-wrapper-object-types": {
       "recommended": true,
@@ -589,7 +589,7 @@
     "prefer-ts-expect-error": {
       "recommended": false,
       "fixable": true,
-      "deprecated": false
+      "deprecated": true
     },
     "promise-function-async": {
       "recommended": false,
@@ -629,7 +629,7 @@
     "sort-type-constituents": {
       "recommended": false,
       "fixable": true,
-      "deprecated": false
+      "deprecated": true
     },
     "strict-boolean-expressions": {
       "recommended": false,
@@ -654,7 +654,7 @@
     "typedef": {
       "recommended": false,
       "fixable": false,
-      "deprecated": false
+      "deprecated": true
     },
     "unbound-method": {
       "recommended": true,
