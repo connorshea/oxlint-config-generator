@@ -128,8 +128,15 @@ const toggleJSPluginsSection = () => {
     </div>
 
     <div class="js-plugins-section">
-      <button class="js-plugins-toggle" @click="toggleJSPluginsSection">
-        {{ showJSPlugins ? "−" : "+" }} JS Plugins (ESLint Compatibility)
+      <button
+        class="js-plugins-toggle"
+        @click="toggleJSPluginsSection"
+        title="Experimental: JS plugin support is experimental"
+      >
+        <span class="js-plugins-toggle-text"
+          >{{ showJSPlugins ? "−" : "+" }} JS Plugins (ESLint Compatibility)</span
+        >
+        <span class="experimental-badge">Experimental</span>
       </button>
       <div v-if="showJSPlugins" class="js-plugins-content">
         <p class="info-text">
@@ -200,7 +207,10 @@ const toggleJSPluginsSection = () => {
 
 .js-plugins-toggle {
   width: 100%;
-  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
   padding: 0.625rem 0.875rem;
   font-size: 0.875rem;
   font-weight: 500;
@@ -210,12 +220,23 @@ const toggleJSPluginsSection = () => {
   cursor: pointer;
   transition: all 0.15s ease;
   color: var(--color-text-secondary);
+  text-align: left;
 }
 
 .js-plugins-toggle:hover {
   background: var(--color-bg-elevated);
   color: var(--color-text);
   border-color: var(--color-border-hover);
+}
+
+.experimental-badge {
+  font-size: 0.6875rem;
+  color: var(--color-primary);
+  background: var(--color-primary-muted);
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  white-space: nowrap;
 }
 
 .js-plugins-content {
