@@ -1,12 +1,32 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import type { PluginName, OxlintRule, RuleOverride } from "../types";
+import type { PluginName, JSPluginName, OxlintRule, RuleOverride } from "../types";
 import rulesData from "../../data/rules.json";
 import ruleDescriptions from "../../data/rule-descriptions.json";
-import { isRuleRecommended, isRuleDeprecated, scopeToPluginMap } from "../utils/config-generator";
+import {
+  isRuleRecommended,
+  isRuleDeprecated,
+  scopeToPluginMap,
+  jsPluginDataMap,
+} from "../utils/config-generator";
+
+// Unified rule interface that works for both oxlint rules and JS plugin rules
+interface DisplayRule {
+  id: string;
+  name: string;
+  scope: string;
+  category?: string;
+  description: string;
+  recommended: boolean;
+  fixable: boolean;
+  typeAware: boolean;
+  docsUrl?: string;
+  isJSPlugin: boolean;
+}
 
 const props = defineProps<{
   selectedPlugins: PluginName[];
+  selectedJSPlugins: JSPluginName[];
   enableTypeAware: boolean;
   useRecommended: boolean;
   ruleOverrides: Record<string, RuleOverride>;
@@ -17,14 +37,13 @@ const props = defineProps<{
 const searchQuery = ref("");
 const filterFixable = ref<"all" | "fixable" | "non-fixable">("all");
 
-// ...
-const isRuleEnabled = (rule: OxlintRule): boolean => {
-  const override = getRuleStatus(rule);
+const isDisplayRuleEnabled = (rule: DisplayRule): boolean => {
+  const override = props.ruleOverrides[rule.id] ?? null;
   if (override !== null) {
     return override !== "off";
   }
   // No explicit override: consider recommended only if the global toggle is enabled
-  return props.useRecommended ? isRuleRecommended(rule) : false;
+  return props.useRecommended ? rule.recommended : false;
 };
 
 const emit = defineEmits<{
@@ -33,6 +52,47 @@ const emit = defineEmits<{
 }>();
 
 const allRules = rulesData as OxlintRule[];
+
+// Convert JS plugin rules to DisplayRule format
+const jsPluginRules = computed((): DisplayRule[] => {
+  const rules: DisplayRule[] = [];
+  for (const jsPluginName of props.selectedJSPlugins) {
+    const plugin = jsPluginDataMap[jsPluginName];
+    for (const [ruleName, ruleData] of Object.entries(plugin.rules)) {
+      if (ruleData.deprecated) continue;
+
+      const ruleId = `${plugin.rulePrefix}/${ruleName}`;
+
+      // Apply search filter
+      if (searchQuery.value) {
+        const query = searchQuery.value.toLowerCase();
+        if (!ruleId.toLowerCase().includes(query) && !ruleName.toLowerCase().includes(query)) {
+          continue;
+        }
+      }
+
+      // Apply fixable filter
+      if (filterFixable.value === "fixable" && !ruleData.fixable) {
+        continue;
+      }
+      if (filterFixable.value === "non-fixable" && ruleData.fixable) {
+        continue;
+      }
+
+      rules.push({
+        id: ruleId,
+        name: ruleName,
+        scope: plugin.rulePrefix,
+        description: "",
+        recommended: ruleData.recommended,
+        fixable: ruleData.fixable,
+        typeAware: false,
+        isJSPlugin: true,
+      });
+    }
+  }
+  return rules;
+});
 
 const filteredRules = computed(() => {
   return allRules.filter((rule) => {
@@ -84,15 +144,36 @@ const filteredRules = computed(() => {
   });
 });
 
+// Convert oxlint rules to DisplayRule format
+const oxlintDisplayRules = computed((): DisplayRule[] => {
+  return filteredRules.value.map((rule) => ({
+    id: getRuleId(rule),
+    name: rule.value,
+    scope: rule.scope,
+    category: rule.category,
+    description: getRuleDescription(rule),
+    recommended: isRuleRecommended(rule),
+    fixable: rule.fix !== "none",
+    typeAware: rule.type_aware,
+    docsUrl: rule.docs_url,
+    isJSPlugin: false,
+  }));
+});
+
+// Combined rules for display
+const allDisplayRules = computed((): DisplayRule[] => {
+  return [...oxlintDisplayRules.value, ...jsPluginRules.value];
+});
+
 const groupedRules = computed(() => {
   if (props.showFullRulesList) {
     // In full rules list mode, return all filtered rules in a single group
-    return [["all", filteredRules.value] as [string, OxlintRule[]]];
+    return [["all", allDisplayRules.value] as [string, DisplayRule[]]];
   }
 
-  const groups: Record<string, OxlintRule[]> = {};
+  const groups: Record<string, DisplayRule[]> = {};
 
-  for (const rule of filteredRules.value) {
+  for (const rule of allDisplayRules.value) {
     const groupName = rule.scope === "eslint" ? "eslint" : rule.scope;
     if (!groups[groupName]) {
       groups[groupName] = [];
@@ -100,8 +181,15 @@ const groupedRules = computed(() => {
     groups[groupName].push(rule);
   }
 
-  // Sort groups: eslint first, then alphabetically
+  // Sort groups: eslint first, then alphabetically, JS plugins at the end
   const sortedEntries = Object.entries(groups).sort(([a], [b]) => {
+    const aIsJS =
+      a.startsWith("@") || props.selectedJSPlugins.some((p) => jsPluginDataMap[p].rulePrefix === a);
+    const bIsJS =
+      b.startsWith("@") || props.selectedJSPlugins.some((p) => jsPluginDataMap[p].rulePrefix === b);
+
+    if (aIsJS && !bIsJS) return 1;
+    if (!aIsJS && bIsJS) return -1;
     if (a === "eslint") return -1;
     if (b === "eslint") return 1;
     return a.localeCompare(b);
@@ -150,24 +238,18 @@ const parseMarkdownInDescription = (description: string): string => {
   return description.replace(/`([^`]+)`/g, '<code class="inline-code">$1</code>');
 };
 
-const getEnabledCountForGroup = (rules: OxlintRule[]): number => {
-  return rules.filter((rule) => isRuleEnabled(rule)).length;
+const getEnabledCountForGroup = (rules: DisplayRule[]): number => {
+  return rules.filter((rule) => isDisplayRuleEnabled(rule)).length;
 };
 
-const getRuleStatus = (rule: OxlintRule): RuleOverride => {
-  const ruleId = getRuleId(rule);
-  return props.ruleOverrides[ruleId] ?? null;
-};
-
-const onRuleChange = (e: Event, rule: OxlintRule) => {
+const onDisplayRuleChange = (e: Event, rule: DisplayRule) => {
   const checked = (e.target as HTMLInputElement).checked;
-  const ruleId = getRuleId(rule);
   const newOverrides = { ...props.ruleOverrides };
 
   if (checked) {
-    newOverrides[ruleId] = "error";
+    newOverrides[rule.id] = "error";
   } else {
-    newOverrides[ruleId] = "off";
+    newOverrides[rule.id] = "off";
   }
 
   emit("update:ruleOverrides", newOverrides);
@@ -216,6 +298,9 @@ const formatGroupName = (scope: string): string => {
     nextjs: "Next.js",
     promise: "Promise",
     node: "Node.js",
+    // JS Plugins
+    playwright: "Playwright (JS Plugin)",
+    "@stylistic": "Stylistic (JS Plugin)",
   };
   return names[scope] || scope;
 };
@@ -286,6 +371,15 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
     node: {
       text: "eslint-plugin-n",
       url: "https://github.com/eslint-community/eslint-plugin-n",
+    },
+    // JS Plugins
+    playwright: {
+      text: "eslint-plugin-playwright",
+      url: "https://github.com/playwright-community/eslint-plugin-playwright",
+    },
+    "@stylistic": {
+      text: "@stylistic/eslint-plugin",
+      url: "https://github.com/eslint-stylistic/eslint-stylistic",
     },
   };
   return sources[scope] || { text: "", url: "" };
@@ -367,19 +461,19 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
         </p>
 
         <div class="rule-list">
-          <div v-for="rule in rules" :key="getRuleId(rule)" class="rule-item">
+          <div v-for="rule in rules" :key="rule.id" class="rule-item">
             <label class="rule-toggle">
               <input
                 type="checkbox"
-                :checked="isRuleEnabled(rule)"
-                @change="onRuleChange($event, rule)"
+                :checked="isDisplayRuleEnabled(rule)"
+                @change="onDisplayRuleChange($event, rule)"
               />
               <div class="rule-content">
                 <div class="rule-head">
-                  <span class="rule-name">{{ rule.value }}</span>
+                  <span class="rule-name">{{ rule.name }}</span>
                   <a
-                    v-if="rule.docs_url"
-                    :href="rule.docs_url"
+                    v-if="rule.docsUrl"
+                    :href="rule.docsUrl"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="rule-doc-link"
@@ -389,37 +483,45 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
                 </div>
 
                 <p
-                  v-if="getRuleDescription(rule)"
+                  v-if="rule.description"
                   class="rule-desc"
-                  :title="getRuleDescription(rule)"
-                  v-html="parseMarkdownInDescription(getRuleDescription(rule))"
+                  :title="rule.description"
+                  v-html="parseMarkdownInDescription(rule.description)"
                 ></p>
               </div>
             </label>
 
             <div class="rule-meta">
               <span
+                v-if="rule.category"
                 :class="['category-badge', getCategoryClass(rule.category)]"
                 :title="getCategoryTooltip(rule.category)"
               >
                 {{ rule.category }}
               </span>
               <span
-                v-if="isRuleRecommended(rule)"
+                v-if="rule.isJSPlugin"
+                class="js-plugin-badge"
+                title="This rule comes from an external ESLint plugin"
+              >
+                js-plugin
+              </span>
+              <span
+                v-if="rule.recommended"
                 class="recommended-badge"
                 title="This rule is recommended in the original ESLint plugin"
               >
                 recommended
               </span>
               <span
-                v-if="rule.type_aware"
+                v-if="rule.typeAware"
                 class="type-aware-badge"
                 title="This rule requires type information from TypeScript"
               >
                 type-aware
               </span>
               <span
-                v-if="rule.fix !== 'none'"
+                v-if="rule.fixable"
                 class="fixable-badge"
                 title="This rule supports automatic fixing"
               >
@@ -699,6 +801,15 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
   border-radius: 4px;
   background: rgba(168, 85, 247, 0.15);
   color: #a855f7;
+  font-weight: 500;
+}
+
+.js-plugin-badge {
+  font-size: 0.6875rem;
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+  background: rgba(236, 72, 153, 0.15);
+  color: #ec4899;
   font-weight: 500;
 }
 
