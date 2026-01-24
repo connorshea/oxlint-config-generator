@@ -65,7 +65,9 @@ const toggleTheme = () => {
 };
 
 const oxlintVersion = computed(() => {
-  return (packageJson.devDependencies as Record<string, string>)?.oxlint?.replace("^", "") || "unknown";
+  return (
+    (packageJson.devDependencies as Record<string, string>)?.oxlint?.replace("^", "") || "unknown"
+  );
 });
 </script>
 
@@ -151,8 +153,7 @@ const oxlintVersion = computed(() => {
           rel="noopener noreferrer"
           >Source Code</a
         >
-        · Made with 💜 in Denver, Colorado
-        · Ruleset based on Oxlint v{{ oxlintVersion }}
+        · Made with 💜 in Denver, Colorado · Ruleset based on Oxlint v{{ oxlintVersion }}
       </p>
     </footer>
   </div>

@@ -23,7 +23,11 @@ interface AdditionalPlugin {
 
 const additionalJSPlugins: AdditionalPlugin[] = [
   { name: "playwright", label: "Playwright", npmPackage: "eslint-plugin-playwright" },
-  { name: "testing-library", label: "Testing Library", npmPackage: "eslint-plugin-testing-library" },
+  {
+    name: "testing-library",
+    label: "Testing Library",
+    npmPackage: "eslint-plugin-testing-library",
+  },
   { name: "stylistic", label: "Stylistic", npmPackage: "@stylistic/eslint-plugin" },
   { name: "storybook", label: "Storybook", npmPackage: "eslint-plugin-storybook" },
 ];
