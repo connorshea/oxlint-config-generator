@@ -22,6 +22,9 @@ import promisePlugin from "../../data/plugins/promise.json";
 import nodePlugin from "../../data/plugins/node.json";
 import playwrightPlugin from "../../data/js-plugins/playwright.json";
 import stylisticPlugin from "../../data/js-plugins/stylistic.json";
+import storybookPlugin from "../../data/js-plugins/storybook.json";
+import testingLibraryPlugin from "../../data/js-plugins/testing-library.json";
+import cypressPlugin from "../../data/js-plugins/cypress.json";
 
 const pluginDataMap: Record<
   PluginName,
@@ -57,24 +60,9 @@ const pluginDataMap: Record<
 export const jsPluginDataMap: Record<JSPluginName, JSPluginData> = {
   playwright: playwrightPlugin as JSPluginData,
   stylistic: stylisticPlugin as JSPluginData,
-  storybook: {
-    name: "storybook",
-    packageName: "eslint-plugin-storybook",
-    rulePrefix: "storybook",
-    rules: {},
-  },
-  "testing-library": {
-    name: "testing-library",
-    packageName: "eslint-plugin-testing-library",
-    rulePrefix: "testing-library",
-    rules: {},
-  },
-  cypress: {
-    name: "cypress",
-    packageName: "eslint-plugin-cypress",
-    rulePrefix: "cypress",
-    rules: {},
-  },
+  storybook: storybookPlugin as JSPluginData,
+  "testing-library": testingLibraryPlugin as JSPluginData,
+  cypress: cypressPlugin as JSPluginData,
 };
 
 export const scopeToPluginMap: Record<string, PluginName> = {

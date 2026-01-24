@@ -301,6 +301,9 @@ const formatGroupName = (scope: string): string => {
     // JS Plugins
     playwright: "Playwright (JS Plugin)",
     "@stylistic": "Stylistic (JS Plugin)",
+    storybook: "Storybook (JS Plugin)",
+    "testing-library": "Testing Library (JS Plugin)",
+    cypress: "Cypress (JS Plugin)",
   };
   return names[scope] || scope;
 };
