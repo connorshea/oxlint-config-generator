@@ -22,7 +22,7 @@ const generatedConfig = computed(() => {
   <div class="app-container">
     <header>
       <h1>Oxlint Config Generator</h1>
-      <p>Generate a custom Oxlint configuration file for your project.</p>
+      <p>Easily create an `.oxlintrc.json` file for your project.</p>
     </header>
 
     <div class="main-layout">
