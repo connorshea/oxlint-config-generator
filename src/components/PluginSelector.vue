@@ -276,11 +276,11 @@ const toggleJSPluginsSection = () => {
 }
 
 .js-plugin-button {
-  border-style: dashed;
+  border: 1px dashed var(--color-primary);
 }
 
 .js-plugin-button.selected {
-  border-style: solid;
+  border: 1px solid var(--color-primary-hover);
 }
 
 .js-plugins-note {
