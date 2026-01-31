@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const REPO_URL = "https://github.com/oxc-project/oxc-project.github.io.git";
+const REPO_URL = "https://github.com/oxc-project/website.git";
 const DEFAULT_CLONE_DIR = join(__dirname, "..", "vendor", "oxc-project-site");
 const RULES_GLOB_DIR = join("src", "docs", "guide", "usage", "linter", "rules");
 const OUTPUT_DIR = join(__dirname, "..", "data");

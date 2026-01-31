@@ -28,7 +28,7 @@ src/
     └── ConfigDisplay.vue      # JSON output with syntax highlighting
 
 scripts/                       # Data generation scripts (run with tsx)
-├── generate-rules.ts          # Fetch rules from oxc-project repo
+├── generate-rules.ts          # Fetch rules from oxc/website repo
 ├── generate-plugins.ts        # Extract plugin metadata from ESLint plugins
 ├── generate-js-plugins.ts     # Extract JS plugin metadata
 ├── generate-rule-descriptions.ts      # Extract descriptions from oxc docs

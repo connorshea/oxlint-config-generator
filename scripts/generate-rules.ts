@@ -6,10 +6,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const RULES_URL =
-  "https://raw.githubusercontent.com/oxc-project/oxc-project.github.io/main/.vitepress/data/rules.json";
+  "https://raw.githubusercontent.com/oxc-project/website/main/.vitepress/data/rules.json";
 
 async function fetchRules() {
-  console.log("Fetching rules.json from oxc-project repository...");
+  console.log("Fetching rules.json from oxc/website repository...");
 
   try {
     const response = await fetch(RULES_URL);
