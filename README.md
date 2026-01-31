@@ -46,7 +46,7 @@ pnpm fmt
 # Check formatting
 pnpm fmt:check
 
-# Generate rules data from oxc-project repository
+# Generate rules data from oxc/website repository
 pnpm generate:rules
 
 # Generate plugin data from ESLint plugins
