@@ -1,0 +1,97 @@
+{
+  "name": "e18e",
+  "packageName": "@e18e/eslint-plugin",
+  "rulePrefix": "e18e",
+  "rules": {
+    "prefer-array-at": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-array-fill": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-array-from-map": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-includes": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-array-to-reversed": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-array-to-sorted": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-array-to-spliced": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-exponentiation-operator": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-nullish-coalescing": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-object-has-own": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-spread-syntax": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-url-canparse": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-indexof-equality": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-timer-args": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-date-now": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-regex-test": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-array-some": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "ban-dependencies": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    }
+  }
+}
