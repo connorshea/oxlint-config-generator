@@ -33,6 +33,7 @@ const availableJSPlugins: JSPlugin[] = [
     npmPackage: "eslint-plugin-testing-library",
   },
   { name: "cypress", label: "Cypress", npmPackage: "eslint-plugin-cypress" },
+  { name: "e18e", label: "e18e", npmPackage: "@e18e/eslint-plugin" },
 ];
 
 const showJSPlugins = ref(false);

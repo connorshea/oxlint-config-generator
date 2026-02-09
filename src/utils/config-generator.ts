@@ -25,6 +25,7 @@ import stylisticPlugin from "../../data/js-plugins/stylistic.json";
 import storybookPlugin from "../../data/js-plugins/storybook.json";
 import testingLibraryPlugin from "../../data/js-plugins/testing-library.json";
 import cypressPlugin from "../../data/js-plugins/cypress.json";
+import e18ePlugin from "../../data/js-plugins/e18e.json";
 
 const pluginDataMap: Record<
   PluginName,
@@ -63,6 +64,7 @@ export const jsPluginDataMap: Record<JSPluginName, JSPluginData> = {
   storybook: storybookPlugin as JSPluginData,
   "testing-library": testingLibraryPlugin as JSPluginData,
   cypress: cypressPlugin as JSPluginData,
+  e18e: e18ePlugin as JSPluginData,
 };
 
 export const scopeToPluginMap: Record<string, PluginName> = {
