@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import type { PluginName, JSPluginName } from "../types";
+import { jsPluginConfigs } from "../shared/js-plugin-configs";
 
 const props = defineProps<{
   selectedPlugins: PluginName[];
@@ -17,24 +18,11 @@ interface PluginCategory {
   plugins: { name: PluginName; label: string }[];
 }
 
-interface JSPlugin {
-  name: JSPluginName;
-  label: string;
-  npmPackage: string;
-}
-
-const availableJSPlugins: JSPlugin[] = [
-  { name: "playwright", label: "Playwright", npmPackage: "eslint-plugin-playwright" },
-  { name: "stylistic", label: "Stylistic", npmPackage: "@stylistic/eslint-plugin" },
-  { name: "storybook", label: "Storybook", npmPackage: "eslint-plugin-storybook" },
-  {
-    name: "testing-library",
-    label: "Testing Library",
-    npmPackage: "eslint-plugin-testing-library",
-  },
-  { name: "cypress", label: "Cypress", npmPackage: "eslint-plugin-cypress" },
-  { name: "e18e", label: "e18e", npmPackage: "@e18e/eslint-plugin" },
-];
+const availableJSPlugins = jsPluginConfigs.map((config) => ({
+  name: config.name,
+  label: config.label,
+  npmPackage: config.packageName,
+}));
 
 const showJSPlugins = ref(false);
 

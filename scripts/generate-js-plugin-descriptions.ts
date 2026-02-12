@@ -1,34 +1,17 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { jsPluginConfigs } from "../src/shared/js-plugin-configs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
-interface JSPluginConfig {
-  name: string;
-  packageName: string;
-  rulePrefix: string;
-}
-
-const jsPlugins: JSPluginConfig[] = [
-  { name: "playwright", packageName: "eslint-plugin-playwright", rulePrefix: "playwright" },
-  { name: "stylistic", packageName: "@stylistic/eslint-plugin", rulePrefix: "@stylistic" },
-  { name: "storybook", packageName: "eslint-plugin-storybook", rulePrefix: "storybook" },
-  {
-    name: "testing-library",
-    packageName: "eslint-plugin-testing-library",
-    rulePrefix: "testing-library",
-  },
-  { name: "cypress", packageName: "eslint-plugin-cypress", rulePrefix: "cypress" },
-];
 
 async function generateJSPluginDescriptions() {
   console.log("Generating JS Plugin rule descriptions...");
 
   const descriptions: Record<string, Record<string, string>> = {};
 
-  for (const plugin of jsPlugins) {
+  for (const plugin of jsPluginConfigs) {
     try {
       console.log(`Processing ${plugin.name}...`);
 

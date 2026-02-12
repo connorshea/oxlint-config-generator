@@ -1,5 +1,5 @@
 export interface OxlintRule {
-  scope: string;
+  scope: ScopeName;
   value: string;
   category: string;
   type_aware: boolean;
@@ -56,6 +56,24 @@ export type PluginName =
   | "promise"
   | "node";
 
+// Names of native plugins (with underscores).
+export type ScopeName =
+  | "eslint"
+  | "oxc"
+  | "react"
+  | "react_perf"
+  | "jsx_a11y"
+  | "import"
+  | "jsdoc"
+  | "jest"
+  | "vitest"
+  | "unicorn"
+  | "typescript"
+  | "vue"
+  | "nextjs"
+  | "promise"
+  | "node";
+
 export type JSPluginName =
   | "playwright"
   | "stylistic"
@@ -64,9 +82,19 @@ export type JSPluginName =
   | "cypress"
   | "e18e";
 
+// This is for JS Plugins.
+// Should be the same as PluginName but with @ prefixes on scoped packages.
+export type RulePrefix =
+  | "playwright"
+  | "@stylistic"
+  | "storybook"
+  | "testing-library"
+  | "cypress"
+  | "@e18e";
+
 export interface JSPluginData {
-  name: string;
+  name: JSPluginName;
   packageName: string;
-  rulePrefix: string;
+  rulePrefix: RulePrefix;
   rules: Record<string, { recommended: boolean; fixable: boolean; deprecated?: boolean }>;
 }

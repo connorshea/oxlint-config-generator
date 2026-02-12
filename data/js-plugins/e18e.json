@@ -1,7 +1,7 @@
 {
   "name": "e18e",
   "packageName": "@e18e/eslint-plugin",
-  "rulePrefix": "e18e",
+  "rulePrefix": "@e18e",
   "rules": {
     "prefer-array-at": {
       "recommended": true,

@@ -188,6 +188,11 @@
       "fixable": true,
       "deprecated": true
     },
+    "exp-jsx-props-style": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
     "jsx-quotes": {
       "recommended": true,
       "fixable": true,

@@ -1,12 +1,13 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import type { PluginName } from "../src/types";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 interface PluginConfig {
-  name: string;
+  name: PluginName;
   packageName: string;
   configName?: string;
 }
@@ -55,7 +56,7 @@ async function generatePluginData() {
       }
 
       const pluginData: {
-        name: string;
+        name: PluginName;
         rules: Record<string, { recommended: boolean; fixable: boolean; deprecated?: boolean }>;
         recommendedConfig?: Record<string, unknown>;
       } = {
