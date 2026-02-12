@@ -26,6 +26,11 @@
       "fixable": false,
       "deprecated": false
     },
+    "hashbang": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
     "no-callback-literal": {
       "recommended": false,
       "fixable": false,
@@ -50,6 +55,11 @@
       "recommended": true,
       "fixable": false,
       "deprecated": false
+    },
+    "no-hide-core-modules": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": true
     },
     "no-missing-import": {
       "recommended": true,
@@ -161,12 +171,12 @@
       "fixable": false,
       "deprecated": false
     },
-    "prefer-global/url-search-params": {
+    "prefer-global/url": {
       "recommended": false,
       "fixable": false,
       "deprecated": false
     },
-    "prefer-global/url": {
+    "prefer-global/url-search-params": {
       "recommended": false,
       "fixable": false,
       "deprecated": false
@@ -190,16 +200,6 @@
       "recommended": true,
       "fixable": false,
       "deprecated": false
-    },
-    "hashbang": {
-      "recommended": true,
-      "fixable": true,
-      "deprecated": false
-    },
-    "no-hide-core-modules": {
-      "recommended": false,
-      "fixable": false,
-      "deprecated": true
     },
     "shebang": {
       "recommended": false,

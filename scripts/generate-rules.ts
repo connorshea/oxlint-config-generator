@@ -20,6 +20,13 @@ async function fetchRules() {
 
     const rules = await response.json();
 
+    // Sort rules alphabetically by scope, then by value (rule name)
+    rules.sort((a: { scope: string; value: string }, b: { scope: string; value: string }) => {
+      const scopeCompare = a.scope.localeCompare(b.scope);
+      if (scopeCompare !== 0) return scopeCompare;
+      return a.value.localeCompare(b.value);
+    });
+
     // Ensure data directory exists
     const dataDir = join(__dirname, "..", "data");
     mkdirSync(dataDir, { recursive: true });

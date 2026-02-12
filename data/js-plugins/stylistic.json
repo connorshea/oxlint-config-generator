@@ -73,6 +73,16 @@
       "fixable": true,
       "deprecated": false
     },
+    "exp-jsx-props-style": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "exp-list-style": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
     "function-call-argument-newline": {
       "recommended": false,
       "fixable": true,
@@ -188,11 +198,6 @@
       "fixable": true,
       "deprecated": true
     },
-    "exp-jsx-props-style": {
-      "recommended": false,
-      "fixable": true,
-      "deprecated": false
-    },
     "jsx-quotes": {
       "recommended": true,
       "fixable": true,
@@ -245,11 +250,6 @@
     },
     "lines-between-class-members": {
       "recommended": true,
-      "fixable": true,
-      "deprecated": false
-    },
-    "exp-list-style": {
-      "recommended": false,
       "fixable": true,
       "deprecated": false
     },

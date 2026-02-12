@@ -97,6 +97,11 @@ async function generateJSPluginData() {
         };
       }
 
+      // Sort rules alphabetically
+      pluginData.rules = Object.fromEntries(
+        Object.entries(pluginData.rules).sort(([a], [b]) => a.localeCompare(b)),
+      );
+
       // Write to file
       const outputPath = join(dataDir, `${plugin.name}.json`);
       writeFileSync(outputPath, JSON.stringify(pluginData, null, 2));

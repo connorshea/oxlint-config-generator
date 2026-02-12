@@ -126,9 +126,18 @@ function buildDescriptionsFromRepo(baseDir: string) {
   return descriptions;
 }
 
+function sortObjectKeys<T>(obj: Record<string, T>): Record<string, T> {
+  return Object.fromEntries(Object.entries(obj).sort(([a], [b]) => a.localeCompare(b)));
+}
+
 function saveDescriptions(obj: Record<string, Record<string, string>>) {
   ensureDir(OUTPUT_DIR);
-  writeFileSync(OUTPUT_FILE, JSON.stringify(obj, null, 2));
+  // Sort plugins and rules within each plugin alphabetically
+  const sorted = sortObjectKeys(obj);
+  for (const key of Object.keys(sorted)) {
+    sorted[key] = sortObjectKeys(sorted[key]);
+  }
+  writeFileSync(OUTPUT_FILE, JSON.stringify(sorted, null, 2));
   log(`Saved descriptions to ${OUTPUT_FILE}`);
 }
 
