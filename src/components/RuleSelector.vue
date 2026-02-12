@@ -338,6 +338,7 @@ const formatGroupName = (scope: string): string => {
     storybook: "Storybook (JS Plugin)",
     "testing-library": "Testing Library (JS Plugin)",
     cypress: "Cypress (JS Plugin)",
+    e18e: "e18e (JS Plugin)",
   };
   return names[scope] || scope;
 };
@@ -429,6 +430,10 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
     cypress: {
       text: "eslint-plugin-cypress",
       url: "https://github.com/cypress-io/eslint-plugin-cypress",
+    },
+    e18e: {
+      text: "@e18e/eslint-plugin",
+      url: "https://github.com/e18e/eslint-plugin",
     },
   };
   return sources[scope] || { text: "", url: "" };

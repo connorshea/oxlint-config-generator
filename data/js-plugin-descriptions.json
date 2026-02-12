@@ -216,5 +216,25 @@
     "no-xpath": "disallow using `cy.xpath()` calls",
     "require-data-selectors": "require `data-*` attribute selectors",
     "unsafe-to-chain-command": "disallow actions within chains"
+  },
+  "e18e": {
+    "prefer-array-at": "Prefer Array.prototype.at() over length-based indexing",
+    "prefer-array-fill": "Prefer Array.prototype.fill() over Array.from or map with constant values",
+    "prefer-array-from-map": "Prefer Array.from(iterable, mapper) over [...iterable].map(mapper) to avoid intermediate array allocation",
+    "prefer-includes": "Prefer .includes() over indexOf() comparisons for arrays and strings",
+    "prefer-array-to-reversed": "Prefer Array.prototype.toReversed() over copying and reversing arrays",
+    "prefer-array-to-sorted": "Prefer Array.prototype.toSorted() over copying and sorting arrays",
+    "prefer-array-to-spliced": "Prefer Array.prototype.toSpliced() over copying and splicing arrays",
+    "prefer-exponentiation-operator": "Prefer the exponentiation operator ** over Math.pow()",
+    "prefer-nullish-coalescing": "Prefer nullish coalescing operator (?? and ??=) over verbose null checks",
+    "prefer-object-has-own": "Prefer Object.hasOwn() over Object.prototype.hasOwnProperty.call() and obj.hasOwnProperty()",
+    "prefer-spread-syntax": "Prefer spread syntax over Array.concat(), Array.from(), Object.assign({}, ...), and Function.apply()",
+    "prefer-url-canparse": "Prefer URL.canParse() over try-catch blocks for URL validation",
+    "no-indexof-equality": "Prefer optimized alternatives to `indexOf()` equality checks",
+    "prefer-timer-args": "Prefer passing function and arguments directly to setTimeout/setInterval instead of wrapping in an arrow function or using bind",
+    "prefer-date-now": "Prefer Date.now() over new Date().getTime() and +new Date()",
+    "prefer-regex-test": "prefer `RegExp.test()` over `String.match()` and `RegExp.exec()` when only checking for match existence",
+    "prefer-array-some": "Prefer Array.some() over Array.find() when checking for element existence",
+    "ban-dependencies": "Bans a list of dependencies from being used"
   }
 }
