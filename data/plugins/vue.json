@@ -796,15 +796,15 @@
       "fixable": true,
       "deprecated": false
     },
-    "no-v-for-template-key-on-child": {
-      "recommended": true,
-      "fixable": false,
-      "deprecated": false
-    },
     "no-v-for-template-key": {
       "recommended": false,
       "fixable": false,
       "deprecated": true
+    },
+    "no-v-for-template-key-on-child": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
     },
     "no-v-html": {
       "recommended": true,
@@ -816,13 +816,13 @@
       "fixable": false,
       "deprecated": true
     },
-    "no-v-text-v-html-on-component": {
-      "recommended": true,
+    "no-v-text": {
+      "recommended": false,
       "fixable": false,
       "deprecated": false
     },
-    "no-v-text": {
-      "recommended": false,
+    "no-v-text-v-html-on-component": {
+      "recommended": true,
       "fixable": false,
       "deprecated": false
     },
@@ -1166,27 +1166,27 @@
       "fixable": false,
       "deprecated": false
     },
-    "valid-v-bind-sync": {
-      "recommended": false,
-      "fixable": false,
-      "deprecated": true
-    },
     "valid-v-bind": {
       "recommended": true,
       "fixable": false,
       "deprecated": false
+    },
+    "valid-v-bind-sync": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": true
     },
     "valid-v-cloak": {
       "recommended": true,
       "fixable": false,
       "deprecated": false
     },
-    "valid-v-else-if": {
+    "valid-v-else": {
       "recommended": true,
       "fixable": false,
       "deprecated": false
     },
-    "valid-v-else": {
+    "valid-v-else-if": {
       "recommended": true,
       "fixable": false,
       "deprecated": false

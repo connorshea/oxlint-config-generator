@@ -116,6 +116,11 @@
       "fixable": true,
       "deprecated": false
     },
+    "no-array-push-push": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": true
+    },
     "no-array-reduce": {
       "recommended": true,
       "fixable": false,
@@ -171,6 +176,11 @@
       "fixable": true,
       "deprecated": false
     },
+    "no-instanceof-array": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": true
+    },
     "no-instanceof-builtins": {
       "recommended": true,
       "fixable": true,
@@ -190,6 +200,11 @@
       "recommended": true,
       "fixable": false,
       "deprecated": false
+    },
+    "no-length-as-slice-end": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": true
     },
     "no-lonely-if": {
       "recommended": true,
@@ -705,21 +720,6 @@
       "recommended": true,
       "fixable": true,
       "deprecated": false
-    },
-    "no-instanceof-array": {
-      "recommended": false,
-      "fixable": false,
-      "deprecated": true
-    },
-    "no-length-as-slice-end": {
-      "recommended": false,
-      "fixable": false,
-      "deprecated": true
-    },
-    "no-array-push-push": {
-      "recommended": false,
-      "fixable": false,
-      "deprecated": true
     }
   },
   "recommendedConfig": {

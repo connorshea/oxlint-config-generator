@@ -1,7 +1,7 @@
 {
   "name": "react-perf",
   "rules": {
-    "jsx-no-new-object-as-prop": {
+    "jsx-no-jsx-as-prop": {
       "recommended": true,
       "fixable": false,
       "deprecated": false
@@ -16,7 +16,7 @@
       "fixable": false,
       "deprecated": false
     },
-    "jsx-no-jsx-as-prop": {
+    "jsx-no-new-object-as-prop": {
       "recommended": true,
       "fixable": false,
       "deprecated": false

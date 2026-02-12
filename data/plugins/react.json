@@ -1,6 +1,11 @@
 {
   "name": "react",
   "rules": {
+    "automatic-effect-dependencies": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
     "boolean-prop-naming": {
       "recommended": false,
       "fixable": false,
@@ -11,9 +16,24 @@
       "fixable": false,
       "deprecated": false
     },
+    "capitalized-calls": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
     "checked-requires-onchange-or-readonly": {
       "recommended": false,
       "fixable": false,
+      "deprecated": false
+    },
+    "component-hook-factories": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "config": {
+      "recommended": true,
+      "fixable": true,
       "deprecated": false
     },
     "default-props-match-prop-types": {
@@ -29,6 +49,26 @@
     "display-name": {
       "recommended": true,
       "fixable": false,
+      "deprecated": false
+    },
+    "error-boundaries": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "exhaustive-deps": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "fbt": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "fire": {
+      "recommended": false,
+      "fixable": true,
       "deprecated": false
     },
     "forbid-component-props": {
@@ -66,14 +106,44 @@
       "fixable": true,
       "deprecated": false
     },
+    "gating": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "globals": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
     "hook-use-state": {
       "recommended": false,
       "fixable": false,
       "deprecated": false
     },
+    "hooks": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
     "iframe-missing-sandbox": {
       "recommended": false,
       "fixable": false,
+      "deprecated": false
+    },
+    "immutability": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "incompatible-library": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "invariant": {
+      "recommended": false,
+      "fixable": true,
       "deprecated": false
     },
     "jsx-boolean-value": {
@@ -96,12 +166,17 @@
       "fixable": true,
       "deprecated": false
     },
-    "jsx-curly-spacing": {
+    "jsx-curly-brace-presence": {
       "recommended": false,
       "fixable": true,
       "deprecated": false
     },
     "jsx-curly-newline": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "jsx-curly-spacing": {
       "recommended": false,
       "fixable": true,
       "deprecated": false
@@ -117,6 +192,11 @@
       "deprecated": false
     },
     "jsx-first-prop-new-line": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "jsx-fragments": {
       "recommended": false,
       "fixable": true,
       "deprecated": false
@@ -196,6 +276,11 @@
       "fixable": true,
       "deprecated": false
     },
+    "jsx-no-undef": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
     "jsx-no-useless-fragment": {
       "recommended": false,
       "fixable": true,
@@ -206,24 +291,9 @@
       "fixable": true,
       "deprecated": false
     },
-    "jsx-no-undef": {
-      "recommended": true,
-      "fixable": false,
-      "deprecated": false
-    },
-    "jsx-curly-brace-presence": {
-      "recommended": false,
-      "fixable": true,
-      "deprecated": false
-    },
     "jsx-pascal-case": {
       "recommended": false,
       "fixable": false,
-      "deprecated": false
-    },
-    "jsx-fragments": {
-      "recommended": false,
-      "fixable": true,
       "deprecated": false
     },
     "jsx-props-no-multi-spaces": {
@@ -231,12 +301,12 @@
       "fixable": true,
       "deprecated": false
     },
-    "jsx-props-no-spreading": {
+    "jsx-props-no-spread-multi": {
       "recommended": false,
       "fixable": false,
       "deprecated": false
     },
-    "jsx-props-no-spread-multi": {
+    "jsx-props-no-spreading": {
       "recommended": false,
       "fixable": false,
       "deprecated": false
@@ -276,9 +346,9 @@
       "fixable": true,
       "deprecated": false
     },
-    "no-invalid-html-attribute": {
+    "memoized-effect-dependencies": {
       "recommended": false,
-      "fixable": false,
+      "fixable": true,
       "deprecated": false
     },
     "no-access-state-in-setstate": {
@@ -321,6 +391,11 @@
       "fixable": false,
       "deprecated": false
     },
+    "no-deriving-state-in-effects": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
     "no-did-mount-set-state": {
       "recommended": false,
       "fixable": false,
@@ -341,6 +416,11 @@
       "fixable": false,
       "deprecated": false
     },
+    "no-invalid-html-attribute": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
     "no-is-mounted": {
       "recommended": true,
       "fixable": false,
@@ -356,13 +436,8 @@
       "fixable": false,
       "deprecated": false
     },
-    "no-set-state": {
+    "no-object-type-as-default-prop": {
       "recommended": false,
-      "fixable": false,
-      "deprecated": false
-    },
-    "no-string-refs": {
-      "recommended": true,
       "fixable": false,
       "deprecated": false
     },
@@ -372,6 +447,16 @@
       "deprecated": false
     },
     "no-render-return-value": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-set-state": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-string-refs": {
       "recommended": true,
       "fixable": false,
       "deprecated": false
@@ -421,11 +506,6 @@
       "fixable": false,
       "deprecated": false
     },
-    "no-object-type-as-default-prop": {
-      "recommended": false,
-      "fixable": false,
-      "deprecated": false
-    },
     "no-will-update-set-state": {
       "recommended": false,
       "fixable": false,
@@ -451,14 +531,29 @@
       "fixable": false,
       "deprecated": false
     },
+    "preserve-manual-memoization": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
     "prop-types": {
       "recommended": true,
       "fixable": false,
       "deprecated": false
     },
+    "purity": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
     "react-in-jsx-scope": {
       "recommended": true,
       "fixable": false,
+      "deprecated": false
+    },
+    "refs": {
+      "recommended": true,
+      "fixable": true,
       "deprecated": false
     },
     "require-default-props": {
@@ -476,8 +571,28 @@
       "fixable": false,
       "deprecated": false
     },
+    "rule-suppression": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "rules-of-hooks": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
     "self-closing-comp": {
       "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "set-state-in-effect": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "set-state-in-render": {
+      "recommended": true,
       "fixable": true,
       "deprecated": false
     },
@@ -501,6 +616,11 @@
       "fixable": false,
       "deprecated": false
     },
+    "static-components": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
     "static-property-placement": {
       "recommended": false,
       "fixable": false,
@@ -511,107 +631,7 @@
       "fixable": false,
       "deprecated": false
     },
-    "void-dom-elements-no-children": {
-      "recommended": false,
-      "fixable": false,
-      "deprecated": false
-    },
-    "exhaustive-deps": {
-      "recommended": true,
-      "fixable": true,
-      "deprecated": false
-    },
-    "rules-of-hooks": {
-      "recommended": true,
-      "fixable": false,
-      "deprecated": false
-    },
-    "hooks": {
-      "recommended": false,
-      "fixable": true,
-      "deprecated": false
-    },
-    "capitalized-calls": {
-      "recommended": false,
-      "fixable": true,
-      "deprecated": false
-    },
-    "static-components": {
-      "recommended": true,
-      "fixable": true,
-      "deprecated": false
-    },
-    "use-memo": {
-      "recommended": true,
-      "fixable": true,
-      "deprecated": false
-    },
-    "void-use-memo": {
-      "recommended": false,
-      "fixable": true,
-      "deprecated": false
-    },
-    "component-hook-factories": {
-      "recommended": true,
-      "fixable": true,
-      "deprecated": false
-    },
-    "preserve-manual-memoization": {
-      "recommended": true,
-      "fixable": true,
-      "deprecated": false
-    },
-    "incompatible-library": {
-      "recommended": true,
-      "fixable": true,
-      "deprecated": false
-    },
-    "immutability": {
-      "recommended": true,
-      "fixable": true,
-      "deprecated": false
-    },
-    "globals": {
-      "recommended": true,
-      "fixable": true,
-      "deprecated": false
-    },
-    "refs": {
-      "recommended": true,
-      "fixable": true,
-      "deprecated": false
-    },
-    "memoized-effect-dependencies": {
-      "recommended": false,
-      "fixable": true,
-      "deprecated": false
-    },
-    "set-state-in-effect": {
-      "recommended": true,
-      "fixable": true,
-      "deprecated": false
-    },
-    "no-deriving-state-in-effects": {
-      "recommended": false,
-      "fixable": true,
-      "deprecated": false
-    },
-    "error-boundaries": {
-      "recommended": true,
-      "fixable": true,
-      "deprecated": false
-    },
-    "purity": {
-      "recommended": true,
-      "fixable": true,
-      "deprecated": false
-    },
-    "set-state-in-render": {
-      "recommended": true,
-      "fixable": true,
-      "deprecated": false
-    },
-    "invariant": {
+    "syntax": {
       "recommended": false,
       "fixable": true,
       "deprecated": false
@@ -621,42 +641,22 @@
       "fixable": true,
       "deprecated": false
     },
-    "syntax": {
-      "recommended": false,
-      "fixable": true,
-      "deprecated": false
-    },
     "unsupported-syntax": {
       "recommended": true,
       "fixable": true,
       "deprecated": false
     },
-    "config": {
+    "use-memo": {
       "recommended": true,
       "fixable": true,
       "deprecated": false
     },
-    "gating": {
-      "recommended": true,
-      "fixable": true,
-      "deprecated": false
-    },
-    "rule-suppression": {
+    "void-dom-elements-no-children": {
       "recommended": false,
-      "fixable": true,
+      "fixable": false,
       "deprecated": false
     },
-    "automatic-effect-dependencies": {
-      "recommended": false,
-      "fixable": true,
-      "deprecated": false
-    },
-    "fire": {
-      "recommended": false,
-      "fixable": true,
-      "deprecated": false
-    },
-    "fbt": {
+    "void-use-memo": {
       "recommended": false,
       "fixable": true,
       "deprecated": false

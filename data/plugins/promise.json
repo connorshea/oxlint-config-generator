@@ -1,7 +1,52 @@
 {
   "name": "promise",
   "rules": {
-    "param-names": {
+    "always-return": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "avoid-new": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "catch-or-return": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-callback-in-promise": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-multiple-resolved": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-native": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-nesting": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-new-statics": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "no-promise-in-callback": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-return-in-finally": {
       "recommended": true,
       "fixable": false,
       "deprecated": false
@@ -11,12 +56,7 @@
       "fixable": false,
       "deprecated": false
     },
-    "always-return": {
-      "recommended": true,
-      "fixable": false,
-      "deprecated": false
-    },
-    "catch-or-return": {
+    "param-names": {
       "recommended": true,
       "fixable": false,
       "deprecated": false
@@ -36,53 +76,13 @@
       "fixable": true,
       "deprecated": false
     },
-    "no-native": {
-      "recommended": true,
-      "fixable": false,
-      "deprecated": false
-    },
-    "no-callback-in-promise": {
-      "recommended": true,
-      "fixable": false,
-      "deprecated": false
-    },
-    "no-promise-in-callback": {
-      "recommended": true,
-      "fixable": false,
-      "deprecated": false
-    },
-    "no-nesting": {
-      "recommended": true,
-      "fixable": false,
-      "deprecated": false
-    },
-    "avoid-new": {
-      "recommended": true,
-      "fixable": false,
-      "deprecated": false
-    },
-    "no-new-statics": {
-      "recommended": true,
-      "fixable": true,
-      "deprecated": false
-    },
-    "no-return-in-finally": {
-      "recommended": true,
+    "spec-only": {
+      "recommended": false,
       "fixable": false,
       "deprecated": false
     },
     "valid-params": {
       "recommended": true,
-      "fixable": false,
-      "deprecated": false
-    },
-    "no-multiple-resolved": {
-      "recommended": false,
-      "fixable": false,
-      "deprecated": false
-    },
-    "spec-only": {
-      "recommended": false,
       "fixable": false,
       "deprecated": false
     }

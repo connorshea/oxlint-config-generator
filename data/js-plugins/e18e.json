@@ -3,6 +3,16 @@
   "packageName": "@e18e/eslint-plugin",
   "rulePrefix": "@e18e",
   "rules": {
+    "ban-dependencies": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-indexof-equality": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
     "prefer-array-at": {
       "recommended": true,
       "fixable": true,
@@ -18,7 +28,7 @@
       "fixable": true,
       "deprecated": false
     },
-    "prefer-includes": {
+    "prefer-array-some": {
       "recommended": true,
       "fixable": true,
       "deprecated": false
@@ -38,7 +48,17 @@
       "fixable": true,
       "deprecated": false
     },
+    "prefer-date-now": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
     "prefer-exponentiation-operator": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
+    "prefer-includes": {
       "recommended": true,
       "fixable": true,
       "deprecated": false
@@ -53,18 +73,13 @@
       "fixable": true,
       "deprecated": false
     },
-    "prefer-spread-syntax": {
+    "prefer-regex-test": {
       "recommended": true,
       "fixable": true,
       "deprecated": false
     },
-    "prefer-url-canparse": {
+    "prefer-spread-syntax": {
       "recommended": true,
-      "fixable": false,
-      "deprecated": false
-    },
-    "no-indexof-equality": {
-      "recommended": false,
       "fixable": true,
       "deprecated": false
     },
@@ -73,22 +88,7 @@
       "fixable": true,
       "deprecated": false
     },
-    "prefer-date-now": {
-      "recommended": true,
-      "fixable": true,
-      "deprecated": false
-    },
-    "prefer-regex-test": {
-      "recommended": true,
-      "fixable": true,
-      "deprecated": false
-    },
-    "prefer-array-some": {
-      "recommended": true,
-      "fixable": true,
-      "deprecated": false
-    },
-    "ban-dependencies": {
+    "prefer-url-canparse": {
       "recommended": true,
       "fixable": false,
       "deprecated": false

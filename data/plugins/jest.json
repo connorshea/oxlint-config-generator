@@ -286,12 +286,12 @@
       "fixable": true,
       "deprecated": false
     },
-    "prefer-to-have-been-called-times": {
+    "prefer-to-have-been-called": {
       "recommended": false,
       "fixable": true,
       "deprecated": false
     },
-    "prefer-to-have-been-called": {
+    "prefer-to-have-been-called-times": {
       "recommended": false,
       "fixable": true,
       "deprecated": false
@@ -331,6 +331,11 @@
       "fixable": false,
       "deprecated": false
     },
+    "valid-expect": {
+      "recommended": true,
+      "fixable": true,
+      "deprecated": false
+    },
     "valid-expect-in-promise": {
       "recommended": true,
       "fixable": false,
@@ -339,11 +344,6 @@
     "valid-expect-with-promise": {
       "recommended": false,
       "fixable": false,
-      "deprecated": false
-    },
-    "valid-expect": {
-      "recommended": true,
-      "fixable": true,
       "deprecated": false
     },
     "valid-mock-module-path": {

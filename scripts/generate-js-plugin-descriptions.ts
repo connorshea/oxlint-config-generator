@@ -50,11 +50,19 @@ async function generateJSPluginDescriptions() {
     }
   }
 
+  // Sort plugins and rules within each plugin alphabetically
+  const sortedDescriptions: Record<string, Record<string, string>> = {};
+  for (const key of Object.keys(descriptions).sort((a, b) => a.localeCompare(b))) {
+    sortedDescriptions[key] = Object.fromEntries(
+      Object.entries(descriptions[key]).sort(([a], [b]) => a.localeCompare(b)),
+    );
+  }
+
   // Write to file
   const outputDir = join(__dirname, "..", "data");
   const outputPath = join(outputDir, "js-plugin-descriptions.json");
   mkdirSync(outputDir, { recursive: true });
-  writeFileSync(outputPath, JSON.stringify(descriptions, null, 2));
+  writeFileSync(outputPath, JSON.stringify(sortedDescriptions, null, 2));
 
   console.log(`\n✓ JS Plugin descriptions saved to ${outputPath}`);
   console.log(`  Total plugins: ${Object.keys(descriptions).length}`);
