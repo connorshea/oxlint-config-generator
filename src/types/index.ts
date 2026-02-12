@@ -1,5 +1,5 @@
 export interface OxlintRule {
-  scope: string;
+  scope: ScopeName;
   value: string;
   category: string;
   type_aware: boolean;
@@ -53,6 +53,24 @@ export type PluginName =
   | "typescript"
   | "vue"
   | "next"
+  | "promise"
+  | "node";
+
+// Names of native plugins (with underscores).
+export type ScopeName =
+  | "eslint"
+  | "oxc"
+  | "react"
+  | "react_perf"
+  | "jsx_a11y"
+  | "import"
+  | "jsdoc"
+  | "jest"
+  | "vitest"
+  | "unicorn"
+  | "typescript"
+  | "vue"
+  | "nextjs"
   | "promise"
   | "node";
 

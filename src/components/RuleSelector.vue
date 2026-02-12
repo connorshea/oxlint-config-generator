@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import type { PluginName, JSPluginName, OxlintRule, RuleOverride } from "../types";
+import type { PluginName, JSPluginName, OxlintRule, RuleOverride, ScopeName } from "../types";
 import rulesData from "../../data/rules.json";
 import ruleDescriptions from "../../data/rule-descriptions.json";
 import jsPluginDescriptions from "../../data/js-plugin-descriptions.json";
@@ -199,10 +199,12 @@ const allDisplayRules = computed((): DisplayRule[] => {
   return [...oxlintDisplayRules.value, ...jsPluginRules.value];
 });
 
-const groupedRules = computed(() => {
+type GroupedRules = [JSPluginName | ScopeName | "all", DisplayRule[]][];
+
+const groupedRules = computed((): GroupedRules => {
   if (props.showFullRulesList) {
     // In full rules list mode, return all filtered rules in a single group
-    return [["all", allDisplayRules.value] as [string, DisplayRule[]]];
+    return [["all", allDisplayRules.value]];
   }
 
   const groups: Record<string, DisplayRule[]> = {};
@@ -216,7 +218,7 @@ const groupedRules = computed(() => {
   }
 
   // Sort groups: eslint first, then alphabetically, JS plugins at the end
-  const sortedEntries = Object.entries(groups).sort(([a], [b]) => {
+  const sortedEntries: GroupedRules = (Object.entries(groups) as GroupedRules).sort(([a], [b]) => {
     const aIsJS =
       a.startsWith("@") || props.selectedJsPlugins.some((p) => jsPluginDataMap[p].rulePrefix === a);
     const bIsJS =
@@ -315,8 +317,12 @@ const getCategoryTooltip = (category: string): string => {
   return tooltips[category] || category;
 };
 
-const formatGroupName = (scope: string): string => {
-  const names: Record<string, string> = {
+const formatGroupName = (scope: JSPluginName | ScopeName | "all"): string => {
+  if (scope === "all") {
+    return scope;
+  }
+
+  const names: Record<JSPluginName | ScopeName, string> = {
     eslint: "ESLint",
     oxc: "oxc",
     typescript: "TypeScript",
@@ -334,13 +340,13 @@ const formatGroupName = (scope: string): string => {
     node: "Node.js",
     // JS Plugins
     playwright: "Playwright (JS Plugin)",
-    "@stylistic": "Stylistic (JS Plugin)",
+    stylistic: "Stylistic (JS Plugin)",
     storybook: "Storybook (JS Plugin)",
     "testing-library": "Testing Library (JS Plugin)",
     cypress: "Cypress (JS Plugin)",
     e18e: "e18e (JS Plugin)",
   };
-  return names[scope] || scope;
+  return names[scope];
 };
 
 interface GroupSourceInfo {
@@ -348,8 +354,12 @@ interface GroupSourceInfo {
   url: string;
 }
 
-const getGroupSource = (scope: string): GroupSourceInfo => {
-  const sources: Record<string, GroupSourceInfo> = {
+const getGroupSource = (scope: JSPluginName | ScopeName | "all"): GroupSourceInfo => {
+  if (scope === "all") {
+    return { text: "", url: "" };
+  }
+
+  const sources: Record<JSPluginName | ScopeName, GroupSourceInfo> = {
     eslint: {
       text: "ESLint",
       url: "https://github.com/eslint/eslint",
@@ -415,7 +425,7 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
       text: "eslint-plugin-playwright",
       url: "https://github.com/playwright-community/eslint-plugin-playwright",
     },
-    "@stylistic": {
+    stylistic: {
       text: "@stylistic/eslint-plugin",
       url: "https://github.com/eslint-stylistic/eslint-stylistic",
     },
@@ -436,7 +446,7 @@ const getGroupSource = (scope: string): GroupSourceInfo => {
       url: "https://github.com/e18e/eslint-plugin",
     },
   };
-  return sources[scope] || { text: "", url: "" };
+  return sources[scope];
 };
 </script>
 

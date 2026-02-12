@@ -11,6 +11,7 @@ interface JSPluginConfig {
   rulePrefix: string;
 }
 
+// NOTE: This should always be `@npmscope` for rulePrefix if the package is `@npmscope/eslint-plugin`.
 const jsPlugins: JSPluginConfig[] = [
   { name: "playwright", packageName: "eslint-plugin-playwright", rulePrefix: "playwright" },
   { name: "stylistic", packageName: "@stylistic/eslint-plugin", rulePrefix: "@stylistic" },
@@ -21,7 +22,7 @@ const jsPlugins: JSPluginConfig[] = [
     rulePrefix: "testing-library",
   },
   { name: "cypress", packageName: "eslint-plugin-cypress", rulePrefix: "cypress" },
-  { name: "e18e", packageName: "@e18e/eslint-plugin", rulePrefix: "e18e" },
+  { name: "e18e", packageName: "@e18e/eslint-plugin", rulePrefix: "@e18e" },
 ];
 
 async function generateJSPluginData() {

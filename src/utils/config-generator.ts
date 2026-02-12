@@ -1,5 +1,6 @@
 import type {
   PluginName,
+  ScopeName,
   JSPluginName,
   OxlintConfig,
   OxlintRule,
@@ -67,7 +68,7 @@ export const jsPluginDataMap: Record<JSPluginName, JSPluginData> = {
   e18e: e18ePlugin as JSPluginData,
 };
 
-export const scopeToPluginMap: Record<string, PluginName> = {
+export const scopeToPluginMap: Record<ScopeName, PluginName> = {
   oxc: "oxc",
   react: "react",
   react_perf: "react-perf",
@@ -82,6 +83,7 @@ export const scopeToPluginMap: Record<string, PluginName> = {
   nextjs: "next",
   promise: "promise",
   node: "node",
+  eslint: "eslint",
 };
 
 const isRecommendedValue = (
