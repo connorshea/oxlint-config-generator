@@ -217,7 +217,7 @@
     "require-data-selectors": "require `data-*` attribute selectors",
     "unsafe-to-chain-command": "disallow actions within chains"
   },
-  "e18e": {
+  "@e18e": {
     "prefer-array-at": "Prefer Array.prototype.at() over length-based indexing",
     "prefer-array-fill": "Prefer Array.prototype.fill() over Array.from or map with constant values",
     "prefer-array-from-map": "Prefer Array.from(iterable, mapper) over [...iterable].map(mapper) to avoid intermediate array allocation",

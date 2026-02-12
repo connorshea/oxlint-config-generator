@@ -1,14 +1,15 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import type { RulePrefix, JSPluginName } from "../src/types";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 interface JSPluginConfig {
-  name: string;
+  name: JSPluginName;
   packageName: string;
-  rulePrefix: string;
+  rulePrefix: RulePrefix;
 }
 
 // NOTE: This should always be `@npmscope` for rulePrefix if the package is `@npmscope/eslint-plugin`.
@@ -42,7 +43,7 @@ async function generateJSPluginData() {
       const pluginData: {
         name: string;
         packageName: string;
-        rulePrefix: string;
+        rulePrefix: RulePrefix;
         rules: Record<string, { recommended: boolean; fixable: boolean; deprecated?: boolean }>;
       } = {
         name: plugin.name,

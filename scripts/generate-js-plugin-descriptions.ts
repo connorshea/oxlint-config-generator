@@ -1,14 +1,15 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import type { JSPluginName, RulePrefix } from "../src/types";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 interface JSPluginConfig {
-  name: string;
+  name: JSPluginName;
   packageName: string;
-  rulePrefix: string;
+  rulePrefix: RulePrefix;
 }
 
 const jsPlugins: JSPluginConfig[] = [
@@ -21,7 +22,7 @@ const jsPlugins: JSPluginConfig[] = [
     rulePrefix: "testing-library",
   },
   { name: "cypress", packageName: "eslint-plugin-cypress", rulePrefix: "cypress" },
-  { name: "e18e", packageName: "@e18e/eslint-plugin", rulePrefix: "e18e" },
+  { name: "e18e", packageName: "@e18e/eslint-plugin", rulePrefix: "@e18e" },
 ];
 
 async function generateJSPluginDescriptions() {

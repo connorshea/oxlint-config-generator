@@ -82,9 +82,19 @@ export type JSPluginName =
   | "cypress"
   | "e18e";
 
+// This is for JS Plugins.
+// Should be the same as PluginName but with @ prefixes on scoped packages.
+export type RulePrefix =
+  | "playwright"
+  | "@stylistic"
+  | "storybook"
+  | "testing-library"
+  | "cypress"
+  | "@e18e";
+
 export interface JSPluginData {
-  name: string;
+  name: JSPluginName;
   packageName: string;
-  rulePrefix: string;
+  rulePrefix: RulePrefix;
   rules: Record<string, { recommended: boolean; fixable: boolean; deprecated?: boolean }>;
 }
