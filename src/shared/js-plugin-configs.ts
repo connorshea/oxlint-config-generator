@@ -9,7 +9,8 @@ export interface JSPluginConfig {
 
 // Single source of truth for all JS plugin configurations.
 // When adding a new JS plugin, add it here and update JSPluginName/RulePrefix in src/types/index.ts.
-// NOTE: rulePrefix should always be `@npmscope` if the package is `@npmscope/eslint-plugin`.
+// NOTE: rulePrefix should always be `@npmscope` if the package is `@npmscope/eslint-plugin`,
+// unless the package specifies a name in the ESLint plugin meta data.
 export const jsPluginConfigs: JSPluginConfig[] = [
   {
     name: "playwright",
@@ -41,5 +42,5 @@ export const jsPluginConfigs: JSPluginConfig[] = [
     rulePrefix: "cypress",
     label: "Cypress",
   },
-  { name: "e18e", packageName: "@e18e/eslint-plugin", rulePrefix: "@e18e", label: "e18e" },
+  { name: "e18e", packageName: "@e18e/eslint-plugin", rulePrefix: "e18e", label: "e18e" },
 ];
