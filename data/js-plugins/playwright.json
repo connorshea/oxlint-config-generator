@@ -48,6 +48,11 @@
       "fixable": false,
       "deprecated": false
     },
+    "no-duplicate-slow": {
+      "recommended": true,
+      "fixable": false,
+      "deprecated": false
+    },
     "no-element-handle": {
       "recommended": true,
       "fixable": false,
@@ -109,6 +114,11 @@
       "deprecated": false
     },
     "no-restricted-matchers": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "no-restricted-roles": {
       "recommended": false,
       "fixable": false,
       "deprecated": false
@@ -236,6 +246,16 @@
     "require-soft-assertions": {
       "recommended": false,
       "fixable": true,
+      "deprecated": false
+    },
+    "require-tags": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "require-to-pass-timeout": {
+      "recommended": false,
+      "fixable": false,
       "deprecated": false
     },
     "require-to-throw-message": {
