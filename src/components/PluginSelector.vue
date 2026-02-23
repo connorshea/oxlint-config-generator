@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import type { PluginName, JSPluginName } from "../types";
-import { jsPluginConfigs } from "../shared/js-plugin-configs";
+import { jsPluginConfigs } from "../shared/js-plugin-configs.mts";
 
 const props = defineProps<{
   selectedPlugins: PluginName[];

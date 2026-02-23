@@ -156,6 +156,11 @@
       "fixable": false,
       "deprecated": false
     },
+    "prefer-global/crypto": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
     "prefer-global/process": {
       "recommended": false,
       "fixable": false,
@@ -167,6 +172,11 @@
       "deprecated": false
     },
     "prefer-global/text-encoder": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "prefer-global/timers": {
       "recommended": false,
       "fixable": false,
       "deprecated": false

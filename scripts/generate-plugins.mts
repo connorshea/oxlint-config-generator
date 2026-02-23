@@ -66,7 +66,7 @@ async function generatePluginData() {
 
       // Get plugin rules (merge hooks rules into react)
       const rules = { ...pluginExport.rules };
-      if (hooksExport && hooksExport.rules) {
+      if (hooksExport?.rules) {
         Object.assign(rules, hooksExport.rules);
       }
 
@@ -97,7 +97,7 @@ async function generatePluginData() {
       mergeRulesFromConfigValue(configs["recommended-type-checking"]);
 
       // If hooksExport exists, also merge its configs the same way
-      if (hooksExport && hooksExport.configs) {
+      if (hooksExport?.configs) {
         mergeRulesFromConfigValue(hooksExport.configs.recommended);
         mergeRulesFromConfigValue(hooksExport.configs["flat/recommended"]);
         mergeRulesFromConfigValue(hooksExport.configs["recommended-requiring-type-checking"]);
@@ -184,4 +184,4 @@ async function generatePluginData() {
   console.log("\n✓ Plugin data generation complete!");
 }
 
-generatePluginData();
+await generatePluginData();
