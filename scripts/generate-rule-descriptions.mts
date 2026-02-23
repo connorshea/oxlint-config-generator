@@ -142,7 +142,7 @@ function saveDescriptions(obj: Record<string, Record<string, string>>) {
 }
 
 // CLI
-(async function main() {
+await (async function main() {
   try {
     const args = process.argv.slice(2);
     const cloneDirArg = args.find((a) => a.startsWith("--clone-dir="));

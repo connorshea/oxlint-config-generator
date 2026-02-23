@@ -43,4 +43,4 @@ async function fetchRules() {
   }
 }
 
-fetchRules();
+await fetchRules();
