@@ -8,6 +8,11 @@
       "fixable": false,
       "deprecated": false
     },
+    "no-and": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
     "no-assigning-return-values": {
       "recommended": true,
       "fixable": false,
@@ -51,7 +56,7 @@
     "no-xpath": {
       "recommended": false,
       "fixable": false,
-      "deprecated": false
+      "deprecated": true
     },
     "require-data-selectors": {
       "recommended": false,

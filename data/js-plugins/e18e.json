@@ -63,6 +63,11 @@
       "fixable": true,
       "deprecated": false
     },
+    "prefer-inline-equality": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
     "prefer-nullish-coalescing": {
       "recommended": true,
       "fixable": true,
@@ -81,6 +86,11 @@
     "prefer-spread-syntax": {
       "recommended": true,
       "fixable": true,
+      "deprecated": false
+    },
+    "prefer-static-regex": {
+      "recommended": true,
+      "fixable": false,
       "deprecated": false
     },
     "prefer-timer-args": {

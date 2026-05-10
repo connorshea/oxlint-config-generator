@@ -100,6 +100,7 @@
   },
   "cypress": {
     "assertion-before-screenshot": "require screenshots to be preceded by an assertion",
+    "no-and": "enforce .should() over .and() for starting assertion chains",
     "no-assigning-return-values": "disallow assigning return values of `cy` calls",
     "no-async-before": "disallow using `async`/`await` in Cypress `before` methods",
     "no-async-tests": "disallow using `async`/`await` in Cypress test cases",
@@ -113,7 +114,7 @@
     "unsafe-to-chain-command": "disallow actions within chains"
   },
   "e18e": {
-    "ban-dependencies": "Bans a list of dependencies from being used",
+    "ban-dependencies": "Disallow dependencies in favor of more performant or secure alternatives",
     "no-indexof-equality": "Prefer optimized alternatives to `indexOf()` equality checks",
     "prefer-array-at": "Prefer Array.prototype.at() over length-based indexing",
     "prefer-array-fill": "Prefer Array.prototype.fill() over Array.from or map with constant values",
@@ -125,10 +126,12 @@
     "prefer-date-now": "Prefer Date.now() over new Date().getTime() and +new Date()",
     "prefer-exponentiation-operator": "Prefer the exponentiation operator ** over Math.pow()",
     "prefer-includes": "Prefer .includes() over indexOf() comparisons for arrays and strings",
+    "prefer-inline-equality": "Prefer inline equality checks over temporary object creation for simple comparisons",
     "prefer-nullish-coalescing": "Prefer nullish coalescing operator (?? and ??=) over verbose null checks",
     "prefer-object-has-own": "Prefer Object.hasOwn() over Object.prototype.hasOwnProperty.call() and obj.hasOwnProperty()",
     "prefer-regex-test": "prefer `RegExp.test()` over `String.match()` and `RegExp.exec()` when only checking for match existence",
     "prefer-spread-syntax": "Prefer spread syntax over Array.concat(), Array.from(), Object.assign({}, ...), and Function.apply()",
+    "prefer-static-regex": "Prefer defining regular expressions at module scope to avoid re-compilation on every function call",
     "prefer-timer-args": "Prefer passing function and arguments directly to setTimeout/setInterval instead of wrapping in an arrow function or using bind",
     "prefer-url-canparse": "Prefer URL.canParse() over try-catch blocks for URL validation"
   },

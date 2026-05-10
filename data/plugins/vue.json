@@ -901,6 +901,11 @@
       "fixable": true,
       "deprecated": false
     },
+    "prefer-single-event-payload": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
     "prefer-template": {
       "recommended": false,
       "fixable": true,
@@ -912,6 +917,11 @@
       "deprecated": false
     },
     "prefer-use-template-ref": {
+      "recommended": false,
+      "fixable": false,
+      "deprecated": false
+    },
+    "prefer-v-model": {
       "recommended": false,
       "fixable": false,
       "deprecated": false

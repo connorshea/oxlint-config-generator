@@ -117,7 +117,7 @@
       "deprecated": false
     },
     "no-unpublished-bin": {
-      "recommended": true,
+      "recommended": false,
       "fixable": false,
       "deprecated": false
     },
@@ -225,7 +225,6 @@
     "n/no-missing-import": "error",
     "n/no-missing-require": "error",
     "n/no-process-exit": "error",
-    "n/no-unpublished-bin": "error",
     "n/no-unpublished-import": "error",
     "n/no-unpublished-require": "error",
     "n/no-unsupported-features/es-builtins": "error",
