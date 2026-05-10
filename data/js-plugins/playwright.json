@@ -44,7 +44,7 @@
       "deprecated": false
     },
     "no-duplicate-hooks": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false,
       "deprecated": false
     },
@@ -184,17 +184,17 @@
       "deprecated": false
     },
     "prefer-hooks-in-order": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false,
       "deprecated": false
     },
     "prefer-hooks-on-top": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false,
       "deprecated": false
     },
     "prefer-locator": {
-      "recommended": false,
+      "recommended": true,
       "fixable": false,
       "deprecated": false
     },
@@ -224,12 +224,12 @@
       "deprecated": false
     },
     "prefer-to-have-count": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true,
       "deprecated": false
     },
     "prefer-to-have-length": {
-      "recommended": false,
+      "recommended": true,
       "fixable": true,
       "deprecated": false
     },

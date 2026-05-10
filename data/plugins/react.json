@@ -1,11 +1,6 @@
 {
   "name": "react",
   "rules": {
-    "automatic-effect-dependencies": {
-      "recommended": false,
-      "fixable": true,
-      "deprecated": false
-    },
     "boolean-prop-naming": {
       "recommended": false,
       "fixable": false,
@@ -27,9 +22,9 @@
       "deprecated": false
     },
     "component-hook-factories": {
-      "recommended": true,
-      "fixable": true,
-      "deprecated": false
+      "recommended": false,
+      "fixable": false,
+      "deprecated": true
     },
     "config": {
       "recommended": true,
@@ -61,12 +56,12 @@
       "fixable": true,
       "deprecated": false
     },
-    "fbt": {
+    "exhaustive-effect-dependencies": {
       "recommended": false,
       "fixable": true,
       "deprecated": false
     },
-    "fire": {
+    "fbt": {
       "recommended": false,
       "fixable": true,
       "deprecated": false
@@ -342,6 +337,11 @@
       "deprecated": false
     },
     "jsx-wrap-multilines": {
+      "recommended": false,
+      "fixable": true,
+      "deprecated": false
+    },
+    "memo-dependencies": {
       "recommended": false,
       "fixable": true,
       "deprecated": false
@@ -689,7 +689,6 @@
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/static-components": "error",
     "react-hooks/use-memo": "error",
-    "react-hooks/component-hook-factories": "error",
     "react-hooks/preserve-manual-memoization": "error",
     "react-hooks/incompatible-library": "warn",
     "react-hooks/immutability": "error",
